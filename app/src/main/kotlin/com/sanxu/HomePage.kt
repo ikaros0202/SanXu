@@ -123,12 +123,6 @@ import java.time.format.DateTimeFormatter
                 Icon(Icons.Outlined.ArrowForward,null,Modifier.size(20.dp))
             }
         } }
-        if(draws.size>1) item { WorkspacePanel {
-            PanelHeading("近期档案"){TextButton(onClick={onHistory("")}){Text("全部");Icon(Icons.Outlined.ChevronRight,null,Modifier.size(16.dp))}}
-            Row(Modifier.fillMaxWidth().padding(horizontal=8.dp).padding(bottom=8.dp)){
-                draws.dropLast(1).takeLast(3).asReversed().forEach{draw->Column(Modifier.weight(1f).heightIn(min=56.dp).clickable{onHistory(draw.issue)}.padding(horizontal=8.dp),verticalArrangement=Arrangement.Center){SmallLabel(draw.issue);Text(draw.number.value,fontFamily=NumberFont,fontWeight=FontWeight.SemiBold,fontSize=20.sp,letterSpacing=3.sp)}}
-            }
-        } }
     }
 }
 

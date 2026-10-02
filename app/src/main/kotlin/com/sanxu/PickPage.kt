@@ -120,11 +120,11 @@ fun playLabel(play:PlayType)=when(play){PlayType.STRAIGHT->"单选";PlayType.GRO
                             }
                         }
                     }
-                    if(input.method in listOf(PickMethod.GROUP,PickMethod.DISTINCT,PickMethod.FILTER,PickMethod.DAN_TUO)&&result.numbers.isNotEmpty()) {
+                    if(input.method!=PickMethod.SINGLE&&result.numbers.isNotEmpty()) {
                         HorizontalDivider(color=MaterialTheme.colorScheme.outlineVariant)
-                        SmallLabel("号码预览",Modifier.padding(top=10.dp,bottom=4.dp))
-                        result.numbers.take(12).chunked(4).forEach { row->
-                            Row(Modifier.fillMaxWidth().padding(vertical=6.dp)){
+                        SmallLabel("组合预览",Modifier.padding(top=6.dp,bottom=2.dp))
+                        result.numbers.take(if(input.method==PickMethod.POSITION)4 else 12).chunked(4).forEach { row->
+                            Row(Modifier.fillMaxWidth().padding(vertical=3.dp)){
                                 row.forEach{Text(it,Modifier.weight(1f),fontFamily=NumberFont,fontSize=16.sp,color=MaterialTheme.colorScheme.primary)}
                                 repeat(4-row.size){Spacer(Modifier.weight(1f))}
                             }

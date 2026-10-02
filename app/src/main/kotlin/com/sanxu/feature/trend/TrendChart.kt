@@ -313,7 +313,7 @@ fun TrendChart(
             val renderedViewport = constrainTrendViewport(viewport, bounds)
             val touchRadiusPx = with(density) { 24.dp.toPx() }
             Column(Modifier.fillMaxSize()) {
-                Row(Modifier.fillMaxWidth().height(48.dp)) {
+                Surface(color=colors.surfaceContainerLow) { Row(Modifier.fillMaxWidth().height(48.dp)) {
                     val starts = listOf(
                         "期号" to 0.dp,
                         "百位" to baseIssueWidth + TrendPrefixWidth * 2,
@@ -332,7 +332,7 @@ fun TrendChart(
                         viewport = latestTrendViewport(bounds, viewport.scale, with(density) { TrendRowHeight.toPx() }, state.tableRows.size)
                             .copy(offsetX = viewport.offsetX)
                     }) { Text("最新") }
-                }
+                } }
             Canvas(
                 modifier = Modifier
                     .fillMaxWidth().weight(1f)

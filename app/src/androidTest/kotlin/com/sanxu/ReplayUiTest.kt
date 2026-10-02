@@ -28,8 +28,12 @@ class ReplayUiTest {
             compose.runOnIdle { official.draws.value=listOf(record("012")) }
             compose.onNodeWithText("已开奖 1").performClick()
             compose.onNodeWithTag("replay_result").assertTextEquals("开奖 012   ·   命中 5 注")
-            compose.onAllNodesWithText("编辑这条").assertCountEquals(0)
-            compose.onAllNodesWithText("删除").assertCountEquals(0)
+            compose.onNodeWithTag("plan_sources").performClick()
+            compose.onAllNodes(hasContentDescription("编辑记录",substring=true)).assertCountEquals(0)
+            compose.onNodeWithContentDescription("记录操作 straight").performClick()
+            compose.onAllNodesWithText("删除记录").assertCountEquals(0)
+            compose.onNodeWithText("查看详情").performClick()
+            compose.onNodeWithContentDescription("关闭弹层").performClick()
             compose.runOnIdle { official.draws.value=listOf(record("013")) }
             compose.onNodeWithTag("replay_result").assertTextEquals("开奖 013   ·   本期未命中")
             compose.onNodeWithTag("plan_amount").assertTextEquals("¥ 10")
@@ -81,4 +85,48 @@ private object ReplaySettings:SettingsStore {
     override val settings=flowOf(AppSettings())
     override suspend fun setTheme(theme:ThemeChoice){}
     override suspend fun setReplayNotice(enabled:Boolean){}
+}
+
+/** Controlled failure fixtures; no remote document or third-party image is loaded. */
+class EmptyWorkspaceDesignTest {
+    @get:Rule val compose=createComposeRule()
+    @Test fun emptyPlansAndUnavailableReportsHaveUsableActionsInBothThemes() {
+        val emptyPlans=object:PlanRepository by ReplayPlans() {
+            override val entries=flowOf(emptyList<PlanEntry>())
+        }
+        val unavailable=object:LiveContentRepository by ReplayLive {
+            var attempts=0
+            override val caibaoRefreshState=flowOf<LiveContentRefreshState>(LiveContentRefreshState.Failed(LiveContentFailure.NETWORK))
+            override suspend fun refreshCaibao(trigger:LiveRefreshTrigger):LiveContentRefreshResult {
+                attempts++
+                return LiveContentRefreshResult.Failed(LiveContentFailure.NETWORK)
+            }
+        }
+        val vm=WorkspaceViewModel(ReplayDraws(),emptyPlans,unavailable,ReplayFeed,ReplaySettings)
+        val dark=androidx.compose.runtime.mutableStateOf(false)
+        try {
+            compose.setContent { SanxuTheme(dark=dark.value){SanxuApp(vm)} }
+            for(night in listOf(false,true)) {
+                compose.runOnIdle {dark.value=night}
+                val suffix=if(night)"dark" else "light"
+                compose.onNodeWithTag("nav_3").performClick()
+                compose.onNodeWithText("还没有本期方案").assertExists()
+                compose.captureDesign("fixture-plans-empty-$suffix")
+                compose.onNodeWithText("去选号").performClick()
+                compose.onNodeWithTag("save_plan").assertIsNotEnabled()
+                compose.captureDesign("fixture-pick-empty-$suffix")
+                compose.onNodeWithTag("nav_1").performClick()
+                compose.onNodeWithText("暂无开奖记录").assertExists()
+                compose.captureDesign("fixture-trend-empty-$suffix")
+                compose.onNodeWithTag("nav_4").performClick()
+                compose.onNodeWithText("这一期彩报暂不可用").assertIsDisplayed()
+                compose.onNodeWithContentDescription("缩放控制").assertIsNotEnabled()
+                compose.onNodeWithContentDescription("上一期").assertIsNotEnabled()
+                compose.captureDesign("fixture-report-unavailable-$suffix")
+                val before=unavailable.attempts
+                compose.onNodeWithText("重试").performClick()
+                compose.waitUntil(5_000){unavailable.attempts>before}
+            }
+        } finally {vm.viewModelScope.cancel()}
+    }
 }

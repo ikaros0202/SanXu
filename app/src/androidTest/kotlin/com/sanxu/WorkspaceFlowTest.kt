@@ -18,6 +18,8 @@ class WorkspaceFlowTest {
     private fun screenshot(name:String) {
         compose.waitForIdle()
         val instrumentation=InstrumentationRegistry.getInstrumentation()
+        instrumentation.waitForIdleSync()
+        android.os.SystemClock.sleep(300)
         val folder=File(instrumentation.targetContext.getExternalFilesDir(null),"qa").apply{mkdirs()}
         val bitmap=instrumentation.uiAutomation.takeScreenshot() ?: compose.onAllNodes(isRoot()).onLast().captureToImage().asAndroidBitmap()
         bitmap.useBitmap { value -> File(folder,"$name.png").outputStream().use { value.compress(Bitmap.CompressFormat.PNG,100,it) } }
@@ -91,7 +93,7 @@ class WorkspaceFlowTest {
         tag("plan_units").assertTextEquals("13 注 · 4 条记录")
 
         tag("nav_0").performClick();screenshot("home-light")
-        compose.onNodeWithContentDescription("偏好设置").performClick();text("墨绿").performClick()
+        compose.onNodeWithContentDescription("偏好设置").performClick();text("夜蓝").performClick()
         compose.onNodeWithContentDescription("返回").performClick();screenshot("home-dark")
         tag("nav_2").performClick();screenshot("pick-position-dark")
         tag("nav_3").performClick();screenshot("plans-dark")

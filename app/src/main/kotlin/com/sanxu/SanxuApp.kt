@@ -64,7 +64,7 @@ import com.sanxu.ui.ContextTag
                     }
                 }) { padding ->
                     Column(Modifier.fillMaxSize().padding(padding)) {
-                        PageHeader(listOf("叁序","走势","选号","方案","彩报")[tab],tag=if(tab==0) "福彩3D" else if(tab==4) "A11 · 第三版" else null) {
+                        if(tab!=1&&tab!=4) PageHeader(listOf("叁序","走势","选号","方案","彩报")[tab],tag=if(tab==0) "福彩3D" else null) {
                             if(tab==0) IconButton(onClick={navigate("settings")}){Icon(Icons.Outlined.Tune,"偏好设置")}
                             if(tab==2) TextButton(onClick={navigate("tools")}) { Icon(Icons.Outlined.Tune,null,Modifier.size(18.dp));Spacer(Modifier.width(4.dp));Text("工具") }
                         }
@@ -92,7 +92,13 @@ import com.sanxu.ui.ContextTag
                 } }
             }
         })
-        SnackbarHost(snackbar,Modifier.align(Alignment.BottomCenter).navigationBarsPadding().padding(bottom=if(stack.size>1)16.dp else if(tab==2)142.dp else 72.dp))
+        val snackbarBottom=when {
+            (stack.lastOrNull() as? Detail)?.page=="tools"->84.dp
+            stack.size>1->16.dp
+            tab==2->142.dp
+            else->72.dp
+        }
+        SnackbarHost(snackbar,Modifier.align(Alignment.BottomCenter).navigationBarsPadding().padding(bottom=snackbarBottom))
     }
     editor.feedback?.let { feedback ->
         WorkspaceSheet(if(feedback.repeated>0) "重复号码已合并" else if(feedback.previous!=null) "记录已更新" else "已加入方案",model::dismissFeedback) {

@@ -60,7 +60,7 @@ import androidx.compose.ui.unit.sp
 
 @Composable fun Metric(value:String,label:String,modifier:Modifier=Modifier) {
     Column(modifier,verticalArrangement=Arrangement.spacedBy(4.dp)) {
-        Text(value,fontFamily=NumberFont,fontSize=24.sp,fontWeight=FontWeight.SemiBold)
+        Text(value,fontFamily=NumberFont,fontSize=if(value.length>=7)18.sp else 24.sp,fontWeight=FontWeight.SemiBold,maxLines=1)
         Text(label,fontSize=12.sp,color=MaterialTheme.colorScheme.onSurfaceVariant)
     }
 }

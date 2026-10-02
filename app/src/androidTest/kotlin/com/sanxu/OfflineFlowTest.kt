@@ -16,6 +16,7 @@ class OfflineFlowTest {
         compose.onNodeWithText("第 2026263 期").assertExists()
         compose.waitUntil(30_000){compose.onAllNodesWithContentDescription("更新开奖").fetchSemanticsNodes().isNotEmpty()}
         compose.onNodeWithContentDescription("更新开奖").assertExists()
+        compose.captureDesign("home-offline-light")
         compose.onNodeWithTag("nav_3").performClick()
         compose.onNodeWithTag("plan_amount").assertTextEquals("¥ 26")
         compose.onNodeWithTag("plan_units").assertTextEquals("13 注 · 4 条记录")

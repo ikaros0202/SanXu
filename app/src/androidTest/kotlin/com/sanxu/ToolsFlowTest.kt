@@ -14,7 +14,7 @@ class ToolsFlowTest {
     @Test fun darkSystemBarsAndLoadedTrend() {
         tag("nav_0").performClick()
         compose.onNodeWithContentDescription("偏好设置").performClick()
-        text("墨绿").performClick()
+        text("夜蓝").performClick()
         compose.waitForIdle()
         compose.runOnIdle { assertThat(WindowCompat.getInsetsController(compose.activity.window,compose.activity.window.decorView).isAppearanceLightStatusBars).isFalse() }
         compose.onNodeWithContentDescription("返回").performClick()
@@ -26,25 +26,27 @@ class ToolsFlowTest {
     @Test fun filterTemplateBacktestAndNumberExclusion() {
         tag("nav_2").performClick();text("工具").performClick()
         text("全号码筛选").performClick()
-        compose.waitUntil(15_000){compose.onAllNodesWithText("返回选号 · 1000 个号码").fetchSemanticsNodes().isNotEmpty()}
-        text("添加筛选条件").performClick()
+        compose.waitUntil(15_000){compose.onAllNodesWithText("1000 个号码").fetchSemanticsNodes().isNotEmpty()}
+        tag("add_condition").performClick()
         text("和值范围").performScrollTo().performClick()
         text("最小值").performTextInput("0");text("最大值").performTextInput("3")
         text("确认").performClick()
-        text("返回选号 · 20 个号码").assertExists()
+        tag("tools_count").assertTextEquals("20 个号码")
+        tag("tool_templates").performClick()
         text("保存当前方法").performScrollTo().performClick()
         text("模板名称").performTextInput("小和值方法")
         text("保存").performClick()
-        text("历史回测").performScrollTo().performClick()
-        compose.waitUntil(15_000){compose.onAllNodes(hasText("期覆盖",substring=true)).fetchSemanticsNodes().isNotEmpty()}
+        text("历史回测").performClick()
+        compose.waitUntil(15_000){compose.onAllNodesWithTag("backtest_ready").fetchSemanticsNodes().isNotEmpty()}
         compose.onNodeWithContentDescription("返回").performClick()
-        text("返回选号 · 20 个号码").performScrollTo().performClick()
+        tag("tools_done").performClick()
         tag("pick_count").assertTextEquals("20 个号码 · 20 注")
-        text("查看 20 个号码").performClick()
+        compose.onNodeWithContentDescription("查看 20 个号码").performClick()
         text("000").performClick();text("保留 19 / 20 个").assertExists()
         text("全部恢复").performClick();text("保留 20 / 20 个").assertExists()
         compose.onNodeWithContentDescription("返回").performClick()
         text("工具").performClick()
+        tag("tool_templates").performClick()
         text("小和值方法").performScrollTo().assertIsDisplayed()
         text("应用").performClick();tag("pick_count").assertTextEquals("20 个号码 · 20 注")
     }
