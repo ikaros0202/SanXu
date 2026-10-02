@@ -53,7 +53,7 @@ import java.time.format.DateTimeFormatter
     val latest=draws.lastOrNull()
     val checked=entries.map{it.issue}.distinct().count{issue->draws.any{it.issue==issue}}
     val pending=entries.filter{entry->draws.none{it.issue==entry.issue}}
-    LazyColumn(Modifier.fillMaxSize(),contentPadding=PaddingValues(start=16.dp,end=16.dp,top=4.dp,bottom=16.dp),verticalArrangement=Arrangement.spacedBy(12.dp)) {
+    LazyColumn(Modifier.fillMaxSize(),contentPadding=PaddingValues(start=16.dp,end=16.dp,top=4.dp,bottom=16.dp),verticalArrangement=Arrangement.spacedBy(8.dp)) {
         item {
             WorkspacePanel {
                 if(latest==null) EmptyPanel("正在读取开奖","正在准备历史记录。")
@@ -117,7 +117,7 @@ import java.time.format.DateTimeFormatter
             }
         } }
         item { Surface(onClick=if(pending.isEmpty())onPick else onPlan,shape=RoundedCornerShape(18.dp),color=MaterialTheme.colorScheme.primaryContainer,contentColor=MaterialTheme.colorScheme.onPrimaryContainer) {
-            Row(Modifier.fillMaxWidth().heightIn(min=72.dp).padding(16.dp),verticalAlignment=Alignment.CenterVertically){
+            Row(Modifier.fillMaxWidth().heightIn(min=72.dp).padding(horizontal=16.dp,vertical=12.dp),verticalAlignment=Alignment.CenterVertically){
                 Icon(Icons.Outlined.FolderOpen,null,Modifier.size(24.dp))
                 Column(Modifier.weight(1f).padding(start=12.dp)){Text(if(pending.isEmpty())"整理我的本期方案" else "${pending.map{it.issue}.distinct().size} 期方案待开奖",fontWeight=FontWeight.SemiBold,fontSize=15.sp);Text(if(settings.showReplayNotice&&checked>0)"$checked 期已开奖，可核对号码" else if(pending.isEmpty())"单选、组选、单选单、位选" else "查看清单，继续整理号码",fontSize=12.sp)}
                 Icon(Icons.Outlined.ArrowForward,null,Modifier.size(20.dp))

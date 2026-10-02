@@ -1,0 +1,57 @@
+{
+  "checkedAt": "2026-10-02T16:25:48.461982+08:00",
+  "gradle": {
+    "command": ".\\gradlew.bat --stop",
+    "result": "1 Daemon stopped",
+    "ownedDaemonPid": 31108,
+    "kotlinChildPid": 37048,
+    "bothExited": true
+  },
+  "dedicatedEmulators": [
+    {
+      "avd": "SanXu_Design_API37",
+      "serial": "emulator-5582",
+      "launcherPid": 30752,
+      "qemuPid": 39584
+    },
+    {
+      "avd": "SanXu_Design_API26",
+      "serial": "emulator-5584",
+      "launcherPid": 7744,
+      "qemuPid": 34164
+    }
+  ],
+  "dedicatedEmulatorRestoration": {
+    "physicalSize": "1080x2400",
+    "physicalDensity": 420,
+    "sizeAndDensityOverride": "reset",
+    "stayOnWhilePluggedIn": 1,
+    "wifiAndMobileData": "restored after offline tests",
+    "definitionsRetained": true,
+    "running": false
+  },
+  "earlierSharedEmulatorRestoration": {
+    "avd": "XinYue_API26",
+    "restorationSerial": "emulator-5586",
+    "physicalSize": "1080x1920",
+    "physicalDensity": 420,
+    "stayOnWhilePluggedIn": 1,
+    "launcherPid": 42720,
+    "qemuPid": 56056,
+    "exited": true
+  },
+  "checkedOwnedPids": [
+    31108,
+    37048,
+    30752,
+    7744,
+    34164,
+    39584,
+    42720,
+    56056
+  ],
+  "remainingOwnedPids": [],
+  "adbDevices": "List of devices attached",
+  "otherProjectProcessesTerminated": false,
+  "note": "Only task-owned emulator serials were stopped after checking their AVD names. The current Gradle daemon log confirmed currentDir=D:\\codexproject\\SanXu. No physical devices were stopped."
+}

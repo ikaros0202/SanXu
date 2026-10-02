@@ -1,0 +1,23 @@
+{
+  "serial": "emulator-5584",
+  "api": 26,
+  "package": "com.sanxu.app",
+  "version": "1.0.1",
+  "coinstalled": "com.lucky3d.app",
+  "newUid": "10077",
+  "originalUid": "10079",
+  "separateAppStorage": true,
+  "start": "Starting: Intent { cmp=com.sanxu.app/com.sanxu.MainActivity }\r\nStatus: ok\r\nActivity: com.sanxu.app/com.sanxu.MainActivity\r\nThisTime: 1490\r\nTotalTime: 1490\r\nWaitTime: 1575\r\nComplete",
+  "fourMethods": true,
+  "processRestartPreservedPlan": {
+    "numbers": 10,
+    "units": 13,
+    "amountYuan": 26
+  },
+  "themes": [
+    "light",
+    "dark"
+  ],
+  "crashBufferContainsSanxu": false,
+  "checkedAt": "2026-10-02T16:22:48.367978+08:00"
+}

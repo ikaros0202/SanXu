@@ -1,0 +1,260 @@
+Starting a Gradle Daemon, 1 stopped Daemon could not be reused, use --status for details
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preDebugBuild UP-TO-DATE
+> Task :app:mergeDebugNativeDebugMetadata NO-SOURCE
+> Task :core:domain:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :core:domain:compileKotlin UP-TO-DATE
+> Task :core:domain:compileJava NO-SOURCE
+> Task :core:domain:processResources NO-SOURCE
+> Task :core:domain:classes UP-TO-DATE
+> Task :core:domain:jar UP-TO-DATE
+> Task :app:generateDebugBuildConfig UP-TO-DATE
+> Task :app:generateDebugResources UP-TO-DATE
+> Task :app:packageDebugResources UP-TO-DATE
+> Task :core:data:preBuild UP-TO-DATE
+> Task :core:data:preDebugBuild UP-TO-DATE
+> Task :core:data:processDebugNavigationResources UP-TO-DATE
+> Task :core:ui:preBuild UP-TO-DATE
+> Task :core:ui:preDebugBuild UP-TO-DATE
+> Task :core:ui:processDebugNavigationResources UP-TO-DATE
+> Task :app:processDebugNavigationResources UP-TO-DATE
+> Task :app:parseDebugLocalResources UP-TO-DATE
+> Task :app:generateDebugRFile UP-TO-DATE
+> Task :core:data:generateDebugResources UP-TO-DATE
+> Task :core:data:packageDebugResources UP-TO-DATE
+> Task :core:data:parseDebugLocalResources UP-TO-DATE
+> Task :core:data:generateDebugRFile UP-TO-DATE
+> Task :core:data:kspDebugKotlin UP-TO-DATE
+> Task :core:data:compileDebugKotlin UP-TO-DATE
+> Task :core:data:javaPreCompileDebug UP-TO-DATE
+> Task :core:data:compileDebugJavaWithJavac UP-TO-DATE
+> Task :core:data:preReleaseBuild UP-TO-DATE
+> Task :core:data:generateReleaseResources UP-TO-DATE
+> Task :core:data:packageReleaseResources UP-TO-DATE
+> Task :core:data:processReleaseNavigationResources UP-TO-DATE
+> Task :core:data:parseReleaseLocalResources UP-TO-DATE
+> Task :core:data:generateReleaseRFile UP-TO-DATE
+> Task :core:data:kspReleaseKotlin UP-TO-DATE
+> Task :core:data:compileReleaseKotlin UP-TO-DATE
+> Task :core:data:javaPreCompileRelease UP-TO-DATE
+> Task :core:data:compileReleaseJavaWithJavac UP-TO-DATE
+> Task :core:data:copyRoomSchemas NO-SOURCE
+> Task :core:data:transformDebugClassesWithAsm UP-TO-DATE
+> Task :core:data:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :core:ui:generateDebugResources UP-TO-DATE
+> Task :core:ui:packageDebugResources UP-TO-DATE
+> Task :core:ui:parseDebugLocalResources UP-TO-DATE
+> Task :core:ui:generateDebugRFile UP-TO-DATE
+> Task :core:ui:compileDebugKotlin UP-TO-DATE
+> Task :core:ui:javaPreCompileDebug UP-TO-DATE
+> Task :core:ui:compileDebugJavaWithJavac NO-SOURCE
+> Task :core:ui:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :app:javaPreCompileDebug UP-TO-DATE
+> Task :app:generateDebugAssets UP-TO-DATE
+> Task :core:data:generateDebugAssets UP-TO-DATE
+> Task :core:data:mergeDebugAssets UP-TO-DATE
+> Task :core:ui:generateDebugAssets UP-TO-DATE
+> Task :core:ui:mergeDebugAssets UP-TO-DATE
+> Task :app:mergeDebugAssets UP-TO-DATE
+> Task :app:compressDebugAssets UP-TO-DATE
+> Task :app:generateDebugGlobalSynthetics UP-TO-DATE
+> Task :core:data:processDebugJavaRes UP-TO-DATE
+> Task :core:ui:processDebugJavaRes UP-TO-DATE
+> Task :app:checkDebugDuplicateClasses UP-TO-DATE
+> Task :app:desugarDebugFileDependencies UP-TO-DATE
+> Task :app:mergeExtDexDebug UP-TO-DATE
+> Task :core:data:bundleLibRuntimeToDirDebug UP-TO-DATE
+> Task :core:ui:bundleLibRuntimeToDirDebug UP-TO-DATE
+> Task :core:data:bundleLibRuntimeToJarDebug UP-TO-DATE
+> Task :core:ui:bundleLibRuntimeToJarDebug UP-TO-DATE
+> Task :core:data:writeDebugAarMetadata UP-TO-DATE
+> Task :core:ui:writeDebugAarMetadata UP-TO-DATE
+> Task :app:checkDebugAarMetadata UP-TO-DATE
+> Task :app:mapDebugSourceSetPaths UP-TO-DATE
+> Task :app:compileDebugNavigationResources UP-TO-DATE
+> Task :app:mergeDebugResources UP-TO-DATE
+> Task :app:mergeLibDexDebug UP-TO-DATE
+> Task :app:createDebugCompatibleScreenManifests UP-TO-DATE
+> Task :app:extractDeepLinksDebug UP-TO-DATE
+> Task :core:data:extractDeepLinksDebug UP-TO-DATE
+> Task :core:data:processDebugManifest UP-TO-DATE
+> Task :core:ui:extractDeepLinksDebug UP-TO-DATE
+> Task :core:ui:processDebugManifest UP-TO-DATE
+> Task :app:processDebugMainManifest UP-TO-DATE
+> Task :app:processDebugManifest UP-TO-DATE
+> Task :app:processDebugManifestForPackage UP-TO-DATE
+> Task :core:data:mapDebugSourceSetPaths UP-TO-DATE
+> Task :core:data:compileDebugLibraryResources UP-TO-DATE
+> Task :core:ui:mapDebugSourceSetPaths UP-TO-DATE
+> Task :core:ui:compileDebugLibraryResources UP-TO-DATE
+> Task :app:processDebugResources UP-TO-DATE
+> Task :app:mergeDebugJniLibFolders UP-TO-DATE
+> Task :core:data:mergeDebugJniLibFolders UP-TO-DATE
+> Task :core:data:mergeDebugNativeLibs NO-SOURCE
+> Task :core:data:copyDebugJniLibsProjectOnly UP-TO-DATE
+> Task :core:ui:mergeDebugJniLibFolders UP-TO-DATE
+> Task :core:ui:mergeDebugNativeLibs NO-SOURCE
+> Task :core:ui:copyDebugJniLibsProjectOnly UP-TO-DATE
+> Task :app:mergeDebugNativeLibs UP-TO-DATE
+> Task :app:stripDebugDebugSymbols UP-TO-DATE
+> Task :app:validateSigningDebug UP-TO-DATE
+> Task :app:writeDebugAppMetadata UP-TO-DATE
+> Task :app:writeDebugSigningConfigVersions UP-TO-DATE
+> Task :app:preReleaseBuild UP-TO-DATE
+> Task :app:mergeReleaseJniLibFolders UP-TO-DATE
+> Task :core:data:mergeReleaseJniLibFolders UP-TO-DATE
+> Task :core:data:mergeReleaseNativeLibs NO-SOURCE
+> Task :core:data:copyReleaseJniLibsProjectOnly UP-TO-DATE
+> Task :core:ui:preReleaseBuild UP-TO-DATE
+> Task :core:ui:mergeReleaseJniLibFolders UP-TO-DATE
+> Task :core:ui:mergeReleaseNativeLibs NO-SOURCE
+> Task :core:ui:copyReleaseJniLibsProjectOnly UP-TO-DATE
+> Task :app:mergeReleaseNativeLibs UP-TO-DATE
+> Task :app:stripReleaseDebugSymbols UP-TO-DATE
+> Task :app:extractReleaseNativeSymbolTables UP-TO-DATE
+> Task :app:mergeReleaseNativeDebugMetadata NO-SOURCE
+> Task :core:data:transformReleaseClassesWithAsm UP-TO-DATE
+> Task :core:data:mergeReleaseGeneratedProguardFiles UP-TO-DATE
+> Task :core:data:exportReleaseConsumerProguardFiles UP-TO-DATE
+> Task :core:ui:generateReleaseResources UP-TO-DATE
+> Task :core:ui:packageReleaseResources UP-TO-DATE
+> Task :core:ui:processReleaseNavigationResources UP-TO-DATE
+> Task :core:ui:parseReleaseLocalResources UP-TO-DATE
+> Task :core:ui:generateReleaseRFile UP-TO-DATE
+> Task :core:ui:compileReleaseKotlin UP-TO-DATE
+> Task :core:ui:javaPreCompileRelease UP-TO-DATE
+> Task :core:ui:compileReleaseJavaWithJavac NO-SOURCE
+> Task :core:ui:mergeReleaseGeneratedProguardFiles UP-TO-DATE
+> Task :core:ui:exportReleaseConsumerProguardFiles UP-TO-DATE
+> Task :app:checkReleaseDuplicateClasses UP-TO-DATE
+> Task :core:data:prepareReleaseArtProfile UP-TO-DATE
+> Task :core:ui:prepareReleaseArtProfile UP-TO-DATE
+> Task :app:mergeReleaseArtProfile UP-TO-DATE
+> Task :app:generateReleaseBuildConfig UP-TO-DATE
+> Task :app:generateReleaseResources UP-TO-DATE
+> Task :app:packageReleaseResources UP-TO-DATE
+> Task :app:processReleaseNavigationResources UP-TO-DATE
+> Task :app:parseReleaseLocalResources UP-TO-DATE
+> Task :app:generateReleaseRFile UP-TO-DATE
+> Task :core:data:bundleLibCompileToJarRelease UP-TO-DATE
+> Task :core:ui:bundleLibCompileToJarRelease UP-TO-DATE
+> Task :app:javaPreCompileRelease UP-TO-DATE
+> Task :core:data:bundleLibRuntimeToJarRelease UP-TO-DATE
+> Task :core:ui:bundleLibRuntimeToJarRelease UP-TO-DATE
+> Task :core:data:writeReleaseAarMetadata UP-TO-DATE
+> Task :core:ui:writeReleaseAarMetadata UP-TO-DATE
+> Task :app:checkReleaseAarMetadata UP-TO-DATE
+> Task :app:mapReleaseSourceSetPaths UP-TO-DATE
+> Task :app:compileReleaseNavigationResources UP-TO-DATE
+> Task :app:mergeReleaseResources UP-TO-DATE
+> Task :app:createReleaseCompatibleScreenManifests UP-TO-DATE
+> Task :app:extractDeepLinksRelease UP-TO-DATE
+> Task :core:data:extractDeepLinksRelease UP-TO-DATE
+> Task :core:data:processReleaseManifest UP-TO-DATE
+> Task :core:ui:extractDeepLinksRelease UP-TO-DATE
+> Task :core:ui:processReleaseManifest UP-TO-DATE
+> Task :app:processReleaseMainManifest UP-TO-DATE
+> Task :app:processReleaseManifest UP-TO-DATE
+> Task :app:processReleaseManifestForPackage UP-TO-DATE
+> Task :core:data:mapReleaseSourceSetPaths UP-TO-DATE
+> Task :core:data:compileReleaseLibraryResources UP-TO-DATE
+> Task :core:ui:mapReleaseSourceSetPaths UP-TO-DATE
+> Task :core:ui:compileReleaseLibraryResources UP-TO-DATE
+> Task :app:processReleaseResources UP-TO-DATE
+> Task :app:extractProguardFiles UP-TO-DATE
+> Task :core:data:processReleaseJavaRes UP-TO-DATE
+> Task :core:ui:processReleaseJavaRes UP-TO-DATE
+> Task :app:mergeReleaseStartupProfile UP-TO-DATE
+> Task :app:generateReleaseAssets UP-TO-DATE
+> Task :core:data:generateReleaseAssets UP-TO-DATE
+> Task :core:data:mergeReleaseAssets UP-TO-DATE
+> Task :core:ui:generateReleaseAssets UP-TO-DATE
+> Task :core:ui:mergeReleaseAssets UP-TO-DATE
+> Task :app:mergeReleaseAssets UP-TO-DATE
+> Task :app:compressReleaseAssets UP-TO-DATE
+> Task :app:extractReleaseVersionControlInfo
+> Task :core:data:createFullJarRelease UP-TO-DATE
+> Task :core:data:extractProguardFiles UP-TO-DATE
+> Task :core:data:generateReleaseLintModel UP-TO-DATE
+> Task :core:data:prepareLintJarForPublish UP-TO-DATE
+> Task :core:ui:createFullJarRelease UP-TO-DATE
+> Task :core:ui:extractProguardFiles UP-TO-DATE
+> Task :core:ui:generateReleaseLintModel UP-TO-DATE
+> Task :core:ui:prepareLintJarForPublish UP-TO-DATE
+> Task :core:data:checkReleaseAarMetadata UP-TO-DATE
+> Task :core:data:extractDeepLinksForAarRelease UP-TO-DATE
+> Task :core:data:extractReleaseAnnotations UP-TO-DATE
+> Task :core:data:mergeReleaseConsumerProguardFiles UP-TO-DATE
+> Task :core:data:mergeReleaseJavaResource UP-TO-DATE
+> Task :core:data:syncReleaseLibJars UP-TO-DATE
+> Task :core:data:bundleReleaseLocalLintAar UP-TO-DATE
+> Task :core:ui:checkReleaseAarMetadata UP-TO-DATE
+> Task :core:ui:extractDeepLinksForAarRelease UP-TO-DATE
+> Task :core:ui:extractReleaseAnnotations UP-TO-DATE
+> Task :core:ui:mergeReleaseConsumerProguardFiles UP-TO-DATE
+> Task :core:ui:mergeReleaseJavaResource UP-TO-DATE
+> Task :core:ui:syncReleaseLibJars UP-TO-DATE
+> Task :core:ui:bundleReleaseLocalLintAar UP-TO-DATE
+> Task :core:data:lintVitalAnalyzeRelease UP-TO-DATE
+> Task :core:data:writeReleaseLintModelMetadata UP-TO-DATE
+> Task :core:ui:lintVitalAnalyzeRelease UP-TO-DATE
+> Task :core:ui:writeReleaseLintModelMetadata UP-TO-DATE
+> Task :core:data:generateReleaseLintVitalModel UP-TO-DATE
+> Task :core:ui:generateReleaseLintVitalModel UP-TO-DATE
+> Task :app:collectReleaseDependencies UP-TO-DATE
+> Task :app:sdkReleaseDependencyData UP-TO-DATE
+> Task :app:validateSigningRelease UP-TO-DATE
+> Task :app:writeReleaseAppMetadata UP-TO-DATE
+> Task :app:writeReleaseSigningConfigVersions UP-TO-DATE
+> Task :app:kspDebugKotlin
+> Task :app:kspReleaseKotlin
+
+> Task :app:compileDebugKotlin
+w: file:///D:/codexproject/SanXu/app/src/main/kotlin/com/sanxu/HomePage.kt:85:45 'val Icons.Outlined.ReceiptLong: ImageVector' is deprecated. Use the AutoMirrored version at Icons.AutoMirrored.Outlined.ReceiptLong.
+w: file:///D:/codexproject/SanXu/app/src/main/kotlin/com/sanxu/HomePage.kt:123:37 'val Icons.Outlined.ArrowForward: ImageVector' is deprecated. Use the AutoMirrored version at Icons.AutoMirrored.Outlined.ArrowForward.
+
+> Task :app:compileReleaseKotlin
+w: file:///D:/codexproject/SanXu/app/src/main/kotlin/com/sanxu/HomePage.kt:85:45 'val Icons.Outlined.ReceiptLong: ImageVector' is deprecated. Use the AutoMirrored version at Icons.AutoMirrored.Outlined.ReceiptLong.
+w: file:///D:/codexproject/SanXu/app/src/main/kotlin/com/sanxu/HomePage.kt:123:37 'val Icons.Outlined.ArrowForward: ImageVector' is deprecated. Use the AutoMirrored version at Icons.AutoMirrored.Outlined.ArrowForward.
+
+> Task :app:compileReleaseJavaWithJavac UP-TO-DATE
+> Task :app:compileDebugJavaWithJavac UP-TO-DATE
+> Task :app:processDebugJavaRes UP-TO-DATE
+> Task :app:mergeDebugJavaResource UP-TO-DATE
+> Task :app:hiltCollectClassesDebug
+> Task :app:hiltAggregateDepsDebug UP-TO-DATE
+> Task :app:hiltJavaCompileDebug UP-TO-DATE
+> Task :app:hiltCollectClassesRelease
+> Task :app:hiltAggregateDepsRelease UP-TO-DATE
+> Task :app:hiltJavaCompileRelease UP-TO-DATE
+> Task :app:processReleaseJavaRes UP-TO-DATE
+> Task :app:mergeReleaseJavaResource UP-TO-DATE
+> Task :app:transformDebugClassesWithAsm
+> Task :app:generateReleaseLintVitalReportModel
+> Task :app:transformReleaseClassesWithAsm
+> Task :app:dexBuilderDebug
+> Task :app:mergeReleaseGeneratedProguardFiles UP-TO-DATE
+> Task :app:mergeProjectDexDebug
+> Task :app:expandReleaseArtProfileWildcards
+> Task :app:packageDebug
+> Task :app:createDebugApkListingFileRedirect UP-TO-DATE
+> Task :app:assembleDebug
+> Task :app:produceReleaseComposeMapping
+> Task :app:reportReleaseComposeMappingErrors
+> Task :app:lintVitalAnalyzeRelease
+> Task :app:minifyReleaseWithR8
+> Task :app:mergeReleaseComposeMapping
+> Task :app:convertShrunkResourcesToBinaryRelease UP-TO-DATE
+> Task :app:optimizeReleaseResources UP-TO-DATE
+> Task :app:compileReleaseArtProfile
+> Task :app:lintVitalReportRelease UP-TO-DATE
+> Task :app:lintVitalRelease
+> Task :app:packageRelease
+> Task :app:createReleaseApkListingFileRedirect UP-TO-DATE
+> Task :app:assembleRelease
+
+[Incubating] Problems report is available at: file:///D:/codexproject/SanXu/build/reports/problems/problems-report.html
+
+BUILD SUCCESSFUL in 3m 4s
+214 actionable tasks: 20 executed, 194 up-to-date
+Consider enabling configuration cache to speed up this build: https://docs.gradle.org/9.5.1/userguide/configuration_cache_enabling.html

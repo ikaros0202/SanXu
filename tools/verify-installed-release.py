@@ -14,12 +14,13 @@ import xml.etree.ElementTree as ET
 ROOT = Path(__file__).resolve().parents[1]
 EVIDENCE = ROOT / 'docs/evidence'
 OWNED = {'emulator-5582': 37, 'emulator-5584': 26}
+VERSION = '1.0.1'
 
 
 def verify(serial):
     assert serial in OWNED, 'Only explicitly owned test emulators are allowed'
     sdk = OWNED[serial]
-    output = EVIDENCE / f'release-api{sdk}'
+    output = EVIDENCE / f'release-{VERSION}-api{sdk}'
     output.mkdir(exist_ok=True)
 
     def adb(*args):
@@ -54,12 +55,13 @@ def verify(serial):
         (output / f'{name}.png').write_bytes(data)
 
     assert adb('shell', 'getprop', 'ro.build.version.sdk') == str(sdk)
+    assert f'SanXu_Design_API{sdk}' in adb('emu', 'avd', 'name'), 'Check dedicated AVD ownership'
     packages = adb('shell', 'pm', 'list', 'packages').splitlines()
     assert 'package:com.sanxu.app' in packages
     assert 'package:com.lucky3d.app' in packages
     package = adb('shell', 'dumpsys', 'package', 'com.sanxu.app')
     old_package = adb('shell', 'dumpsys', 'package', 'com.lucky3d.app')
-    assert 'versionName=1.0.0' in package
+    assert f'versionName={VERSION}' in package
     app_user = re.search(r'(?:userId|appId)=(\d+)', package).group(1)
     old_user = re.search(r'(?:userId|appId)=(\d+)', old_package).group(1)
     assert app_user != old_user
@@ -82,7 +84,7 @@ def verify(serial):
     capture('plans-light')
     tap('首页', bottom=True)
     tap('偏好设置', 'content-desc')
-    tap('墨绿')
+    tap('夜蓝')
     tap('返回', 'content-desc')
     capture('home-dark')
     tap('走势', bottom=True)
@@ -95,7 +97,7 @@ def verify(serial):
     assert adb('shell', 'pidof', 'com.sanxu.app')
     crashes = adb('logcat', '-d', '-b', 'crash')
     assert 'com.sanxu.app' not in crashes, 'App crash found in device crash buffer'
-    return dict(serial=serial, api=sdk, package='com.sanxu.app', version='1.0.0',
+    return dict(serial=serial, api=sdk, package='com.sanxu.app', version=VERSION,
                 coinstalled='com.lucky3d.app', newUid=app_user, originalUid=old_user,
                 separateAppStorage=True, start=start, fourMethods=True,
                 processRestartPreservedPlan=dict(numbers=10, units=13, amountYuan=26),
@@ -109,5 +111,5 @@ if __name__ == '__main__':
     for serial in sys.argv[1:]:
         result = verify(serial)
         result['checkedAt'] = datetime.datetime.now().astimezone().isoformat()
-        (EVIDENCE / f'release-smoke-api{OWNED[serial]}.json').write_text(json.dumps(result, ensure_ascii=False, indent=2)+'\n', encoding='utf-8')
+        (EVIDENCE / f'release-{VERSION}-smoke-api{OWNED[serial]}.json').write_text(json.dumps(result, ensure_ascii=False, indent=2)+'\n', encoding='utf-8')
         print(json.dumps(result, ensure_ascii=False, indent=2), flush=True)
