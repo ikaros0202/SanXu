@@ -28,7 +28,7 @@ import com.sanxu.ui.*
     val input=state.draft.input
     val base=remember(input){PickEngine.generate(input.copy(excluded=emptySet())).numbers}
     val selected=remember(input){PickEngine.generate(input).numbers.toSet()}
-    Column(Modifier.fillMaxSize().padding(horizontal=16.dp)) {
+    Column(Modifier.fillMaxSize().padding(horizontal=12.dp)) {
         WorkspacePanel {
             Row(Modifier.fillMaxWidth().heightIn(min=64.dp).padding(start=16.dp,end=8.dp),verticalAlignment=Alignment.CenterVertically){
                 Column(Modifier.weight(1f)){Text("保留 ${selected.size} / ${base.size} 个",style=MaterialTheme.typography.titleMedium);SmallLabel("点选排除，再次点选恢复")}

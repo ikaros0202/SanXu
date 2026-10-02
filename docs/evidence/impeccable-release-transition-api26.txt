@@ -1,0 +1,9 @@
+ERROR: null root node returned by UiTestAutomationBridge.
+Traceback (most recent call last):
+  File "D:\codexproject\SanXu\tools\verify-installed-release.py", line 137, in <module>
+    result = verify(serial)
+             ^^^^^^^^^^^^^^
+  File "D:\codexproject\SanXu\tools\verify-installed-release.py", line 92, in verify
+    assert not any(n.get('text') == '四种选号方式' for n in tree().iter('node'))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

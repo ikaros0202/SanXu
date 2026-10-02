@@ -35,7 +35,7 @@ import kotlinx.coroutines.withContext
             BacktestEngine{_,_,_->candidates}.run(FilterTemplate("current","当前方法",input.effectivePlay,emptyList(),30,1),draws.takeLast(window+30).map{it.asHistoricalDraw()})
         }
     }
-    Column(Modifier.fillMaxSize().padding(horizontal=16.dp),verticalArrangement=Arrangement.spacedBy(12.dp)) {
+    Column(Modifier.fillMaxSize().padding(horizontal=12.dp),verticalArrangement=Arrangement.spacedBy(8.dp)) {
         ChoiceRail(listOf("近30期","近100期","近300期"),listOf(30,100,300).indexOf(window),{window=listOf(30,100,300)[it]})
         val result=report
         WorkspacePanel {
@@ -57,11 +57,11 @@ import kotlinx.coroutines.withContext
                 Row(Modifier.fillMaxWidth().padding(horizontal=16.dp,vertical=12.dp)){SmallLabel("期号",Modifier.weight(1f));SmallLabel("当期注数",Modifier.width(80.dp));SmallLabel("核对结果")}
                 HorizontalDivider(color=MaterialTheme.colorScheme.outlineVariant)
                 LazyColumn(Modifier.fillMaxSize()){items(result.results.filter{it.status==BacktestStatus.EVALUATED}.asReversed(),key={it.targetIssue}){row->
-                    Row(Modifier.fillMaxWidth().heightIn(min=48.dp).padding(horizontal=16.dp),verticalAlignment=Alignment.CenterVertically){
+                    Row(Modifier.fillMaxWidth().heightIn(min=48.dp).padding(horizontal=12.dp),verticalAlignment=Alignment.CenterVertically){
                         Text(row.targetIssue,Modifier.weight(1f),fontFamily=NumberFont,fontSize=14.sp)
                         Text(row.candidateCount.toString(),Modifier.width(80.dp),fontFamily=NumberFont,fontSize=14.sp)
                         Text(if(row.covered==true)"✓ 覆盖" else "— 未覆盖",fontSize=12.sp,fontWeight=FontWeight.Medium,color=if(row.covered==true)MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurfaceVariant)
-                    };HorizontalDivider(Modifier.padding(horizontal=16.dp),color=MaterialTheme.colorScheme.outlineVariant.copy(alpha=.6f))
+                    };HorizontalDivider(Modifier.padding(horizontal=12.dp),color=MaterialTheme.colorScheme.outlineVariant.copy(alpha=.6f))
                 }}
             }
         }

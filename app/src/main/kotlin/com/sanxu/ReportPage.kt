@@ -77,7 +77,7 @@ import com.sanxu.ui.WorkspacePanel
         PageHeader("彩报","A11 · 第三版") {
             IconButton(onClick={model.refreshReport(issue)},enabled=refresh!=LiveContentRefreshState.Refreshing){Icon(Icons.Outlined.Refresh,"刷新彩报",Modifier.size(20.dp))}
         }
-        WorkspacePanel(Modifier.padding(horizontal=16.dp).padding(bottom=8.dp)) {
+        WorkspacePanel(Modifier.padding(horizontal=12.dp).padding(bottom=8.dp)) {
         Row(Modifier.fillMaxWidth(),verticalAlignment=Alignment.CenterVertically) {
             val index=options.indexOf(issue)
             IconButton(onClick={options.getOrNull(index+1)?.let(::choose)},enabled=index>=0&&index<options.lastIndex){Icon(Icons.Outlined.ChevronLeft,"上一期")}
@@ -100,7 +100,7 @@ import com.sanxu.ui.WorkspacePanel
         }
         }
         if(refresh==LiveContentRefreshState.Refreshing||decoding) LinearProgressIndicator(Modifier.fillMaxWidth())
-        if(refresh is LiveContentRefreshState.Failed&&bitmap!=null) SmallLabel("更新未成功，仍可查看已加载的这一期",Modifier.padding(horizontal=16.dp))
+        if(refresh is LiveContentRefreshState.Failed&&bitmap!=null) SmallLabel("更新未成功，仍可查看已加载的这一期",Modifier.padding(horizontal=12.dp))
         Box(Modifier.weight(1f).fillMaxWidth().clipToBounds().onSizeChanged { size=it },contentAlignment=Alignment.Center) {
             val image=bitmap
             if(image!=null) Image(image,contentDescription="$issue 期 彩吧彩报第三版",contentScale=ContentScale.Fit,
@@ -109,7 +109,11 @@ import com.sanxu.ui.WorkspacePanel
                     val x=size.width*(scale-1)/2;val y=size.height*(scale-1)/2
                     offset=Offset((offset.x+pan.x).coerceIn(-x,x),(offset.y+pan.y).coerceIn(-y,y))
                 }}.graphicsLayer { scaleX=scale;scaleY=scale;translationX=offset.x;translationY=offset.y })
-            else if(!decoding&&refresh!=LiveContentRefreshState.Refreshing) EmptyPanel("这一期彩报暂不可用",if(imageError) "图片未能完整显示，请重新加载。" else "可刷新，或选择最近30日内的其他期号。","重试",{model.refreshReport(issue)})
+            else if(!decoding&&refresh!=LiveContentRefreshState.Refreshing) EmptyPanel("这一期彩报暂不可用",when {
+                imageError->"图片未能完整显示，请重新加载。"
+                options.isEmpty()->"暂时没有可查看的期号，请刷新后重试。"
+                else->"可刷新，或选择最近30日内的其他期号。"
+            },"重试",{model.refreshReport(issue)})
         }
     }
 }

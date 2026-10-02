@@ -40,7 +40,7 @@ import com.sanxu.ui.*
     var section by rememberSaveable{mutableIntStateOf(0)}
     var remove by remember{mutableStateOf<PlanEntry?>(null)}
     var detail by remember{mutableStateOf<PlanEntry?>(null)}
-    Column(Modifier.fillMaxSize().padding(horizontal=16.dp)) {
+    Column(Modifier.fillMaxSize().padding(horizontal=12.dp)) {
         Row(Modifier.fillMaxWidth(),verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(4.dp)) {
             ChoiceRail(listOf("未开奖 ${allIssues.size-pastIssues.size}","已开奖 ${pastIssues.size}"),if(past)1 else 0,{past=it==1},Modifier.weight(1f))
             Box {
@@ -50,15 +50,16 @@ import com.sanxu.ui.*
                 DropdownMenu(menu,{menu=false}){issues.forEach{value->DropdownMenuItem(text={Text("第 $value 期")},onClick={chosen=value;menu=false})}}
             }
         }
-        Spacer(Modifier.height(12.dp))
+        Spacer(Modifier.height(8.dp))
         if(issues.isEmpty()) {
             WorkspacePanel { EmptyPanel(if(entries.isEmpty())"还没有本期方案" else "这里还没有方案",if(past)"已有方案开奖后，会在这里显示核对结果。" else "选择号码并加入，同一期的记录会自动整理。","去选号",onPick) }
         } else {
             WorkspacePanel(Modifier.weight(1f)) {
-                Column(Modifier.fillMaxWidth().padding(16.dp)) {
+                Surface(color=MaterialTheme.colorScheme.primaryContainer) {
+                Column(Modifier.fillMaxWidth().padding(horizontal=12.dp,vertical=8.dp)) {
                     Row(Modifier.fillMaxWidth(),verticalAlignment=Alignment.CenterVertically){SmallLabel("第 $issue 期 · 合计",Modifier.weight(1f));ContextTag(if(draw!=null)"已核对" else if(locked)"等待补齐开奖" else "待开奖")}
-                    Row(Modifier.fillMaxWidth().padding(top=10.dp),verticalAlignment=Alignment.CenterVertically) {
-                        Text("¥ ${summary.amountYuan}",Modifier.weight(1f).testTag("plan_amount"),fontSize=30.sp,fontFamily=NumberFont,fontWeight=FontWeight.SemiBold)
+                    Row(Modifier.fillMaxWidth().padding(top=4.dp),verticalAlignment=Alignment.CenterVertically) {
+                        Text("¥ ${summary.amountYuan}",Modifier.weight(1f).testTag("plan_amount"),fontSize=24.sp,fontFamily=NumberFont,fontWeight=FontWeight.SemiBold)
                         Column(horizontalAlignment=Alignment.End){Text("${summary.numberCount} 个号码",fontSize=16.sp,fontWeight=FontWeight.Medium,modifier=Modifier.testTag("plan_count"));Text("${summary.unitCount} 注 · ${sources.size} 条记录",fontSize=12.sp,color=MaterialTheme.colorScheme.onSurfaceVariant,modifier=Modifier.testTag("plan_units"))}
                     }
                     if(draw!=null) {
@@ -67,8 +68,9 @@ import com.sanxu.ui.*
                         Row(verticalAlignment=Alignment.CenterVertically){Icon(if(matches.isEmpty())Icons.Outlined.RemoveCircleOutline else Icons.Outlined.CheckCircle,null,Modifier.size(18.dp),tint=MaterialTheme.colorScheme.primary);Spacer(Modifier.width(8.dp));Text("开奖 ${draw.number.value}   ·   ${if(matches.isEmpty())"本期未命中" else "命中 ${matches.sumOf{it.multiplier}} 注"}",fontSize=14.sp,modifier=Modifier.testTag("replay_result"))}
                     }
                 }
+                }
                 HorizontalDivider(color=MaterialTheme.colorScheme.outlineVariant)
-                ChoiceRail(listOf("合并号码","选号记录 ${sources.size}"),section,{section=it},Modifier.padding(8.dp),tags=listOf("plan_numbers","plan_sources"))
+                ChoiceRail(listOf("合并号码","选号记录 ${sources.size}"),section,{section=it},Modifier,tags=listOf("plan_numbers","plan_sources"))
                 if(section==0) LazyColumn(Modifier.weight(1f),contentPadding=PaddingValues(start=16.dp,end=16.dp,bottom=12.dp)) {
                     summary.bets.groupBy{it.play}.forEach{(play,bets)->
                         item(key="heading_$play"){Row(Modifier.fillMaxWidth().height(36.dp),verticalAlignment=Alignment.CenterVertically){Text(playLabel(play),fontWeight=FontWeight.Medium,fontSize=14.sp);Spacer(Modifier.width(8.dp));SmallLabel("${bets.size} 个号码")}}
@@ -87,7 +89,7 @@ import com.sanxu.ui.*
                 } else LazyColumn(Modifier.weight(1f),contentPadding=PaddingValues(bottom=8.dp)) {
                     items(sources,key={it.id}){entry->
                         var sourceMenu by remember{mutableStateOf(false)}
-                        Row(Modifier.fillMaxWidth().heightIn(min=80.dp).clickable{detail=entry}.padding(start=16.dp,end=4.dp),verticalAlignment=Alignment.CenterVertically){
+                        Row(Modifier.fillMaxWidth().heightIn(min=72.dp).clickable{detail=entry}.padding(start=16.dp,end=4.dp),verticalAlignment=Alignment.CenterVertically){
                             Column(Modifier.weight(1f).padding(vertical=10.dp)){
                                 Text(methodLabel(entry.input.method),fontSize=15.sp,fontWeight=FontWeight.SemiBold)
                                 Text(entry.numbers.take(5).joinToString("  ")+if(entry.numbers.size>5)" …" else "",fontFamily=NumberFont,fontSize=13.sp,maxLines=1,overflow=TextOverflow.Ellipsis)
@@ -103,7 +105,7 @@ import com.sanxu.ui.*
                                 }
                             }
                         }
-                        HorizontalDivider(Modifier.padding(horizontal=16.dp),color=MaterialTheme.colorScheme.outlineVariant)
+                        HorizontalDivider(Modifier.padding(horizontal=12.dp),color=MaterialTheme.colorScheme.outlineVariant)
                     }
                 }
             }
@@ -111,7 +113,7 @@ import com.sanxu.ui.*
         }
     }
     detail?.let{entry->WorkspaceSheet("${methodLabel(entry.input.method)} · 记录详情",{detail=null}) {
-        Column(Modifier.heightIn(max=460.dp).verticalScroll(rememberScrollState()),verticalArrangement=Arrangement.spacedBy(12.dp)){
+        Column(Modifier.heightIn(max=460.dp).verticalScroll(rememberScrollState()),verticalArrangement=Arrangement.spacedBy(8.dp)){
             Text("${entry.issue} 期 · ${entry.numbers.size} 个号码 × ${entry.multiplier} 倍",style=MaterialTheme.typography.titleMedium)
             if(entry.note.isNotBlank()){SmallLabel("备注");Text(entry.note,fontSize=14.sp)}
             HorizontalDivider(color=MaterialTheme.colorScheme.outlineVariant)

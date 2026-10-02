@@ -1,0 +1,35 @@
+ERROR: null root node returned by UiTestAutomationBridge.
+ERROR: null root node returned by UiTestAutomationBridge.
+{
+  "serial": "emulator-5584",
+  "api": 26,
+  "package": "com.sanxu.app",
+  "version": "1.0.2",
+  "coinstalled": "com.lucky3d.app",
+  "newUid": "10077",
+  "originalUid": "10079",
+  "separateAppStorage": true,
+  "start": "Starting: Intent { cmp=com.sanxu.app/com.sanxu.MainActivity }\r\nStatus: ok\r\nActivity: com.sanxu.app/com.sanxu.MainActivity\r\nThisTime: 713\r\nTotalTime: 713\r\nWaitTime: 759\r\nComplete",
+  "fourMethods": true,
+  "processRestartPreservedPlan": {
+    "numbers": 10,
+    "units": 13,
+    "amountYuan": 26
+  },
+  "guidedPick": {
+    "numbers": [
+      "002",
+      "007",
+      "102",
+      "107"
+    ],
+    "amountYuan": 8
+  },
+  "sheetBackAndDragDismiss": true,
+  "themes": [
+    "light",
+    "dark"
+  ],
+  "crashBufferContainsSanxu": false,
+  "checkedAt": "2026-10-02T18:37:28.146562+08:00"
+}

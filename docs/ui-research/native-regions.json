@@ -1,0 +1,100 @@
+{
+  "platform": "android",
+  "mode": "operate",
+  "unit": "dp",
+  "native": true,
+  "approvedStructure": "B vertical accordion + draw-first Home",
+  "latestUserInstruction": "配色不能苍白；每个组件太大；一个屏幕必须看到更多内容",
+  "viewports": [
+    {
+      "api": 26,
+      "width": 360,
+      "height": 800,
+      "navigationMode": "3-button"
+    },
+    {
+      "api": 37,
+      "width": 393,
+      "height": 851,
+      "navigationMode": "gesture"
+    }
+  ],
+  "regions": [
+    {
+      "id": "identity",
+      "kind": "native-top-app-bar",
+      "height": 48,
+      "colorRole": "secondaryContainer"
+    },
+    {
+      "id": "home-draw",
+      "kind": "native-layout",
+      "numberDisc": 48,
+      "numberTypeSp": 30,
+      "source": "Room.latestDraw"
+    },
+    {
+      "id": "home-trial",
+      "kind": "native-row",
+      "height": 56,
+      "source": "TrialVisibility"
+    },
+    {
+      "id": "home-history",
+      "kind": "native-table",
+      "headerHeight": 48,
+      "rows": 5,
+      "rowHeight": 48
+    },
+    {
+      "id": "home-actions",
+      "kind": "native-row",
+      "height": 64,
+      "minTarget": 48
+    },
+    {
+      "id": "pick-methods",
+      "kind": "native-tabs",
+      "height": 48,
+      "items": 4
+    },
+    {
+      "id": "pick-step",
+      "kind": "native-accordion",
+      "rows": 3,
+      "rowHeight": 48,
+      "expanded": 1
+    },
+    {
+      "id": "pick-keyboard",
+      "kind": "native-button-grid",
+      "columns": 5,
+      "rows": 2,
+      "target": 48,
+      "gap": 8
+    },
+    {
+      "id": "pick-result",
+      "kind": "native-layout",
+      "previewNumbers": 4,
+      "preserveLeadingZero": true
+    },
+    {
+      "id": "pick-actions",
+      "kind": "native-row",
+      "height": 64,
+      "minTarget": 48
+    },
+    {
+      "id": "navigation",
+      "kind": "native-navigation",
+      "height": 64,
+      "items": 5,
+      "separateSystemInsets": true
+    }
+  ],
+  "rasterAssets": [],
+  "evidence": "docs/evidence/impeccable-api26 and impeccable-api37; final release directories separately",
+  "detector": "not applicable: native Compose, no HTML or CSS",
+  "compPixelDiff": "not applicable to latest request: user explicitly superseded oversized comp proportions; region dimensions and full-visibility tests are the acceptance measure"
+}

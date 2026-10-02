@@ -1,6 +1,7 @@
 package com.sanxu.ui
 
 import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.selection.selectableGroup
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -18,26 +19,25 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 @Composable fun WorkspacePanel(modifier:Modifier=Modifier,content:@Composable ColumnScope.()->Unit) {
-    Surface(modifier.fillMaxWidth(),shape=RoundedCornerShape(18.dp),color=MaterialTheme.colorScheme.surface,
-        border=BorderStroke(1.dp,MaterialTheme.colorScheme.outlineVariant.copy(alpha=.7f))) {
+    Surface(modifier.fillMaxWidth(),shape=RoundedCornerShape(12.dp),color=MaterialTheme.colorScheme.surface) {
         Column(content=content)
     }
 }
 
 /** Connected choices form one control, rather than a row of unrelated buttons. */
 @Composable fun ChoiceRail(labels:List<String>,selected:Int,onSelect:(Int)->Unit,modifier:Modifier=Modifier,tags:List<String> = emptyList(),enabled:Boolean=true) {
-    Surface(modifier,shape=RoundedCornerShape(10.dp),color=MaterialTheme.colorScheme.surfaceContainer) {
-        Row(Modifier.fillMaxWidth().selectableGroup().padding(3.dp)) {
+    Surface(modifier,color=MaterialTheme.colorScheme.surface) {
+        Row(Modifier.fillMaxWidth().selectableGroup()) {
             labels.forEachIndexed { index,label ->
                 val active=index==selected
                 Surface(onClick={onSelect(index)},enabled=enabled,
                     modifier=Modifier.weight(1f).heightIn(min=48.dp).then(tags.getOrNull(index)?.let { Modifier.testTag(it) } ?: Modifier)
                         .semantics { this.selected=active;role=Role.Tab },
-                    shape=RoundedCornerShape(8.dp),
-                    color=if(active) MaterialTheme.colorScheme.surface else MaterialTheme.colorScheme.surfaceContainer,
+                    color=MaterialTheme.colorScheme.surface,
                     contentColor=if(active) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurfaceVariant) {
                     Box(Modifier.padding(horizontal=4.dp),contentAlignment=Alignment.Center) {
                         Text(label,fontSize=14.sp,fontWeight=if(active) FontWeight.SemiBold else FontWeight.Normal,maxLines=1)
+                        if(active) Box(Modifier.align(Alignment.BottomCenter).width(28.dp).height(3.dp).background(MaterialTheme.colorScheme.primary,RoundedCornerShape(2.dp)))
                     }
                 }
             }

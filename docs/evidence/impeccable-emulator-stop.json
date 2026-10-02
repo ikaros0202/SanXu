@@ -1,0 +1,16 @@
+[
+  {
+    "avd": "SanXu_Design_API37",
+    "killOutput": "OK: killing emulator, bye bye  OK ",
+    "networkBeforeClose": "Active default network: 104",
+    "serial": "emulator-5582",
+    "displayOverridesReset": true
+  },
+  {
+    "avd": "SanXu_Design_API26",
+    "killOutput": "OK: killing emulator, bye bye  OK ",
+    "networkBeforeClose": "Active default network: 103",
+    "serial": "emulator-5584",
+    "displayOverridesReset": true
+  }
+]

@@ -102,7 +102,8 @@ class EmptyWorkspaceDesignTest {
                 return LiveContentRefreshResult.Failed(LiveContentFailure.NETWORK)
             }
         }
-        val vm=WorkspaceViewModel(ReplayDraws(),emptyPlans,unavailable,ReplayFeed,ReplaySettings)
+        val official=ReplayDraws()
+        val vm=WorkspaceViewModel(official,emptyPlans,unavailable,ReplayFeed,ReplaySettings)
         val dark=androidx.compose.runtime.mutableStateOf(false)
         try {
             compose.setContent { SanxuTheme(dark=dark.value){SanxuApp(vm)} }
@@ -122,10 +123,23 @@ class EmptyWorkspaceDesignTest {
                 compose.onNodeWithText("这一期彩报暂不可用").assertIsDisplayed()
                 compose.onNodeWithContentDescription("缩放控制").assertIsNotEnabled()
                 compose.onNodeWithContentDescription("上一期").assertIsNotEnabled()
+                compose.onNodeWithText("暂时没有可查看的期号，请刷新后重试。").assertIsDisplayed()
+                compose.onNodeWithText("可刷新，或选择最近30日内的其他期号。").assertDoesNotExist()
                 compose.captureDesign("fixture-report-unavailable-$suffix")
                 val before=unavailable.attempts
                 compose.onNodeWithText("重试").performClick()
                 compose.waitUntil(5_000){unavailable.attempts>before}
+            }
+            // A recent issue remains selectable even when its image cannot load.
+            val today=java.time.LocalDate.now(java.time.ZoneId.of("Asia/Shanghai"))
+            val issue="${today.year}001"
+            compose.runOnIdle {official.draws.value=listOf(DrawRecord(issue,today.toString(),DrawNumber.parse("007"),"fixture","fixture"))}
+            for(night in listOf(false,true)) {
+                compose.runOnIdle {dark.value=night}
+                compose.onNodeWithText("第 $issue 期").assertIsEnabled()
+                compose.onNodeWithText("可刷新，或选择最近30日内的其他期号。").assertIsDisplayed()
+                compose.onNodeWithText("暂时没有可查看的期号，请刷新后重试。").assertDoesNotExist()
+                compose.captureDesign("fixture-report-with-issue-${if(night) "dark" else "light"}")
             }
         } finally {vm.viewModelScope.cancel()}
     }

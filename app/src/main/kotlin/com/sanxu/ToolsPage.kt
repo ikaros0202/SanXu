@@ -37,8 +37,8 @@ import com.sanxu.ui.*
     var delete by remember{mutableStateOf<SavedMethod?>(null)}
     var detail by remember{mutableStateOf<SavedMethod?>(null)}
     Column(Modifier.fillMaxSize()) {
-        ChoiceRail(listOf("筛选","模板","备注"),section,{section=it},Modifier.padding(horizontal=16.dp),tags=listOf("tool_filters","tool_templates","tool_note"))
-        Column(Modifier.weight(1f).fillMaxWidth().verticalScroll(rememberScrollState()).padding(16.dp),verticalArrangement=Arrangement.spacedBy(12.dp)) {
+        ChoiceRail(listOf("筛选","模板","备注"),section,{section=it},Modifier.padding(horizontal=12.dp),tags=listOf("tool_filters","tool_templates","tool_note"))
+        Column(Modifier.weight(1f).fillMaxWidth().verticalScroll(rememberScrollState()).padding(16.dp),verticalArrangement=Arrangement.spacedBy(8.dp)) {
             when(section) {
                 0->WorkspacePanel {
                     PanelHeading("生成范围"){ContextTag(methodLabel(input.method),Modifier.padding(end=8.dp))}
@@ -63,7 +63,7 @@ import com.sanxu.ui.*
                             Column(Modifier.weight(1f).padding(vertical=8.dp)){Text(condition.title,fontSize=14.sp,fontWeight=FontWeight.Medium);SmallLabel(conditionDescription(condition))}
                             IconButton(onClick={model.updateInput{it.copy(conditionsJson=ConditionCodec.encode(conditions.filterIndexed{i,_->i!=index}),excluded=emptySet())}}){Icon(Icons.Outlined.Close,"移除${condition.title}",Modifier.size(18.dp))}
                         }
-                        if(index!=conditions.lastIndex)HorizontalDivider(Modifier.padding(horizontal=16.dp),color=MaterialTheme.colorScheme.outlineVariant)
+                        if(index!=conditions.lastIndex)HorizontalDivider(Modifier.padding(horizontal=12.dp),color=MaterialTheme.colorScheme.outlineVariant)
                     }
                     if(result.problem!=null&&result.problem!=PickProblem.NO_RESULTS&&result.problem!=PickProblem.INCOMPLETE)Text("请检查号码、胆码或拖码条件",Modifier.padding(16.dp),fontSize=12.sp,color=MaterialTheme.colorScheme.error)
                 }
@@ -76,7 +76,7 @@ import com.sanxu.ui.*
                             TextButton(onClick={model.applyMethod(method);onPick()}){Text("应用")}
                             IconButton(onClick={delete=method}){Icon(Icons.Outlined.DeleteOutline,"删除模板",Modifier.size(20.dp))}
                         }
-                        HorizontalDivider(Modifier.padding(horizontal=16.dp),color=MaterialTheme.colorScheme.outlineVariant)
+                        HorizontalDivider(Modifier.padding(horizontal=12.dp),color=MaterialTheme.colorScheme.outlineVariant)
                     }
                 }
                 2->WorkspacePanel {

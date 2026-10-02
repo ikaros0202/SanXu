@@ -1,10 +1,12 @@
 package com.sanxu
 
 import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.background
 import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
@@ -38,20 +40,22 @@ fun playLabel(play:PlayType)=when(play){PlayType.STRAIGHT->"单选";PlayType.GRO
     var batch by remember { mutableStateOf(false) }
     var help by remember { mutableStateOf(false) }
     var issueEditor by remember { mutableStateOf(false) }
+    var activePosition by rememberSaveable(input.method,draft.editingId) { mutableIntStateOf(0) }
     Column(Modifier.fillMaxSize()) {
+        ChoiceRail(primaryMethods.map(::methodLabel),primaryMethods.indexOf(input.method),{model.chooseMethod(primaryMethods[it]);entry="";activePosition=0},
+            modifier=Modifier.fillMaxWidth(),tags=primaryMethods.map{"method_${it.name}"},enabled=state.ready&&!state.saving)
         Row(Modifier.fillMaxWidth().height(48.dp).padding(horizontal=12.dp),verticalAlignment=Alignment.CenterVertically) {
             TextButton(onClick={issueEditor=true},modifier=Modifier.testTag("issue_picker"),contentPadding=PaddingValues(horizontal=4.dp)) {
                 Text(if(draft.issue.isBlank()) "选择目标期号" else "第 ${draft.issue} 期",fontFamily=NumberFont,fontWeight=FontWeight.Medium)
                 Icon(Icons.Outlined.ExpandMore,null,Modifier.size(18.dp))
             }
             Spacer(Modifier.weight(1f))
-            ContextTag(if(draft.editingId==null) "草稿" else "编辑中")
-            TextButton(onClick={model.newEntry();entry=""},enabled=!state.saving) { Text(if(draft.editingId==null) "清空" else "新建") }
+            if(draft.editingId!=null)ContextTag("编辑中")
+            TextButton(onClick={model.newEntry();entry="";activePosition=0},enabled=!state.saving) { Text(if(draft.editingId==null) "清空" else "新建") }
         }
-        Column(Modifier.weight(1f).fillMaxWidth().verticalScroll(rememberScrollState()).padding(horizontal=16.dp)) {
+        Column(Modifier.weight(1f).fillMaxWidth().verticalScroll(rememberScrollState()).padding(horizontal=12.dp)) {
+            if(input.method==PickMethod.POSITION)SmallLabel("每位选数字，自动组合成单选号码",Modifier.padding(start=4.dp,bottom=8.dp))
             WorkspacePanel {
-                ChoiceRail(primaryMethods.map(::methodLabel),primaryMethods.indexOf(input.method),{model.chooseMethod(primaryMethods[it]);entry=""},
-                    modifier=Modifier.fillMaxWidth().padding(4.dp),tags=primaryMethods.map{"method_${it.name}"},enabled=state.ready&&!state.saving)
                 if(!state.ready) Box(Modifier.fillMaxWidth().height(260.dp),contentAlignment=Alignment.Center){CircularProgressIndicator()}
                 else Column(Modifier.fillMaxWidth().padding(horizontal=12.dp,vertical=4.dp),verticalArrangement=Arrangement.spacedBy(4.dp)) {
                     when(input.method) {
@@ -104,12 +108,36 @@ fun playLabel(play:PlayType)=when(play){PlayType.STRAIGHT->"单选";PlayType.GRO
                         }
                         PickMethod.POSITION -> {
                             repeat(3) { position->
-                                Row(Modifier.fillMaxWidth(),verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(6.dp)) {
-                                    Column(Modifier.width(28.dp),horizontalAlignment=Alignment.CenterHorizontally) {
-                                        Text(listOf("百","十","个")[position],fontWeight=FontWeight.SemiBold)
-                                        SmallLabel(if(input.positions[position].isEmpty())"未选" else "${input.positions[position].size}选")
+                                val chosen=input.positions[position]
+                                val active=activePosition==position
+                                val update:(Set<Int>)->Unit={digits->model.updateInput{current->current.copy(positions=current.positions.mapIndexed{i,set->if(i==position)digits else set},excluded=emptySet())}}
+                                Surface(color=if(active)MaterialTheme.colorScheme.primaryContainer else MaterialTheme.colorScheme.surface,shape=RoundedCornerShape(8.dp)) {
+                                    Column {
+                                        Surface(onClick={activePosition=position},color=androidx.compose.ui.graphics.Color.Transparent,
+                                            modifier=Modifier.fillMaxWidth().height(48.dp).testTag("position_$position").semantics{selected=active}) {
+                                            Row(Modifier.padding(horizontal=8.dp),verticalAlignment=Alignment.CenterVertically) {
+                                                Surface(shape=CircleShape,color=if(active||chosen.isNotEmpty())MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.surfaceContainer,contentColor=if(active||chosen.isNotEmpty())MaterialTheme.colorScheme.onPrimary else MaterialTheme.colorScheme.onSurfaceVariant) {
+                                                    Box(Modifier.size(24.dp),contentAlignment=Alignment.Center){
+                                                        if(!active&&chosen.isNotEmpty())Icon(Icons.Outlined.Check,null,Modifier.size(16.dp))
+                                                        else Text("${position+1}",fontSize=12.sp,fontWeight=FontWeight.Bold)
+                                                    }
+                                                }
+                                                Text(listOf("百位","十位","个位")[position],Modifier.padding(start=10.dp).weight(1f),style=MaterialTheme.typography.titleMedium)
+                                                Text(if(chosen.isEmpty())"未选择" else if(chosen.size==10)"0–9 全部" else chosen.sorted().joinToString(" "),fontFamily=NumberFont,fontSize=13.sp,color=if(chosen.isEmpty())MaterialTheme.colorScheme.onSurfaceVariant else MaterialTheme.colorScheme.onSurface)
+                                                Icon(if(active)Icons.Outlined.ExpandLess else Icons.Outlined.ExpandMore,null,Modifier.padding(start=4.dp).size(18.dp))
+                                            }
+                                        }
+                                        if(active) {
+                                            DigitGrid(chosen,"pos$position",Modifier.padding(horizontal=8.dp)){update(chosen.toggle(it))}
+                                            Row(Modifier.fillMaxWidth().height(48.dp).padding(start=8.dp,end=4.dp),verticalAlignment=Alignment.CenterVertically) {
+                                                SmallLabel("已选 ${chosen.size} 个",Modifier.weight(1f))
+                                                TextButton(onClick={update(if(chosen.size==10)emptySet() else (0..9).toSet())},contentPadding=PaddingValues(horizontal=8.dp)){Text(if(chosen.size==10)"清除" else "全选")}
+                                                TextButton(onClick={activePosition=if(position<2)position+1 else 0},enabled=chosen.isNotEmpty(),modifier=Modifier.testTag("position_next_$position"),contentPadding=PaddingValues(horizontal=8.dp)){
+                                                    Text(if(position<2)"下一位" else "回看百位");Icon(Icons.Outlined.ChevronRight,null,Modifier.size(16.dp))
+                                                }
+                                            }
+                                        }
                                     }
-                                    DigitGrid(input.positions[position],"pos$position",Modifier.weight(1f)){digit->model.updateInput{current->current.copy(positions=current.positions.mapIndexed{i,set->if(i==position)set.toggle(digit) else set},excluded=emptySet())}}
                                 }
                             }
                         }
@@ -122,7 +150,6 @@ fun playLabel(play:PlayType)=when(play){PlayType.STRAIGHT->"单选";PlayType.GRO
                     }
                     if(input.method!=PickMethod.SINGLE&&result.numbers.isNotEmpty()) {
                         HorizontalDivider(color=MaterialTheme.colorScheme.outlineVariant)
-                        SmallLabel("组合预览",Modifier.padding(top=6.dp,bottom=2.dp))
                         result.numbers.take(if(input.method==PickMethod.POSITION)4 else 12).chunked(4).forEach { row->
                             Row(Modifier.fillMaxWidth().padding(vertical=3.dp)){
                                 row.forEach{Text(it,Modifier.weight(1f),fontFamily=NumberFont,fontSize=16.sp,color=MaterialTheme.colorScheme.primary)}
@@ -144,10 +171,10 @@ fun playLabel(play:PlayType)=when(play){PlayType.STRAIGHT->"单选";PlayType.GRO
         Surface(color=MaterialTheme.colorScheme.surface) {
             Column {
                 HorizontalDivider(color=MaterialTheme.colorScheme.outlineVariant)
-                Row(Modifier.fillMaxWidth().padding(horizontal=12.dp,vertical=10.dp),verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(8.dp)) {
+                Row(Modifier.fillMaxWidth().padding(horizontal=12.dp,vertical=8.dp),verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(8.dp)) {
                     Column(Modifier.weight(1f)) {
                         SmallLabel("合计金额")
-                        Text("¥ ${result.numbers.size*draft.multiplier*2}",fontFamily=NumberFont,fontWeight=FontWeight.SemiBold,fontSize=if(result.numbers.size*draft.multiplier>=5000)17.sp else 21.sp,maxLines=1,modifier=Modifier.testTag("pick_amount"))
+                        Text("¥ ${result.numbers.size*draft.multiplier*2}",color=MaterialTheme.colorScheme.primary,fontFamily=NumberFont,fontWeight=FontWeight.SemiBold,fontSize=if(result.numbers.size*draft.multiplier>=5000)17.sp else 21.sp,maxLines=1,modifier=Modifier.testTag("pick_amount"))
                     }
                     Surface(shape=RoundedCornerShape(10.dp),color=MaterialTheme.colorScheme.surfaceContainerLow,border=BorderStroke(1.dp,MaterialTheme.colorScheme.outlineVariant)) {
                         Row(verticalAlignment=Alignment.CenterVertically) {
@@ -194,14 +221,16 @@ fun playLabel(play:PlayType)=when(play){PlayType.STRAIGHT->"单选";PlayType.GRO
 
 fun Set<Int>.toggle(digit:Int)=if(digit in this)this-digit else this+digit
 @Composable fun DigitGrid(selected:Set<Int>,tag:String,modifier:Modifier=Modifier,onDigit:(Int)->Unit) {
-    Column(modifier,verticalArrangement=Arrangement.spacedBy(2.dp)) {
-        repeat(2){row->Row(Modifier.fillMaxWidth(),horizontalArrangement=Arrangement.spacedBy(4.dp)) {
+    Column(modifier,verticalArrangement=Arrangement.spacedBy(8.dp)) {
+        repeat(2){row->Row(Modifier.fillMaxWidth(),horizontalArrangement=Arrangement.spacedBy(8.dp)) {
             repeat(5){column->val digit=row*5+column;val active=digit in selected
-                Surface(onClick={onDigit(digit)},modifier=Modifier.weight(1f).height(48.dp).testTag("${tag}_$digit").semantics{this.selected=active;contentDescription="$digit"},shape=RoundedCornerShape(8.dp),
-                    color=if(active)MaterialTheme.colorScheme.primaryContainer else MaterialTheme.colorScheme.surfaceContainerLow,
-                    contentColor=if(active)MaterialTheme.colorScheme.onPrimaryContainer else MaterialTheme.colorScheme.onSurface,
+                Box(Modifier.weight(1f),contentAlignment=Alignment.Center) {
+                Surface(onClick={onDigit(digit)},modifier=Modifier.size(48.dp).testTag("${tag}_$digit").semantics{this.selected=active;contentDescription="$digit"},shape=CircleShape,
+                    color=if(active)MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.surface,
+                    contentColor=if(active)MaterialTheme.colorScheme.onPrimary else MaterialTheme.colorScheme.onSurface,
                     border=BorderStroke(if(active)1.dp else .5.dp,if(active)MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.outlineVariant)) {
-                    Box(contentAlignment=Alignment.Center){Text(digit.toString(),fontFamily=NumberFont,fontWeight=if(active)FontWeight.Bold else FontWeight.Medium,fontSize=20.sp);if(active)Icon(Icons.Outlined.Check,null,Modifier.align(Alignment.TopEnd).padding(3.dp).size(10.dp))}
+                    Box(contentAlignment=Alignment.Center){Text(digit.toString(),fontFamily=NumberFont,fontWeight=if(active)FontWeight.Bold else FontWeight.Medium,fontSize=20.sp);if(active)Icon(Icons.Outlined.Check,null,Modifier.align(Alignment.BottomEnd).padding(5.dp).size(9.dp))}
+                }
                 }
             }
         }}

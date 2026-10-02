@@ -28,7 +28,7 @@ import kotlinx.coroutines.withContext
     Column(Modifier.fillMaxSize()) {
         PageHeader("走势") {
             Box {
-                TextButton(onClick={menu=true}){Text("近 $window 期");Icon(Icons.Outlined.KeyboardArrowDown,null)}
+                TextButton(onClick={menu=true},colors=ButtonDefaults.textButtonColors(contentColor=LocalContentColor.current)){Text("近 $window 期");Icon(Icons.Outlined.KeyboardArrowDown,null)}
                 DropdownMenu(menu,{menu=false}) { listOf(10,30,60,100).forEach { value->DropdownMenuItem(text={Text("近 $value 期")},onClick={window=value;menu=false;selected=null}) } }
             }
             IconButton(onClick={help=true}){Icon(Icons.Outlined.HelpOutline,"走势操作说明",Modifier.size(20.dp))}

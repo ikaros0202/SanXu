@@ -22,15 +22,15 @@ import java.time.format.DateTimeFormatter
     val metadata by model.metadata.collectAsStateWithLifecycle()
     val draws by model.draws.collectAsStateWithLifecycle()
     val refreshing by model.refreshing.collectAsStateWithLifecycle()
-    Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(16.dp),verticalArrangement=Arrangement.spacedBy(16.dp)) {
+    Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(16.dp),verticalArrangement=Arrangement.spacedBy(8.dp)) {
         WorkspacePanel {
             PanelHeading("外观")
-            ChoiceRail(listOf("跟随系统","纸白","夜蓝"),ThemeChoice.entries.indexOf(settings.theme),{model.setTheme(ThemeChoice.entries[it])},Modifier.padding(start=12.dp,end=12.dp,bottom=12.dp))
+            ChoiceRail(listOf("跟随系统","浅色","深色"),ThemeChoice.entries.indexOf(settings.theme),{model.setTheme(ThemeChoice.entries[it])},Modifier.padding(start=12.dp,end=12.dp,bottom=12.dp))
         }
         WorkspacePanel {
-            Row(Modifier.fillMaxWidth().heightIn(min=80.dp).padding(horizontal=16.dp),verticalAlignment=Alignment.CenterVertically){Column(Modifier.weight(1f)){Text("首页核对提示",style=MaterialTheme.typography.titleMedium);SmallLabel("已有方案开奖后显示核对入口")};Switch(settings.showReplayNotice,model::setNotice)}
+            Row(Modifier.fillMaxWidth().heightIn(min=64.dp).padding(horizontal=12.dp),verticalAlignment=Alignment.CenterVertically){Column(Modifier.weight(1f)){Text("首页核对提示",style=MaterialTheme.typography.titleMedium);SmallLabel("已有方案开奖后显示核对入口")};Switch(settings.showReplayNotice,model::setNotice)}
             HorizontalDivider(color=MaterialTheme.colorScheme.outlineVariant)
-            Row(Modifier.fillMaxWidth().heightIn(min=80.dp).padding(start=16.dp,end=4.dp),verticalAlignment=Alignment.CenterVertically){
+            Row(Modifier.fillMaxWidth().heightIn(min=64.dp).padding(start=16.dp,end=4.dp),verticalAlignment=Alignment.CenterVertically){
                 Column(Modifier.weight(1f)){Text("开奖数据 · ${draws.size} 期",style=MaterialTheme.typography.titleMedium)
                     SmallLabel(metadata?.lastSuccessEpochMillis?.let{"上次更新 ${Instant.ofEpochMilli(it).atZone(ZoneId.of("Asia/Shanghai")).format(DateTimeFormatter.ofPattern("MM-dd HH:mm"))}"} ?: "尚未完成首次更新")
                 }

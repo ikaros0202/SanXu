@@ -1,0 +1,31 @@
+{
+  "uniqueInstrumentedTestsPerDevice": 14,
+  "countsBySource": {
+    "CompactViewportTest.kt": 3,
+    "DesignScreensTest.kt": 2,
+    "GuidedPickFlowTest.kt": 1,
+    "OfflineFlowTest.kt": 1,
+    "ReplayUiTest.kt": 2,
+    "ReportFlowTest.kt": 1,
+    "ToolsFlowTest.kt": 3,
+    "WorkspaceFlowTest.kt": 1
+  },
+  "devices": [
+    26,
+    37
+  ],
+  "completedRuns": [
+    "impeccable-regression-api26.txt",
+    "impeccable-regression-api37.txt",
+    "impeccable-states-api26.txt",
+    "impeccable-states-api37.txt",
+    "impeccable-offline-api26.txt",
+    "impeccable-offline-api37.txt",
+    "impeccable-review-ui-api26.txt",
+    "impeccable-review-ui-api37.txt",
+    "impeccable-compact-confirm-api26.txt",
+    "impeccable-compact-confirm-api37.txt"
+  ],
+  "api26ReviewRunNote": "7 tests; 6 passed, one DataStore theme-change wait race in test. Added await Selected and reran all 3 CompactViewportTest cases successfully on both APIs. No production theme code changed in that follow-up.",
+  "screenshotCountPerDevice": 63
+}

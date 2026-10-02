@@ -4,10 +4,13 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.SystemBarStyle
 import androidx.activity.viewModels
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.SideEffect
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.ui.graphics.toArgb
 import androidx.core.view.WindowCompat
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleEventObserver
@@ -26,13 +29,16 @@ class MainActivity: ComponentActivity() {
         setContent {
             val settings by model.settings.collectAsStateWithLifecycle()
             val dark=when(settings.theme) { ThemeChoice.SYSTEM->isSystemInDarkTheme(); ThemeChoice.LIGHT->false; ThemeChoice.DARK->true }
-            SideEffect {
-                WindowCompat.getInsetsController(window,window.decorView).apply {
-                    isAppearanceLightStatusBars=!dark
-                    isAppearanceLightNavigationBars=!dark
+            SanxuTheme(dark) {
+                val navigationColor=MaterialTheme.colorScheme.surface.toArgb()
+                SideEffect {
+                    enableEdgeToEdge(
+                        statusBarStyle=SystemBarStyle.dark(android.graphics.Color.TRANSPARENT),
+                        navigationBarStyle=if(dark)SystemBarStyle.dark(navigationColor) else SystemBarStyle.light(navigationColor,navigationColor),
+                    )
                 }
+                SanxuApp(model)
             }
-            SanxuTheme(dark) { SanxuApp(model) }
         }
     }
 }

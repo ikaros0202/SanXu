@@ -78,7 +78,7 @@ class WorkspaceFlowTest {
 
         tag("nav_2").performClick();tag("method_POSITION").performClick()
         listOf(0,1).forEach{tag("pos0_$it").performClick()}
-        tag("pos1_0").performClick();listOf(2,7).forEach{tag("pos2_$it").performClick()}
+        tag("position_next_0").performClick();tag("pos1_0").performClick();tag("position_next_1").performClick();listOf(2,7).forEach{tag("pos2_$it").performClick()}
         tag("pick_count").assertTextEquals("4 个号码 · 4 注")
         tag("pos2_9").assertIsDisplayed()
         tag("save_plan").assertIsDisplayed()
@@ -93,7 +93,7 @@ class WorkspaceFlowTest {
         tag("plan_units").assertTextEquals("13 注 · 4 条记录")
 
         tag("nav_0").performClick();screenshot("home-light")
-        compose.onNodeWithContentDescription("偏好设置").performClick();text("夜蓝").performClick()
+        compose.onNodeWithContentDescription("偏好设置").performClick();text("深色").performClick()
         compose.onNodeWithContentDescription("返回").performClick();screenshot("home-dark")
         tag("nav_2").performClick();screenshot("pick-position-dark")
         tag("nav_3").performClick();screenshot("plans-dark")
@@ -103,7 +103,7 @@ class WorkspaceFlowTest {
         tag("nav_4").performClick()
         // No caibao screenshots are stored: third-party images are not part of the source deliverable.
         tag("nav_0").performClick();compose.onNodeWithContentDescription("偏好设置").performClick()
-        text("纸白").performClick();compose.onNodeWithContentDescription("返回").performClick()
+        text("浅色").performClick();compose.onNodeWithContentDescription("返回").performClick()
         tag("nav_3").performClick()
     }
 

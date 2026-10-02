@@ -14,14 +14,14 @@ class ToolsFlowTest {
     @Test fun darkSystemBarsAndLoadedTrend() {
         tag("nav_0").performClick()
         compose.onNodeWithContentDescription("偏好设置").performClick()
-        text("夜蓝").performClick()
+        text("深色").performClick()
         compose.waitForIdle()
         compose.runOnIdle { assertThat(WindowCompat.getInsetsController(compose.activity.window,compose.activity.window.decorView).isAppearanceLightStatusBars).isFalse() }
         compose.onNodeWithContentDescription("返回").performClick()
         tag("nav_1").performClick()
         compose.waitUntil(15_000){compose.onAllNodesWithTag("trend_ready").fetchSemanticsNodes().isNotEmpty()}
         tag("trend_ready").assertIsDisplayed()
-        tag("nav_0").performClick();compose.onNodeWithContentDescription("偏好设置").performClick();text("纸白").performClick()
+        tag("nav_0").performClick();compose.onNodeWithContentDescription("偏好设置").performClick();text("浅色").performClick()
     }
     @Test fun filterTemplateBacktestAndNumberExclusion() {
         tag("nav_2").performClick();text("工具").performClick()

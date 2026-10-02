@@ -1,0 +1,18 @@
+{
+  "ownedEmulatorsExited": true,
+  "displayOverridesReset": true,
+  "checkedAt": "2026-10-02T18:41:13.0450750+08:00",
+  "ownedProcessIds": [
+    42872,
+    40780,
+    58204,
+    49228,
+    51728,
+    54216
+  ],
+  "remainingOwnedProcesses": [],
+  "devicesAfter": "List of devices attached\n",
+  "gradleStopCommand": ".\\gradlew.bat --stop",
+  "networkRestoredBeforeClose": true,
+  "unrelatedDevicesClosed": false
+}

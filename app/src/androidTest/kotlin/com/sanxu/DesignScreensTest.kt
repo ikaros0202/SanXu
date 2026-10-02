@@ -21,7 +21,7 @@ class DesignScreensTest {
 
     @Test fun selectedThemeAndFullTemplateTitleAreVisible() {
         val fullTitle="这是一条用于检查完整标题可读性与列表排版的四十字筛选方法模板名称测试记录文本示例甲".take(40)
-        for((theme,suffix) in listOf("纸白" to "light","夜蓝" to "dark")) {
+        for((theme,suffix) in listOf("浅色" to "light","深色" to "dark")) {
             tag("nav_0").performClick();desc("偏好设置").performClick();text(theme).performClick()
             compose.waitUntil(10_000){text(theme).fetchSemanticsNode().config[SemanticsProperties.Selected]}
             text(theme).assertIsSelected();shot("settings-$suffix");back()
@@ -29,13 +29,15 @@ class DesignScreensTest {
             text(fullTitle).performClick();text("方法详情").assertIsDisplayed()
             compose.onAllNodesWithText(fullTitle).onLast().assertIsDisplayed();shot("template-full-title-$suffix");close();back()
         }
-        tag("nav_0").performClick();desc("偏好设置").performClick();text("纸白").performClick();back()
+        tag("nav_0").performClick();desc("偏好设置").performClick();text("浅色").performClick();back()
     }
 
     @Test fun allWorkspacesLongContentAndFullPoolRemainUsable() {
-        for((theme,suffix) in listOf("纸白" to "light","夜蓝" to "dark")) {
+        for((theme,suffix) in listOf("浅色" to "light","深色" to "dark")) {
             tag("nav_0").performClick();desc("偏好设置").performClick();text(theme).performClick()
-            shot("settings-$suffix");back();shot("home-$suffix")
+            shot("settings-$suffix");back();tag("recent_2026258").assertIsDisplayed();tag("home_start_pick").assertIsDisplayed()
+            assertThat(tag("home_start_pick").getUnclippedBoundsInRoot().bottom.value).isAtMost(tag("nav_0").getUnclippedBoundsInRoot().top.value)
+            shot("home-$suffix")
             text("第 2026263 期").performClick()
             compose.waitUntil(15_000){compose.onAllNodesWithContentDescription("关闭弹层").fetchSemanticsNodes().isNotEmpty()}
             shot("history-detail-$suffix");close();shot("history-$suffix");back()
@@ -46,12 +48,16 @@ class DesignScreensTest {
             tag("method_GROUP").performClick();shot("pick-group-$suffix")
             tag("method_DISTINCT").performClick();shot("pick-distinct-$suffix")
             tag("method_POSITION").performClick()
-            for(position in 0..2)for(digit in 0..9) {
+            for(position in 0..2) {
+                tag("position_$position").performClick()
+                for(digit in 0..9) {
                 val node=tag("pos${position}_$digit")
                 if(node.fetchSemanticsNode().config[SemanticsProperties.Selected]!=true)node.performClick()
             }
+            }
             tag("pick_count").assertTextEquals("1000 个号码 · 1000 注")
             desc("查看 1000 个号码").assertIsDisplayed();tag("save_plan").assertIsDisplayed()
+            assertThat(desc("查看 1000 个号码").getUnclippedBoundsInRoot().bottom.value).isAtMost(tag("save_plan").getUnclippedBoundsInRoot().top.value)
             shot("pick-position-full-$suffix")
             tag("issue_picker").performClick();tag("issue_input").performTextReplacement("1999001")
             Espresso.closeSoftKeyboard();shot("issue-$suffix");close()
@@ -65,7 +71,7 @@ class DesignScreensTest {
             shot("tools-filter-$suffix");tag("add_condition").performClick();shot("condition-types-$suffix")
             text("和值范围").performClick();shot("condition-editor-$suffix");close()
             tag("tool_templates").performClick()
-            if(suffix=="light") {
+            if(suffix=="light"&&compose.onAllNodes(hasText("这是一条用于检查完整标题",substring=true)).fetchSemanticsNodes().isEmpty()) {
                 text("保存当前方法").performClick()
                 text("模板名称").performTextInput("这是一条用于检查完整标题可读性与列表排版的四十字筛选方法模板名称测试记录文本示例甲".take(40))
                 text("保存").performClick()
@@ -91,6 +97,6 @@ class DesignScreensTest {
         compose.waitUntil(15_000){compose.onAllNodesWithText("撤销本次").fetchSemanticsNodes().isNotEmpty()}
         text("撤销本次").performClick();tag("nav_3").performClick()
         tag("plan_amount").assertTextEquals("¥ 26");tag("plan_units").assertTextEquals("13 注 · 4 条记录")
-        tag("nav_0").performClick();desc("偏好设置").performClick();text("纸白").performClick();back()
+        tag("nav_0").performClick();desc("偏好设置").performClick();text("浅色").performClick();back()
     }
 }

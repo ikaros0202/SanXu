@@ -1,0 +1,53 @@
+INSTRUMENTATION_STATUS: numtests=2
+INSTRUMENTATION_STATUS: stream=
+com.sanxu.CompactViewportTest:
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: test=openingSheetDoesNotShowEnglishDragHandleTooltip
+INSTRUMENTATION_STATUS: class=com.sanxu.CompactViewportTest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: numtests=2
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: test=openingSheetDoesNotShowEnglishDragHandleTooltip
+INSTRUMENTATION_STATUS: class=com.sanxu.CompactViewportTest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: numtests=2
+INSTRUMENTATION_STATUS: stream=
+com.sanxu.EmptyWorkspaceDesignTest:
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: test=emptyPlansAndUnavailableReportsHaveUsableActionsInBothThemes
+INSTRUMENTATION_STATUS: class=com.sanxu.EmptyWorkspaceDesignTest
+INSTRUMENTATION_STATUS: current=2
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: numtests=2
+INSTRUMENTATION_STATUS: stream=
+Error in emptyPlansAndUnavailableReportsHaveUsableActionsInBothThemes(com.sanxu.EmptyWorkspaceDesignTest):
+java.lang.AssertionError: Assert failed: The component with Text + InputText + EditableText contains '暂时没有可查看的期号，请刷新后重试。' (ignoreCase: false) is not displayed!
+	at androidx.compose.ui.test.AssertionsKt.assertIsDisplayed(Assertions.kt:34)
+	at com.sanxu.EmptyWorkspaceDesignTest.emptyPlansAndUnavailableReportsHaveUsableActionsInBothThemes(ReplayUiTest.kt:125)
+
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: test=emptyPlansAndUnavailableReportsHaveUsableActionsInBothThemes
+INSTRUMENTATION_STATUS: class=com.sanxu.EmptyWorkspaceDesignTest
+INSTRUMENTATION_STATUS: stack=java.lang.AssertionError: Assert failed: The component with Text + InputText + EditableText contains '暂时没有可查看的期号，请刷新后重试。' (ignoreCase: false) is not displayed!
+	at androidx.compose.ui.test.AssertionsKt.assertIsDisplayed(Assertions.kt:34)
+	at com.sanxu.EmptyWorkspaceDesignTest.emptyPlansAndUnavailableReportsHaveUsableActionsInBothThemes(ReplayUiTest.kt:125)
+
+INSTRUMENTATION_STATUS: current=2
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_RESULT: stream=
+
+Time: 7.661
+There was 1 failure:
+1) emptyPlansAndUnavailableReportsHaveUsableActionsInBothThemes(com.sanxu.EmptyWorkspaceDesignTest)
+java.lang.AssertionError: Assert failed: The component with Text + InputText + EditableText contains '暂时没有可查看的期号，请刷新后重试。' (ignoreCase: false) is not displayed!
+	at androidx.compose.ui.test.AssertionsKt.assertIsDisplayed(Assertions.kt:34)
+	at com.sanxu.EmptyWorkspaceDesignTest.emptyPlansAndUnavailableReportsHaveUsableActionsInBothThemes(ReplayUiTest.kt:125)
+
+FAILURES!!!
+Tests run: 2,  Failures: 1
+
+
+INSTRUMENTATION_CODE: -1

@@ -1,0 +1,56 @@
+INSTRUMENTATION_STATUS: numtests=1
+INSTRUMENTATION_STATUS: stream=
+com.sanxu.CompactViewportTest:
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: test=openingSheetDoesNotShowEnglishDragHandleTooltip
+INSTRUMENTATION_STATUS: class=com.sanxu.CompactViewportTest
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS_CODE: 1
+INSTRUMENTATION_STATUS: numtests=1
+INSTRUMENTATION_STATUS: stream=
+Error in openingSheetDoesNotShowEnglishDragHandleTooltip(com.sanxu.CompactViewportTest):
+java.lang.AssertionError: Failed: assertDoesNotExist.
+Reason: Did not expect any node but found '1' node that satisfies: (Text + InputText + EditableText contains 'Drag handle' (ignoreCase: false))
+Node found:
+Node #322 at (l=24.0, t=12.0, r=216.0, b=54.0)px
+Text = '[Drag handle]'
+Actions = [ClearTextSubstitution, GetTextLayoutResult, SetTextSubstitution, ShowTextSubstitution]
+
+	at androidx.compose.ui.test.SemanticsNodeInteraction.assertDoesNotExist(SemanticsNodeInteraction.kt:101)
+	at com.sanxu.CompactViewportTest.openingSheetDoesNotShowEnglishDragHandleTooltip(CompactViewportTest.kt:43)
+
+INSTRUMENTATION_STATUS: id=AndroidJUnitRunner
+INSTRUMENTATION_STATUS: test=openingSheetDoesNotShowEnglishDragHandleTooltip
+INSTRUMENTATION_STATUS: class=com.sanxu.CompactViewportTest
+INSTRUMENTATION_STATUS: stack=java.lang.AssertionError: Failed: assertDoesNotExist.
+Reason: Did not expect any node but found '1' node that satisfies: (Text + InputText + EditableText contains 'Drag handle' (ignoreCase: false))
+Node found:
+Node #322 at (l=24.0, t=12.0, r=216.0, b=54.0)px
+Text = '[Drag handle]'
+Actions = [ClearTextSubstitution, GetTextLayoutResult, SetTextSubstitution, ShowTextSubstitution]
+
+	at androidx.compose.ui.test.SemanticsNodeInteraction.assertDoesNotExist(SemanticsNodeInteraction.kt:101)
+	at com.sanxu.CompactViewportTest.openingSheetDoesNotShowEnglishDragHandleTooltip(CompactViewportTest.kt:43)
+
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS_CODE: -2
+INSTRUMENTATION_RESULT: stream=
+
+Time: 4.608
+There was 1 failure:
+1) openingSheetDoesNotShowEnglishDragHandleTooltip(com.sanxu.CompactViewportTest)
+java.lang.AssertionError: Failed: assertDoesNotExist.
+Reason: Did not expect any node but found '1' node that satisfies: (Text + InputText + EditableText contains 'Drag handle' (ignoreCase: false))
+Node found:
+Node #322 at (l=24.0, t=12.0, r=216.0, b=54.0)px
+Text = '[Drag handle]'
+Actions = [ClearTextSubstitution, GetTextLayoutResult, SetTextSubstitution, ShowTextSubstitution]
+
+	at androidx.compose.ui.test.SemanticsNodeInteraction.assertDoesNotExist(SemanticsNodeInteraction.kt:101)
+	at com.sanxu.CompactViewportTest.openingSheetDoesNotShowEnglishDragHandleTooltip(CompactViewportTest.kt:43)
+
+FAILURES!!!
+Tests run: 1,  Failures: 1
+
+
+INSTRUMENTATION_CODE: -1

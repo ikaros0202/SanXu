@@ -15,7 +15,7 @@ internal fun ComposeTestRule.captureDesign(name:String) {
     runner.waitForIdleSync()
     SystemClock.sleep(450)
     waitForIdle()
-    val folder=File(runner.targetContext.getExternalFilesDir(null),"redesign-qa").apply{mkdirs()}
+    val folder=File(runner.targetContext.getExternalFilesDir(null),"impeccable-qa").apply{mkdirs()}
     val bitmap=runner.uiAutomation.takeScreenshot() ?: onAllNodes(isRoot()).onLast().captureToImage().asAndroidBitmap()
     try { File(folder,"$name.png").outputStream().use { bitmap.compress(Bitmap.CompressFormat.PNG,100,it) } }
     finally { bitmap.recycle() }
