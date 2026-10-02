@@ -4,6 +4,7 @@ import android.graphics.Bitmap
 import androidx.compose.ui.graphics.asAndroidBitmap
 import androidx.compose.ui.test.*
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
+import com.google.common.truth.Truth.assertThat
 import androidx.test.platform.app.InstrumentationRegistry
 import org.junit.Rule
 import org.junit.Test
@@ -23,8 +24,10 @@ class WorkspaceFlowTest {
     }
     @Test fun fourMethodsMergeUndoAndRestore() {
         tag("nav_2").performClick()
-        compose.waitUntil(15_000){compose.onAllNodesWithTag("issue_input").fetchSemanticsNodes().isNotEmpty()}
+        compose.waitUntil(15_000){compose.onAllNodesWithTag("issue_picker").fetchSemanticsNodes().isNotEmpty()}
+        tag("issue_picker").performClick()
         tag("issue_input").performTextReplacement("2026300")
+        tag("apply_issue").performClick()
         text("批量录入").performClick()
         tag("batch_input").performTextInput("012")
         text("加入号码").performClick()
@@ -75,6 +78,12 @@ class WorkspaceFlowTest {
         listOf(0,1).forEach{tag("pos0_$it").performClick()}
         tag("pos1_0").performClick();listOf(2,7).forEach{tag("pos2_$it").performClick()}
         tag("pick_count").assertTextEquals("4 个号码 · 4 注")
+        tag("pos2_9").assertIsDisplayed()
+        tag("save_plan").assertIsDisplayed()
+        compose.onNodeWithContentDescription("查看 4 个号码").assertIsDisplayed()
+        val digitBounds=tag("pos2_9").getUnclippedBoundsInRoot()
+        assertThat((digitBounds.right-digitBounds.left).value).isAtLeast(48f)
+        assertThat((digitBounds.bottom-digitBounds.top).value).isAtLeast(48f)
         screenshot("pick-position-light")
         tag("save_plan").performClick();waitFor("重复号码已合并");text("查看方案").performClick()
         tag("plan_amount").assertTextEquals("¥ 26")

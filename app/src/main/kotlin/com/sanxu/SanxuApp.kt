@@ -1,6 +1,9 @@
 package com.sanxu
 
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.background
+import androidx.compose.foundation.selection.selectable
+import androidx.compose.foundation.selection.selectableGroup
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.outlined.ArrowBack
@@ -13,6 +16,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
@@ -21,6 +25,7 @@ import androidx.navigation3.runtime.entryProvider
 import androidx.navigation3.runtime.rememberNavBackStack
 import androidx.navigation3.ui.NavDisplay
 import kotlinx.serialization.Serializable
+import com.sanxu.ui.ContextTag
 
 @Serializable data object Workspace: NavKey
 @Serializable data class Detail(val page:String,val issue:String=""):NavKey
@@ -40,16 +45,29 @@ import kotlinx.serialization.Serializable
         NavDisplay(backStack=stack,onBack={ if(stack.size>1) stack.removeAt(stack.lastIndex) },entryProvider=entryProvider {
             entry<Workspace> {
                 Scaffold(containerColor=MaterialTheme.colorScheme.background,bottomBar={
-                    NavigationBar(containerColor=MaterialTheme.colorScheme.surface,tonalElevation=0.dp) {
+                    Surface(color=MaterialTheme.colorScheme.surface) {
+                    Column(Modifier.navigationBarsPadding()) {
+                    HorizontalDivider(color=MaterialTheme.colorScheme.outlineVariant)
+                    Row(Modifier.fillMaxWidth().height(64.dp).selectableGroup()) {
                         val names=listOf("首页","走势","选号","方案","彩报")
                         val icons=listOf(Icons.Outlined.Home,Icons.Outlined.ShowChart,Icons.Outlined.Dialpad,Icons.Outlined.FolderOpen,Icons.Outlined.Article)
-                        names.forEachIndexed { index,name -> NavigationBarItem(selected=tab==index,onClick={ tab=index },icon={Icon(icons[index],null)},label={Text(name)},modifier=Modifier.testTag("nav_$index")) }
+                        names.forEachIndexed { index,name ->
+                            val active=tab==index
+                            Column(Modifier.weight(1f).fillMaxHeight().selectable(selected=active,onClick={tab=index},role=Role.Tab).testTag("nav_$index"),horizontalAlignment=Alignment.CenterHorizontally,verticalArrangement=Arrangement.Center) {
+                                Icon(icons[index],null,Modifier.size(23.dp),tint=if(active) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurfaceVariant)
+                                Text(name,fontSize=12.sp,fontWeight=if(active) FontWeight.SemiBold else FontWeight.Normal,color=if(active) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurfaceVariant)
+                                Box(Modifier.padding(top=3.dp).size(18.dp,2.dp).background(if(active) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.surface,RoundedCornerShape(1.dp)))
+                            }
+                        }
+                    }
+                    }
                     }
                 }) { padding ->
                     Column(Modifier.fillMaxSize().padding(padding)) {
-                        if(tab!=0) PageHeader(listOf("叁序","走势","选号","方案","彩报")[tab],
-                            subtitle=when(tab){1->"每一期开出的轨迹";2->"按你熟悉的方式";3->"按期整理，开奖后核对";else->"彩吧彩报 · 第三版"},
-                            action=if(tab==2) "工具" else null,onAction={navigate("tools")})
+                        PageHeader(listOf("叁序","走势","选号","方案","彩报")[tab],tag=if(tab==0) "福彩3D" else if(tab==4) "A11 · 第三版" else null) {
+                            if(tab==0) IconButton(onClick={navigate("settings")}){Icon(Icons.Outlined.Tune,"偏好设置")}
+                            if(tab==2) TextButton(onClick={navigate("tools")}) { Icon(Icons.Outlined.Tune,null,Modifier.size(18.dp));Spacer(Modifier.width(4.dp));Text("工具") }
+                        }
                         when(tab) {
                             0->HomePage(model,onSettings={navigate("settings")},onHistory={stack.add(Detail("history",it))},onPick={tab=2},onPlan={tab=3})
                             1->TrendPage(model,onPick={tab=2})
@@ -74,28 +92,30 @@ import kotlinx.serialization.Serializable
                 } }
             }
         })
-        SnackbarHost(snackbar,Modifier.align(Alignment.BottomCenter).navigationBarsPadding().padding(bottom=86.dp))
+        SnackbarHost(snackbar,Modifier.align(Alignment.BottomCenter).navigationBarsPadding().padding(bottom=if(stack.size>1)16.dp else if(tab==2)142.dp else 72.dp))
     }
     editor.feedback?.let { feedback ->
-        AlertDialog(onDismissRequest=model::dismissFeedback,
-            icon={Icon(if(feedback.repeated>0) Icons.Outlined.Layers else Icons.Outlined.CheckCircle,null)},
-            title={Text(if(feedback.repeated>0) "重复号码已合并" else if(feedback.previous!=null) "记录已更新" else "已加入方案")},
-            text={Text(if(feedback.repeated>0) "有 ${feedback.repeated} 个号码与本期其他记录重合，倍数已相加。每次选号的来源仍保留，可单独编辑或撤销。"
-                else "第 ${feedback.entry.issue} 期 · ${feedback.entry.numbers.size} 个号码 × ${feedback.entry.multiplier} 倍\n可以查看方案，或继续创建一条选号记录。")},
-            confirmButton={TextButton(onClick={model.dismissFeedback();goPlan()}){Text("查看方案")}},
-            dismissButton={Row { TextButton(onClick={model.undo(feedback)}){Text("撤销本次")}; TextButton(onClick={model.dismissFeedback();model.newEntry()}){Text("继续选号")} }}
-        )
+        WorkspaceSheet(if(feedback.repeated>0) "重复号码已合并" else if(feedback.previous!=null) "记录已更新" else "已加入方案",model::dismissFeedback) {
+            Text("第 ${feedback.entry.issue} 期 · ${feedback.entry.numbers.size} 个号码 × ${feedback.entry.multiplier} 倍",Modifier.padding(vertical=8.dp),style=MaterialTheme.typography.titleMedium)
+            SmallLabel(if(feedback.repeated>0) "${feedback.repeated} 个重复号码已累加倍数。来源记录仍可单独调整。" else "已保存到本期清单，可继续选号或查看汇总。")
+            Row(Modifier.fillMaxWidth().padding(top=16.dp),horizontalArrangement=Arrangement.spacedBy(4.dp)) {
+                TextButton(onClick={model.undo(feedback)},modifier=Modifier.weight(1f).height(48.dp)){Text("撤销本次")}
+                TextButton(onClick={model.dismissFeedback();model.newEntry()},modifier=Modifier.weight(1f).height(48.dp)){Text("继续选号")}
+                Button(onClick={model.dismissFeedback();goPlan()},modifier=Modifier.weight(1f).height(48.dp),contentPadding=PaddingValues(horizontal=8.dp)){Text("查看方案")}
+            }
+        }
     }
 }
 
-@Composable fun PageHeader(title:String,subtitle:String,action:String?=null,onAction:()->Unit={}) {
-    Row(Modifier.fillMaxWidth().padding(start=20.dp,end=12.dp,top=12.dp,bottom=12.dp),verticalAlignment=Alignment.CenterVertically) {
-        Column(Modifier.weight(1f)) { Text(title,style=MaterialTheme.typography.headlineMedium); Text(subtitle,style=MaterialTheme.typography.bodySmall,color=MaterialTheme.colorScheme.onSurfaceVariant) }
-        if(action!=null) TextButton(onClick=onAction) { Icon(Icons.Outlined.Tune,null,Modifier.size(18.dp)); Spacer(Modifier.width(6.dp));Text(action) }
+@Composable fun PageHeader(title:String,tag:String?=null,actions:@Composable RowScope.()->Unit={}) {
+    Row(Modifier.fillMaxWidth().height(56.dp).padding(start=16.dp,end=8.dp),verticalAlignment=Alignment.CenterVertically) {
+        Text(title,style=MaterialTheme.typography.headlineMedium)
+        if(tag!=null){Spacer(Modifier.width(10.dp));ContextTag(tag)}
+        Spacer(Modifier.weight(1f));actions()
     }
 }
 @Composable fun SecondaryHeader(title:String,onBack:()->Unit) {
-    Row(Modifier.fillMaxWidth().statusBarsPadding().height(64.dp),verticalAlignment=Alignment.CenterVertically) {
+    Row(Modifier.fillMaxWidth().statusBarsPadding().height(56.dp),verticalAlignment=Alignment.CenterVertically) {
         IconButton(onClick=onBack) { Icon(Icons.AutoMirrored.Outlined.ArrowBack,"返回") }
         Text(title,style=MaterialTheme.typography.titleLarge)
     }
