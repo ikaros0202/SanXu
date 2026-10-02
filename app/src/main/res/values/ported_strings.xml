@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+  <string name="trend_window">%1$d期</string>
+  <string name="trend_position_hundreds">百位</string>
+  <string name="trend_position_tens">十位</string>
+  <string name="trend_position_ones">个位</string>
+  <string name="trend_period_selector_a11y">显示期数，当前%1$d期</string>
+  <string name="trend_occurrence_count">出现次数</string>
+  <string name="trend_current_omission">当前遗漏</string>
+  <string name="trend_average_omission">平均遗漏</string>
+  <string name="trend_max_omission">最大遗漏</string>
+  <string name="pick_condition_editor_title">编辑筛选条件</string>
+  <string name="pick_condition_type">条件类型</string>
+  <string name="pick_digits_label">数字集合，例如 1,2,3</string>
+  <string name="pick_counts_label">允许个数，例如 1,2</string>
+  <string name="pick_minimum">最小值</string>
+  <string name="pick_maximum">最大值</string>
+  <string name="pick_position">位置</string>
+  <string name="pick_pair_position">两码位置</string>
+  <string name="pick_pair_hundreds_tens">百十</string>
+  <string name="pick_pair_tens_ones">十个</string>
+  <string name="pick_pair_hundreds_ones">百个</string>
+  <string name="pick_metric_sum">两码和</string>
+  <string name="pick_metric_difference">绝对差</string>
+  <string name="pick_require_pair">要求含二连号</string>
+  <string name="pick_exclude_pair">要求不含二连号</string>
+  <string name="pick_invalid_condition">参数无效，请检查数字集合或范围。</string>
+  <string name="pick_confirm">确认</string>
+  <string name="cancel">取消</string>
+  <string name="pick_kind_required">全局胆码</string>
+  <string name="pick_kind_excluded">全局杀码</string>
+  <string name="pick_kind_position">定位允许</string>
+  <string name="pick_kind_sum">和值范围</string>
+  <string name="pick_kind_sum_tail">和尾</string>
+  <string name="pick_kind_span">跨度范围</string>
+  <string name="pick_kind_odd">奇数个数</string>
+  <string name="pick_kind_big">大数个数</string>
+  <string name="pick_kind_prime">质数个数</string>
+  <string name="pick_kind_route">012路</string>
+  <string name="pick_kind_shape">组选形态</string>
+  <string name="pick_kind_consecutive">连号</string>
+  <string name="pick_kind_pair">两码关系</string>
+  <string name="pick_shape_leopard">豹子</string>
+  <string name="pick_shape_group3">组三</string>
+  <string name="pick_shape_group6">组六</string>
+</resources>

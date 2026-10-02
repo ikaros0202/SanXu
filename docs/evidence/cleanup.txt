@@ -1,0 +1,19 @@
+2026-10-02 14:07 +08:00 — task resource cleanup
+
+Gradle: .\gradlew.bat --stop completed successfully.
+Output: Stopping Daemon(s) / 1 Daemon stopped.
+Task Gradle/Kotlin processes observed during builds (including 16500, 4344,
+28476, 30796, 31676) are no longer running at final inspection.
+
+Owned emulators: emulator-5582 (XinYue_API37), emulator-5584 (XinYue_API26).
+Before shutdown: restored stay_on_while_plugged_in to original value 1,
+reset wm size and density overrides; Wi-Fi and mobile data already restored.
+adb devices confirmed these two emulator serials before emu kill.
+Both emu kill calls acknowledged OK. Subsequent adb devices listed no devices.
+No emulator.exe or qemu process remained at the final inspection.
+
+An unrelated NewMyBook build started at 14:07 (wrapper PID 33280 and its
+Gradle daemon 47608). Its command line and Gradle currentDir identify
+D:\codexproject\NewMyBook. Those processes were left running.
+
+Only task-owned emulator resources were closed. No physical device was targeted.

@@ -1,0 +1,13 @@
+{
+  "originalPathsUnchanged": 290,
+  "originalGitStatusUnchanged": true,
+  "seedRecords": 3399,
+  "firstIssue": "2017001",
+  "lastIssue": "2026263",
+  "seedSha256": "99f0a60994ae0cd040bce79fd8804ffd74988d3f640beb7c816519fde118855b",
+  "databaseSha256": "6f06aa89665fb8664c35d84ae6c7e7ec2ae39dd9d197e1e973a4b78cfb7b3b15",
+  "databaseIntegrity": "ok",
+  "emptyUserTables": true,
+  "dependencyDirection": "passed",
+  "checkedAt": "2026-10-02T14:09:53.525317+08:00"
+}

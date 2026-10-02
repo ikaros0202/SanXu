@@ -1,0 +1,18 @@
+.gradle/
+.kotlin/
+.idea/
+**/build/
+local.properties
+*.jks
+*.keystore
+*.log
+__pycache__/
+artifacts/
+# Intermediate device captures; final and release evidence remains versioned.
+docs/evidence/api26/
+docs/evidence/api37/
+docs/evidence/*-initial.png
+docs/evidence/sanxu-home-first.png
+docs/evidence/release-dark-api37.*
+docs/evidence/release-settings-api37.xml
+docs/evidence/release-window-api*.xml

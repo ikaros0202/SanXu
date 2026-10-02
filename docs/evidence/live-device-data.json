@@ -1,0 +1,30 @@
+{
+  "serial": "emulator-5582",
+  "draws": [
+    3399,
+    "2026263"
+  ],
+  "trial": [
+    615,
+    "2026264"
+  ],
+  "plans": 4,
+  "caibao": [
+    [
+      "2026264",
+      1240,
+      1754,
+      "image/jpeg"
+    ]
+  ],
+  "liveState": [
+    [
+      "CAIBAO",
+      null
+    ],
+    [
+      "TRIAL_NUMBER",
+      "NETWORK"
+    ]
+  ]
+}

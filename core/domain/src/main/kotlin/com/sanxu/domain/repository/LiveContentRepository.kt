@@ -1,0 +1,49 @@
+package com.sanxu.domain.repository
+
+import com.sanxu.core.model.CaibaoDocument
+import com.sanxu.core.model.TrialNumber
+import com.sanxu.domain.livecontent.LiveContentFailure
+import com.sanxu.domain.livecontent.LiveContentRefreshResult
+import com.sanxu.domain.livecontent.LiveContentRefreshState
+import com.sanxu.domain.livecontent.LiveRefreshTrigger
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.map
+
+sealed interface CaibaoImageReadResult {
+    data class Loaded(val bytes: ByteArray) : CaibaoImageReadResult
+    data class Unavailable(val failure: LiveContentFailure) : CaibaoImageReadResult
+}
+
+sealed interface BundledTrialSeedImportResult {
+    data class Imported(val count: Int) : BundledTrialSeedImportResult
+    data object AlreadyCurrent : BundledTrialSeedImportResult
+    data class Failed(val failure: LiveContentFailure) : BundledTrialSeedImportResult
+}
+
+interface LiveContentRepository {
+    val trialNumber: Flow<TrialNumber?>
+    val trialNumbers: Flow<List<TrialNumber>>
+        get() = trialNumber.map { it?.let(::listOf).orEmpty() }
+    val trialRefreshState: Flow<LiveContentRefreshState>
+    val caibaoDocument: Flow<CaibaoDocument?>
+    val caibaoDocuments: Flow<List<CaibaoDocument>>
+        get() = caibaoDocument.map { it?.let(::listOf).orEmpty() }
+    val caibaoRefreshState: Flow<LiveContentRefreshState>
+
+    suspend fun importBundledTrialSeed(): BundledTrialSeedImportResult =
+        BundledTrialSeedImportResult.AlreadyCurrent
+
+    suspend fun refreshTrial(trigger: LiveRefreshTrigger): LiveContentRefreshResult
+    suspend fun refreshTrialHistory(
+        trigger: LiveRefreshTrigger,
+        requiredWindow: Int = 100,
+        requiredIssues: Set<String> = emptySet(),
+    ): LiveContentRefreshResult =
+        refreshTrial(trigger)
+    suspend fun refreshCaibao(trigger: LiveRefreshTrigger): LiveContentRefreshResult
+    suspend fun refreshCaibaoIssue(issue: String): LiveContentRefreshResult =
+        refreshCaibao(LiveRefreshTrigger.MANUAL)
+    suspend fun readCaibaoImage(document: CaibaoDocument): CaibaoImageReadResult
+    suspend fun invalidateCaibaoImage(document: CaibaoDocument)
+    suspend fun cleanCaibaoCache()
+}

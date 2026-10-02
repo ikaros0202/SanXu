@@ -1,0 +1,32 @@
+{
+  "jvm": {
+    "core/domain/build/test-results/test": {
+      "tests": 57,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "core/data/build/test-results/testDebugUnitTest": {
+      "tests": 101,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "app/build/test-results/testDebugUnitTest": {
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  },
+  "apks": {
+    "Sanxu-1.0.0-debug.apk": {
+      "bytes": 27062424,
+      "sha256": "d48d15ef67f67aa9958bdcc1b96df00d547529fd16c937b80a2dce631763550c"
+    },
+    "Sanxu-1.0.0-local.apk": {
+      "bytes": 7155141,
+      "sha256": "6fe0e0a411a30378776bf14338dffcbca536540a9dcec3b62d01d0ec5d5d0628"
+    }
+  }
+}

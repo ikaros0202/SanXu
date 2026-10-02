@@ -1,0 +1,8 @@
+Created C:\Users\jiqin\AppData\Local\Temp\tmpbw1uvkre\sanxu.db
+Records: 2 (2017001..2017002)
+SHA-256: 334487DF8284792CB527FEFBE376DAE1178201104EFCA4EBDD93E82BCCA7C17B
+...
+----------------------------------------------------------------------
+Ran 3 tests in 0.068s
+
+OK
