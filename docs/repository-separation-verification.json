@@ -1,0 +1,20 @@
+{
+  "date": "2026-10-11",
+  "project": "SanXu",
+  "sharedRevision": "4f5e1c65427f5c7c3301da10fe62557d641f66d4",
+  "checks": {
+    "setup-shared-resources.ps1": "passed",
+    "validate-predevelopment-data.ps1": "passed",
+    "trial-seed-verify": "passed",
+    "drawRecords": 3399,
+    "trialRecords": 615,
+    "python tools/verify.py": "passed",
+    "python -m unittest discover -s tools -p test_seed_builder.py": "3 passed",
+    "python tools/verify.py --audit-original": "failed: 15 historical snapshot differences, preserved without changing manifest"
+  },
+  "androidBuildRun": false,
+  "notes": [
+    "Existing working tree saved by user instruction.",
+    "No Release published; no Android acceptance claimed."
+  ]
+}
