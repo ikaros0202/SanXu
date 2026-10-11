@@ -1,0 +1,2191 @@
+{
+  "date": "2026-10-02",
+  "authorizedBy": "用户要求删除淘汰掉的历史版本图片；仅清理SanXu新工程",
+  "projectRoot": "D:\\codexproject\\SanXu",
+  "status": "completed",
+  "kept": [
+    {
+      "path": ".impeccable/mocks/approved/distinct-permutations.png",
+      "bytes": 960145,
+      "sha256": "a7bd1bd299fd48b0a167481d5bb14b0a431b4ddb3768ceb536f46240a0c960fc"
+    },
+    {
+      "path": ".impeccable/mocks/approved/single-direct-edit.png",
+      "bytes": 1008433,
+      "sha256": "c8999e01ceea39813b08483ae0894393a80e3e132354b192fc516f8945ad2645"
+    },
+    {
+      "path": ".impeccable/mocks/number-studio/home-dense.png",
+      "bytes": 976231,
+      "sha256": "6711f53c5f01880842959cb5f2ef9351558938dd617a09dd720e2231d23c795d"
+    },
+    {
+      "path": "docs/evidence/release-1.0.2-api26/home-dark.png",
+      "bytes": 178212,
+      "sha256": "e75a313ca4a9a1540b59b623733034c3566fc7897370a6978104d0c64e783333"
+    },
+    {
+      "path": "docs/evidence/release-1.0.2-api26/home-light.png",
+      "bytes": 175806,
+      "sha256": "827eb9bd7dfe1477edbdbc920f825fa3825e7e30a6047054acd2371f3ea4f78d"
+    },
+    {
+      "path": "docs/evidence/release-1.0.2-api26/pick-position-dark.png",
+      "bytes": 168178,
+      "sha256": "17863b641701630b8a8f4c150d59235e39791457a90e4ee3c3fc1ed39dde90d7"
+    },
+    {
+      "path": "docs/evidence/release-1.0.2-api26/pick-position-light.png",
+      "bytes": 165794,
+      "sha256": "ff7250ad4cec0393eb743755571ca94f3f135aaba3ca942569c2eea75c316aae"
+    },
+    {
+      "path": "docs/evidence/release-1.0.2-api26/plans-light.png",
+      "bytes": 144140,
+      "sha256": "4adcad6a4488a5cc9cf26a25045af2d10c922c887c94596f4f78f3861d9861d5"
+    },
+    {
+      "path": "docs/evidence/release-1.0.2-api26/trend-dark.png",
+      "bytes": 222705,
+      "sha256": "98d3d21239ec7388a8f85136e83c7a9c64fb39cbcde2eb06a3b2dace3a99ca20"
+    },
+    {
+      "path": "docs/evidence/release-1.0.2-api37/home-dark.png",
+      "bytes": 166543,
+      "sha256": "681369fd11f784dcb88046195996b6849ba34e7566aa83f534b9c07e47167d4c"
+    },
+    {
+      "path": "docs/evidence/release-1.0.2-api37/home-light.png",
+      "bytes": 165363,
+      "sha256": "49c6d955210cc205c0f9e64d1779b2a4cfa221541986c350cf6b3469e6f7b704"
+    },
+    {
+      "path": "docs/evidence/release-1.0.2-api37/pick-position-dark.png",
+      "bytes": 156829,
+      "sha256": "442ade26ccd79f17bcfb64a04203a12db2b4c623bdcf17ca14a1d7dc25bfe59c"
+    },
+    {
+      "path": "docs/evidence/release-1.0.2-api37/pick-position-light.png",
+      "bytes": 155682,
+      "sha256": "0bb2c1c2d1b33e91009ac6e34524890ac197e2c70d5437c03400a06e85e082eb"
+    },
+    {
+      "path": "docs/evidence/release-1.0.2-api37/plans-light.png",
+      "bytes": 134687,
+      "sha256": "d1f87e6054a010aab6ca95ba515509c9e9d08c3f9be0f11aafd8684b14227c94"
+    },
+    {
+      "path": "docs/evidence/release-1.0.2-api37/trend-dark.png",
+      "bytes": 228569,
+      "sha256": "af36a74233b2f515270eb4fc06e437f1215ba5256f8423d42d10f3ab13640cf2"
+    }
+  ],
+  "deleted": [
+    {
+      "path": ".impeccable/mocks/home-compact-v2.png",
+      "bytes": 1096729,
+      "sha256": "7c19d5c7551bd5c220fcec92486e721b406400e4026a4487fda479d7a59443c4",
+      "reason": "superseded-or-unselected-design"
+    },
+    {
+      "path": ".impeccable/mocks/home-direction.png",
+      "bytes": 991864,
+      "sha256": "5cc3aadd6b8f558632838d859da0072f55b5140f83e91eb2de7982f4e0253cb1",
+      "reason": "superseded-or-unselected-design"
+    },
+    {
+      "path": ".impeccable/mocks/pick-a-horizontal.png",
+      "bytes": 988323,
+      "sha256": "0a5c902946743354b2a8841d49a6dea0b867947d68419e2cf90d2232a07dd3d0",
+      "reason": "superseded-or-unselected-design"
+    },
+    {
+      "path": ".impeccable/mocks/pick-b-accordion.png",
+      "bytes": 914577,
+      "sha256": "262ad00852dbde84c03dacaea0f9015160eedf96b650d61153581e88da2f6ccf",
+      "reason": "superseded-or-unselected-design"
+    },
+    {
+      "path": ".impeccable/mocks/pick-b-compact-v2.png",
+      "bytes": 1112466,
+      "sha256": "1a1ee0d267b11fd274c4ebc7f555636b4c00e89fc8b7b6124ea3c229a2b3a062",
+      "reason": "superseded-or-unselected-design"
+    },
+    {
+      "path": ".impeccable/mocks/pick-c-preview.png",
+      "bytes": 1009625,
+      "sha256": "33a540585cf981d80f220dc60d6824d8e90277290b47a1dcbe5c77732db036a8",
+      "reason": "superseded-or-unselected-design"
+    },
+    {
+      "path": ".impeccable/mocks/number-studio/a-split.png",
+      "bytes": 954053,
+      "sha256": "857c164bcef3cb9ee7e68f4db9640d7eea9b50529a3516bd2208c41d54a07e81",
+      "reason": "superseded-or-unselected-design"
+    },
+    {
+      "path": ".impeccable/mocks/number-studio/b-results.png",
+      "bytes": 955879,
+      "sha256": "ccad8ed81f7fc58494caedde7c98c5646d23498a03e34de3d097bf755060fec9",
+      "reason": "superseded-or-unselected-design"
+    },
+    {
+      "path": ".impeccable/mocks/number-studio/c-assembly.png",
+      "bytes": 965352,
+      "sha256": "b52267bb9a24a07a93548f53d094b42a4b42241c3de48929cb8736d7b0e5b9a5",
+      "reason": "superseded-or-unselected-design"
+    },
+    {
+      "path": ".impeccable/mocks/number-studio/d-permutations.png",
+      "bytes": 961970,
+      "sha256": "1379fdccc78d52b12c02777bf2a830aefb30232ee4c32b7e0ad3918a86bd03f5",
+      "reason": "superseded-or-unselected-design"
+    },
+    {
+      "path": ".impeccable/mocks/number-studio/e-quick-entry.png",
+      "bytes": 1016876,
+      "sha256": "8ea2608510b6cfeff12d6a4d73debda58e3de689f8a37a0cf72ccb9b95213857",
+      "reason": "superseded-or-unselected-design"
+    },
+    {
+      "path": ".impeccable/mocks/number-studio/f-direct-edit.png",
+      "bytes": 941054,
+      "sha256": "27d2e562928e1fa347104e726adbf70476781a61ff9669159073ff741eec6982",
+      "reason": "superseded-or-unselected-design"
+    },
+    {
+      "path": ".impeccable/mocks/number-studio/home-first.png",
+      "bytes": 985227,
+      "sha256": "33cd8cceda5b279ceb7ded51c626280fcb3a5e2ec1aea4bf68c88acca066cede",
+      "reason": "superseded-or-unselected-design"
+    },
+    {
+      "path": ".impeccable/review/api26-contact-1.jpg",
+      "bytes": 251447,
+      "sha256": "d4a16d37b1e9363fea16f9a7026cbd0505413079e2e6fd274847f2eda1588613",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": ".impeccable/review/api26-contact-2.jpg",
+      "bytes": 245210,
+      "sha256": "128bc21219d2a20b58e8d07dd471b7b6822d0da0e32e0d1d1abca67ff265061b",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": ".impeccable/review/api26-contact-3.jpg",
+      "bytes": 324798,
+      "sha256": "55fa36fd5c5355fae1c7adc9491e546381eedce21ad97f53b5c7e037cda1b477",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": ".impeccable/review/api26-contact-4.jpg",
+      "bytes": 279133,
+      "sha256": "d957d8d3151ed2044d59a25e25a8de78534b2534e96ad56ca829d93d921be392",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": ".impeccable/review/api26-contact-5.jpg",
+      "bytes": 258723,
+      "sha256": "08bef3526299e667875e1fb38da4e2dfa5e44fdfb2535dfe9695207376febad9",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": ".impeccable/review/api26-contact-6.jpg",
+      "bytes": 103380,
+      "sha256": "ccea68f32a2eb57d767ea2e3ce504ebfced2d1c6a2999d75614d025bfe22c1fc",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": ".impeccable/review/api37-contact-1.jpg",
+      "bytes": 235285,
+      "sha256": "6ce25f2891673f8edff30470545cfc435fe83e7ef8f6fa84b357f81ac4f30dae",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": ".impeccable/review/api37-contact-2.jpg",
+      "bytes": 230550,
+      "sha256": "5fa87fdaa34e726436bb792ed24776104b61fd295853a4e30f8697dfcc081710",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": ".impeccable/review/api37-contact-3.jpg",
+      "bytes": 325864,
+      "sha256": "db587d97b38ab0256184f2474821f5b461bda27c1f1bc4da296f5c9508a97b3a",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": ".impeccable/review/api37-contact-4.jpg",
+      "bytes": 265832,
+      "sha256": "ecb133976ecd681cf5836126b2e9fb88004799c3c4ee50d91e8d0c9f77e403c5",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": ".impeccable/review/api37-contact-5.jpg",
+      "bytes": 249294,
+      "sha256": "89c1a2a4e337da2abeb6e1bd9ae592ccebe8501e91c3ff043ac19ee34c85e0e6",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": ".impeccable/review/api37-contact-6.jpg",
+      "bytes": 106903,
+      "sha256": "b9816573c7770c089d7335e860ab89676172e804b1be4b5f4c050fdb4e73bb00",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/api26-initial.png",
+      "bytes": 120255,
+      "sha256": "e27bb180e0bd8757a88ae64dacbe980e569ad8fbe7b874671069e0d9739c3a96",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-release-overview.png",
+      "bytes": 210387,
+      "sha256": "1ddecc70bb627dc75d6942d519a5202a61e10243435dddb627120133c70fb1a2",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/release-dark-api37.png",
+      "bytes": 200757,
+      "sha256": "6cee486026afe62a7fc11b9ecb989272e80ea620e2ee1d099b050b6dec2452d2",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/sanxu-home-first.png",
+      "bytes": 183128,
+      "sha256": "c05a262ded34b105243205c795efa86d747808f94a7b68650fe9b030cbbfa951",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/sanxu-initial.png",
+      "bytes": 15580,
+      "sha256": "46347d0137822dc9c6e942063b63b14fbd9efac25487e8447dadea9f6637fd9d",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/api26/qa/home-dark.png",
+      "bytes": 176280,
+      "sha256": "fd278145ca60f3a186c6b27078bbd949753af9b5f211986d35d685885ea0425d",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/api26/qa/home-light.png",
+      "bytes": 175819,
+      "sha256": "e317d3ddc6332a423e47fd47b10941d4036f107f169d0ff00caf8310726e8028",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/api26/qa/merge-dialog-light.png",
+      "bytes": 59296,
+      "sha256": "55fa3472d0fbf54a4950b60ad8940bec5dde767027ea7f8fd43634ab14646f5f",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/api26/qa/pick-distinct-light.png",
+      "bytes": 184115,
+      "sha256": "36491806a9b1006244035d3eb964ab1cc6c20b16f94f42cce1569d9a98b43cc5",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/api26/qa/pick-group-light.png",
+      "bytes": 160245,
+      "sha256": "59d450fa316f1ce4ceea078327b029883a40b5f36c57f5d9d8b762ccc0b08100",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/api26/qa/pick-position-dark.png",
+      "bytes": 167285,
+      "sha256": "bae06b8e44125cd7189463a9b0afe23fd8683f37e1c0361c3947b8433c328c36",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/api26/qa/pick-position-light.png",
+      "bytes": 159780,
+      "sha256": "36e8ffccb174aefc9ee4c1b75a8f1752df47dbac2a9bb59f1b5efea6affc51e5",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/api26/qa/plans-dark.png",
+      "bytes": 163975,
+      "sha256": "4434694aa3c6406765fe1b558094721a0788936877db50ea9f9067e2b8003726",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/api26/qa/plans-merged-light.png",
+      "bytes": 160180,
+      "sha256": "faf0edf952bba3cb4bd5e76ba7fe4b8ad5c758da3fce1f955351816014bd3b4f",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/api26/qa/trend-dark.png",
+      "bytes": 212348,
+      "sha256": "4c6af315a95c38aaa54996ebab73903ff74a44dddac3f4aa0402c48f1437c6d6",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/api37/home-dark.png",
+      "bytes": 168446,
+      "sha256": "cab590d8683520e21a0bdc140065b340754b57bde4d16156ce252149359cdd65",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/api37/home-light.png",
+      "bytes": 171930,
+      "sha256": "632f5bdf77fb66b20c27d3d96fae264c9a802f9b64044c0c990a57fc82a3a597",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/api37/merge-dialog-light.png",
+      "bytes": 178428,
+      "sha256": "080de7936194f402d346f7b63e5e8962a7d365899788555c5c94596def49220f",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/api37/pick-distinct-light.png",
+      "bytes": 184349,
+      "sha256": "bef4a6fd92d64cad01640f14732ab1611d074c879f309a5dd3304a7c9d3e859f",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/api37/pick-group-light.png",
+      "bytes": 161349,
+      "sha256": "d2d51cac86715daef10c4bedbee0fdc62516faf435543bea22889055c69fe3b6",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/api37/pick-position-dark.png",
+      "bytes": 162953,
+      "sha256": "4cd4fe62570b2fe9de51f472c1f6d2980965e163df0225b04060e83a10aa98c3",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/api37/pick-position-light.png",
+      "bytes": 165360,
+      "sha256": "447bced25e161a555e02fc68cf6cfa76859d80b2d50655f8dc61dc7c47ce4e9e",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/api37/plans-dark.png",
+      "bytes": 163152,
+      "sha256": "c9eeae05b820f9ab9b39345814117a8469a5e0dfbf20034800194b8b1e2b6306",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/api37/plans-merged-light.png",
+      "bytes": 149433,
+      "sha256": "07eda513ebb70835368df3c6f871acbe5dc05ed36f08813dc437d0883e81ef25",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/api37/trend-dark.png",
+      "bytes": 109044,
+      "sha256": "40b0870d1731b30a942f93043c371ee5e2e4fe14ab92db5f6325bb0f1117cbf1",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/final-api26/home-dark.png",
+      "bytes": 186901,
+      "sha256": "79b5a88ff8b42598936f7703508c906786db8cb5734240234c1d77d90f44bf03",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/final-api26/home-light.png",
+      "bytes": 186318,
+      "sha256": "6b4a751148f077829dea615ba13e08078cf07263a3a7bcb188725a42c8d8fcfe",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/final-api26/merge-dialog-light.png",
+      "bytes": 59296,
+      "sha256": "55fa3472d0fbf54a4950b60ad8940bec5dde767027ea7f8fd43634ab14646f5f",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/final-api26/pick-distinct-light.png",
+      "bytes": 184076,
+      "sha256": "ab247bab877f9252dbecb75895a7dc36524ca4477c191c5d3905202f646bf6d5",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/final-api26/pick-group-light.png",
+      "bytes": 161486,
+      "sha256": "dbe55f2185c374fc3a3ffc71ff8690a9944f98c81507a80a1f382c4d418cf3e3",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/final-api26/pick-position-dark.png",
+      "bytes": 166029,
+      "sha256": "eb5e03014403b5fc25575c85ee5520605868d68171bebe31abe14015f0cb18a3",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/final-api26/pick-position-light.png",
+      "bytes": 159780,
+      "sha256": "36e8ffccb174aefc9ee4c1b75a8f1752df47dbac2a9bb59f1b5efea6affc51e5",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/final-api26/plans-dark.png",
+      "bytes": 163830,
+      "sha256": "3929c9e0b63b08361f4bb3541b94dc5ccdacc1e19707525faa7420934a324ecc",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/final-api26/plans-merged-light.png",
+      "bytes": 160180,
+      "sha256": "faf0edf952bba3cb4bd5e76ba7fe4b8ad5c758da3fce1f955351816014bd3b4f",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/final-api26/trend-dark.png",
+      "bytes": 212834,
+      "sha256": "4c4dcb0808da75e8ba230254ac025fe9ed01514f137c04a2684d8f8701e53a4f",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/final-api37/home-dark.png",
+      "bytes": 168718,
+      "sha256": "579948a95e606f2b9d3fe3b786d4250c672ac0fac66592ebbb12c9113bd4c815",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/final-api37/home-light.png",
+      "bytes": 171281,
+      "sha256": "2f61127e6f60b2486a50d76f933c5784e96e36fc07fa7e956b59899b90daf0ae",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/final-api37/merge-dialog-light.png",
+      "bytes": 185456,
+      "sha256": "530ef0bb23e8508776b93eab1a6e38b6ebabd892cc0a8b874d5954462cc4bdc3",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/final-api37/pick-distinct-light.png",
+      "bytes": 181320,
+      "sha256": "86d78824f1be9a47e58caba8b28df2882be6dc3780d219694a79f1ac93db5dfa",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/final-api37/pick-group-light.png",
+      "bytes": 156607,
+      "sha256": "ac80c09ff231975834526926fe09ef49d7c988fc6ded690901f2b120c62630c3",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/final-api37/pick-position-dark.png",
+      "bytes": 161407,
+      "sha256": "19246c4ef72ea4e0903db0793843a532498f943c7db9850453ad85889dd9ec89",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/final-api37/pick-position-light.png",
+      "bytes": 162850,
+      "sha256": "340380bccc97670dbbe1972f6cd01055fa4920dd25155386562781f00f5d93b1",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/final-api37/plans-dark.png",
+      "bytes": 164065,
+      "sha256": "e1fab8fb7253fce7c22f509dd745c4f037c9ea6aef74869906de094040f6f8d8",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/final-api37/plans-merged-light.png",
+      "bytes": 158451,
+      "sha256": "3b79dbabcd7f70a4f05f8fc704227b224e477c2d10253e35f2d59c7e3ce1fcb1",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/final-api37/trend-dark.png",
+      "bytes": 199624,
+      "sha256": "4f06d06edcf91c8c23cfab6321584250d4a9f5c9a20ad7299bd9f8e992e921dd",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api26/backtest-dark.png",
+      "bytes": 155841,
+      "sha256": "cb7fc32b819619cbeb2e152473cb1698d215de85bf560abd082509fe113ff4be",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api26/backtest-light.png",
+      "bytes": 153233,
+      "sha256": "413b9b6dc4de7ba9d25b8fc4d75952716408ff82d2c2b7e339374b6bda512d40",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api26/batch-dark.png",
+      "bytes": 160908,
+      "sha256": "1aa5a9ba4362cfbfdd8e6f9a4fc9ef7871a7faf0e41f6ca91faeffa84391af97",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api26/batch-light.png",
+      "bytes": 160890,
+      "sha256": "0f1ddafd9f30d43d62cad1384499daa7bd968cd2b88c28f83c0260d4d3a01335",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api26/condition-editor-dark.png",
+      "bytes": 134069,
+      "sha256": "d8f0588221e798cc9d5b8b1aeaf16b0ccc38185a18b5a31cc52ed279d92d4b50",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api26/condition-editor-light.png",
+      "bytes": 132247,
+      "sha256": "ff9264febffda5ba3282def3939b21a11e25c0b740377ceb113784173c8dc3b7",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api26/condition-types-dark.png",
+      "bytes": 136157,
+      "sha256": "174b036088a0b038e3e193dd5689b88a6fb8dcb3063693a61f16f08ab1e36138",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api26/condition-types-light.png",
+      "bytes": 134739,
+      "sha256": "8db5f9913388edc13a1d0bcac57e7f2b4a5f8c33e09e02499ba02036f8c6a1c0",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api26/fixture-pick-empty-dark.png",
+      "bytes": 139682,
+      "sha256": "1077702ec29510c048be0266677c156f339316e1cfc6e1489998faefedea7a5d",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api26/fixture-pick-empty-light.png",
+      "bytes": 138987,
+      "sha256": "f612d7e38e0140fe903aa050be180a895cf32a30ec62beb43c9c2e45ca532736",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api26/fixture-plans-empty-dark.png",
+      "bytes": 89774,
+      "sha256": "ede01a9dc129dbfc217a979c83f68f566fdadd8b490ecd6f38fc872aceb79f10",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api26/fixture-plans-empty-light.png",
+      "bytes": 88859,
+      "sha256": "4a5c8f9f61d3906578ae3cecd397ab2c5c73bdfe99d2f4dd9c11d93ce60a6f55",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api26/fixture-report-unavailable-dark.png",
+      "bytes": 90706,
+      "sha256": "7818ae72f755d65f9bce4924544abf5083a09ae2b5415af15ced956472ba7f39",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api26/fixture-report-unavailable-light.png",
+      "bytes": 89609,
+      "sha256": "5b349a5b12d374656956894d97b1e58d5af12e20b7d4b1452e54c5038ef2ab7c",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api26/fixture-report-with-issue-dark.png",
+      "bytes": 94698,
+      "sha256": "ab895ec8b6743204234fcdd3e709b9eecf6ba8f940cb73aaca1954107652dca2",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api26/fixture-report-with-issue-light.png",
+      "bytes": 93739,
+      "sha256": "e23c4a25cfeaab7f1cdc649dcb6c55f44b085352a0c9b748f56fff8cece2f242",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api26/fixture-trend-empty-dark.png",
+      "bytes": 74681,
+      "sha256": "03cbfbe460fe68d1dda5b761dc5035f3a00fbcc1e8122276647512ff6a2a3f73",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api26/fixture-trend-empty-light.png",
+      "bytes": 73781,
+      "sha256": "5b3949995f597815fee7f441dec31ea92b56a4df6f22184ac866671e595b1363",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api26/history-dark.png",
+      "bytes": 166331,
+      "sha256": "1a713a24447c8dfbc868310555f87b33b2deb0b89db38a88278c0e4224c3373a",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api26/history-detail-dark.png",
+      "bytes": 176755,
+      "sha256": "85b42ff66719a9ac80e02d31fcf508fcc66f64853b8f8eaefe0cfca5f7340cb6",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api26/history-detail-light.png",
+      "bytes": 174452,
+      "sha256": "ee98b8029a9581df0ef99a7fb09c783167638db04007d5eab82cf54ca9bdb107",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api26/history-light.png",
+      "bytes": 163701,
+      "sha256": "290b86724b1ba1ba64a1f809ea5c9b0c20d1ffef94b65bdf42b51a6c9ae441bd",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api26/home-dark.png",
+      "bytes": 161533,
+      "sha256": "b28489f6ddb74058c855aa0aa27a74d61c9338cf0ae1b6bbbcf4fe116c954dea",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api26/home-light.png",
+      "bytes": 159228,
+      "sha256": "74432050042411de28b686bdf8434fcc4a1b4febe749e71a2d8006a437480008",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api26/home-offline-light.png",
+      "bytes": 172517,
+      "sha256": "08ceffb6b4f8b00d96a1ec8a18b81113ffcec1007c9ec38d3a9e9bf3968781df",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api26/issue-dark.png",
+      "bytes": 152092,
+      "sha256": "e3ad4da6780ab72d5223f65de3cd5a80b9588485330b4bfc3cdc985df52754b5",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api26/issue-light.png",
+      "bytes": 150339,
+      "sha256": "35363fc29e82906778c0c9ce331ff1e671e05900e150e6f32fbe4a8b771f6895",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api26/notes-dark.png",
+      "bytes": 213485,
+      "sha256": "cd01f89c039e15fcd8f233a1c7a0ca4bc26aff6476d892a32309899a7891498c",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api26/notes-light.png",
+      "bytes": 211192,
+      "sha256": "c7a5e12a2a88206fa07dea99e5ff568bc52381b9a8d2fe65c2bd733df557c573",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api26/numbers-dark.png",
+      "bytes": 144159,
+      "sha256": "1cc2cfd47ce0de9ab502d6243d318d5c2f43a6b1f7925ab363343bc7f0cd89ba",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api26/numbers-light.png",
+      "bytes": 140849,
+      "sha256": "e32f40be4a1874ff8ccb0939b84b1f2f5c052e55231b929907e9b8fa48cbae23",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api26/pick-distinct-dark.png",
+      "bytes": 149563,
+      "sha256": "844dcdb9edb6a7c1c1e61c9105feeb51f3cd586cc81afa178828595b9bcfd1f8",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api26/pick-distinct-light.png",
+      "bytes": 146787,
+      "sha256": "fae1ad1a117d299d50527237d8ac019a4d9d41fda0e87a80141b0c04094d39d5",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api26/pick-group-dark.png",
+      "bytes": 148490,
+      "sha256": "1ff58a245e8621608632f41411c0525965067cd284f3f611ab956c37a2938978",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api26/pick-group-light.png",
+      "bytes": 146027,
+      "sha256": "db0a0992f02c1a324a7d741ba33a838416f7b8bc3ae25a158e4b1a42c6b9d157",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api26/pick-help-dark.png",
+      "bytes": 201738,
+      "sha256": "0c25165889aef5e680ec9e3ec1f4a7fda8cb6f9e9150f2e54fb4a76cc1a50fd4",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api26/pick-help-light.png",
+      "bytes": 199261,
+      "sha256": "1371130b46d08a500551bdea77f6e16ec6fdde46e2da14c0321c21039443ce76",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api26/pick-position-full-dark.png",
+      "bytes": 160552,
+      "sha256": "a4bde7819774c39fc00b38aea4fabb51c8852fe4cc15329d91a85f1c02cee473",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api26/pick-position-full-light.png",
+      "bytes": 157583,
+      "sha256": "4b2717a12e33dc3f6b4a9f005b13bb6c0486b12b556db86d67664348fc062592",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api26/pick-single-dark.png",
+      "bytes": 134924,
+      "sha256": "9adb3219e32aad16fc6a544921e0727b6ff0cb0ec49129c98ee435a638efffc6",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api26/pick-single-light.png",
+      "bytes": 132954,
+      "sha256": "c27d97bfbac6b155b4616af077586d328206d011627c88fbee98e4dcd7406bf0",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api26/plans-dark.png",
+      "bytes": 132970,
+      "sha256": "a83b06d0136ddc3ab3af0d940716da217a841e836607b1495419f83594daa0b6",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api26/plans-light.png",
+      "bytes": 130198,
+      "sha256": "e50cbcaedadda0ffdbcef68723bd9fd86d52d9e8f165eb1f443a5e5d0c6cc17c",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api26/settings-dark.png",
+      "bytes": 152939,
+      "sha256": "101826458a4550333cc2fc32046f10ed9f16d6837f1830224818999bfaf49aac",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api26/settings-light.png",
+      "bytes": 150014,
+      "sha256": "de4ff57153fb386e19fd7d84f636b0cb9e38b4dbd1c942d61c8b38d81c740b5f",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api26/sheet-tooltip-regression.png",
+      "bytes": 189539,
+      "sha256": "9743f725dfa34c9e7c2dc188d597e88b57a81559b12e80c85e7015c2786b4e7e",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api26/source-delete-dark.png",
+      "bytes": 154231,
+      "sha256": "dbf6c4799558bfa9820c9ab98314104fca6f4801ea1d94ee23922e0a76bb7288",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api26/source-delete-light.png",
+      "bytes": 152065,
+      "sha256": "4f5b7f57761c38237c379ee4b4eeacd15e908d5587e6bd28edc06c73028aea87",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api26/source-detail-dark.png",
+      "bytes": 131024,
+      "sha256": "4a4bb8cc01eda31e5c37e28d3b759fd0d5b51e83c09d28e40af978eaf611c27c",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api26/source-detail-light.png",
+      "bytes": 129255,
+      "sha256": "07fe43379d4348793d7b89b081f6fb8c8a5c3c51c296718f281cef77286d0fbd",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api26/source-edit-dark.png",
+      "bytes": 134802,
+      "sha256": "d64e7f57e1628b09b70bd14d9d51286e058b47563f7863ff76d1630d20ef7bc3",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api26/sources-dark.png",
+      "bytes": 140170,
+      "sha256": "cc4943343ddfd289831b2694d41d7479149d2deffc70820bf68be21e650efecf",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api26/sources-light.png",
+      "bytes": 137617,
+      "sha256": "8f2dabdadce30ba2f4007c9cb614df8914607caf66d4fd97cb632d14ef324f26",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api26/template-full-title-dark.png",
+      "bytes": 177824,
+      "sha256": "5fc4353d9c8016b833dd2113c5fd37996ec638e31f3e2c611351b7dbac1e5adb",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api26/template-full-title-light.png",
+      "bytes": 176091,
+      "sha256": "dd0a76ba5e2716c0740d2607487483376549b7500e590a62ad44d39bf02714aa",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api26/templates-dark.png",
+      "bytes": 125724,
+      "sha256": "f90814ce9136131b843cedc192029237127e7461cc31a7f21ca3a16b47571b6e",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api26/templates-light.png",
+      "bytes": 123564,
+      "sha256": "abbd5203f90ffc6bbfcaef9c11402969bdf53338ab6757d02ecdfddf3609ddd9",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api26/tools-filter-dark.png",
+      "bytes": 118944,
+      "sha256": "c2c87fcbb68be2d7a28d20d8d672219dda0d5f7e1fbc9fd58c590e0723a96bc0",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api26/tools-filter-light.png",
+      "bytes": 116417,
+      "sha256": "645b78a161ef9901d1ca205ca8015fd1a82144040e7e23bd34b6139afe9565bf",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api26/trend-dark.png",
+      "bytes": 199478,
+      "sha256": "09ad241ae65d6ced5f66bb9b5b829231050aed32e01e95b5bbef3972d238dc1b",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api26/trend-help-dark.png",
+      "bytes": 222517,
+      "sha256": "4f923c7ed1d776960701461720c3e123f34233cd6fc92c3f625b429bf8097c72",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api26/trend-help-light.png",
+      "bytes": 220364,
+      "sha256": "602daeb1f3d21a3e1ebbad20c4142042d2283520ba2da49cdfb9d6f8b05aa2d4",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api26/trend-light.png",
+      "bytes": 196363,
+      "sha256": "5c9be346e1869b88fe7a7bd6bdb98fc7cb9e3bb408dcda76d319ed830e3ca154",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api37/backtest-dark.png",
+      "bytes": 150815,
+      "sha256": "ffe455cda0d10798f7af2b4c763563c1a96aa4fca1e0a925f5b0198760ea74a5",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api37/backtest-light.png",
+      "bytes": 150365,
+      "sha256": "b86bb777fa9ea73b9e9a7842246159166a56640b07b38de6260763e070d4c156",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api37/batch-dark.png",
+      "bytes": 134552,
+      "sha256": "210310d7432bc3c54b0eed6f565b8a420a9d197329b0fb591cf7a07d7228bca1",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api37/batch-light.png",
+      "bytes": 134030,
+      "sha256": "4393ded9bd1b796162c75c887d0e951c0aa86b1d74af80a58b5fb09f77763198",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api37/condition-editor-dark.png",
+      "bytes": 124741,
+      "sha256": "ffbc676db4c1ffa8228af8a940ced109044561006f0851000184b5bb7896ea02",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api37/condition-editor-light.png",
+      "bytes": 124584,
+      "sha256": "ddaadfbf5f7ad8152f87360ce53eddad3640aeb6d5c9e80c703830ec184d9f86",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api37/condition-types-dark.png",
+      "bytes": 142415,
+      "sha256": "2d50822bc62ec8209948724dabba84f16a8b340474a7d26f4064d1f031788940",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api37/condition-types-light.png",
+      "bytes": 142282,
+      "sha256": "8d8ce769c8d5b475436d9a579ecd60c3c4a532506efb72abf7805bf153bef2b6",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api37/fixture-pick-empty-dark.png",
+      "bytes": 131992,
+      "sha256": "869938f35ee63060707229442d270ce855a1c260a8b653791c14aa71922ababd",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api37/fixture-pick-empty-light.png",
+      "bytes": 130832,
+      "sha256": "a1f25b8862bb8271cc6d4994337e17c14fbadb91821c479ba226a33342c07f25",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api37/fixture-plans-empty-dark.png",
+      "bytes": 83037,
+      "sha256": "6b3444368b36e30b2d8d9bf2e2e9a1f172a1d77c66b2046a6c4b1e44995b3d8b",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api37/fixture-plans-empty-light.png",
+      "bytes": 81478,
+      "sha256": "3fea6a1e260b6ab30128028220c21f0a45be9009d0bc8a4764108cc7374dad7f",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api37/fixture-report-unavailable-dark.png",
+      "bytes": 84512,
+      "sha256": "8e691688fa658d31d28dd229220146153d6858a976ca0da8dcc3c9778511c93d",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api37/fixture-report-unavailable-light.png",
+      "bytes": 82775,
+      "sha256": "e5e447a9bf9f38790bba3bfc389f806e4093d35abd5ed6a02f60d3c40af21275",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api37/fixture-report-with-issue-dark.png",
+      "bytes": 88377,
+      "sha256": "8efdb431980f2d81548fbe931c91488b1f5378c083cf604e7fdda713ec96a81e",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api37/fixture-report-with-issue-light.png",
+      "bytes": 87053,
+      "sha256": "d4fff9418c6c881c566fc8c5d98ed6f2729cdf98aac79de1080f5dbf02a07069",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api37/fixture-trend-empty-dark.png",
+      "bytes": 69763,
+      "sha256": "74803b0b04c88890ee96dd1fb8fc4ddd04af1b26f426af165331f3cfe012d92c",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api37/fixture-trend-empty-light.png",
+      "bytes": 68581,
+      "sha256": "a81cc74b8e7541d253ee125c63f133f33835cec21c2b836d0c7c6c366de2ede8",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api37/history-dark.png",
+      "bytes": 161811,
+      "sha256": "21553aca00f185f4f6b71f76df4c2bf5f6a6fe5f940f47c8f2b306d8654cdc8b",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api37/history-detail-dark.png",
+      "bytes": 161481,
+      "sha256": "d191bad4d5add76a78be453b3b92f0a03db403dafa747ec6edc9dcac9dc6ecfa",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api37/history-detail-light.png",
+      "bytes": 160196,
+      "sha256": "dc6a3f5d32304601b01f7c05c6d40ab85c8a1da4d319c90ef22ff483c92355f9",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api37/history-light.png",
+      "bytes": 159492,
+      "sha256": "6fe6781aff3da16b624d4792357620d5a00a6d91b8399c4e01e2a5115dbd6389",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api37/home-dark.png",
+      "bytes": 151055,
+      "sha256": "69655bc5c0c1bde8585dc3ad2fc42846e28795c7160628af4ce77e8789a9d460",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api37/home-light.png",
+      "bytes": 150167,
+      "sha256": "a26ad72c2459a305a71b3ef7e9eb248b087e617f50df106869738994f037d1e7",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api37/home-offline-light.png",
+      "bytes": 176585,
+      "sha256": "a308025b871f3c88f0039f2b6842dbc1225eaa8202a179b22f223ee7349aa9db",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api37/issue-dark.png",
+      "bytes": 151509,
+      "sha256": "17716789fe219b39b6e68029932eae0c9ac45c694bc293dd13b5d2f62d641da3",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api37/issue-light.png",
+      "bytes": 151724,
+      "sha256": "1ca97c985b40c1d1c5207c063bc855f1458714f210df88c41ea5c0db8cb7eb67",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api37/notes-dark.png",
+      "bytes": 209613,
+      "sha256": "171e2d312e9a3f47c841877e231cf7db43e3e09d8c3368f4199a24387528960e",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api37/notes-light.png",
+      "bytes": 209029,
+      "sha256": "dc46e4791332ad7a7776f308fc598a0aceb3a386d68fc9d039017c563b146eb5",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api37/numbers-dark.png",
+      "bytes": 144862,
+      "sha256": "b1cc561298547988734537f83173bb542f01e5ba92b0aedbdf1198d7e66db233",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api37/numbers-light.png",
+      "bytes": 142842,
+      "sha256": "5c676c8af35bd1bcfc83d57d3b5543c8e598817d95ce053d2b3a2fbbb81c2ce0",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api37/pick-distinct-dark.png",
+      "bytes": 139746,
+      "sha256": "273f9d3457e2cf129a76077d67706757c4a06e7cfb33ce20a50e456eb176697c",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api37/pick-distinct-light.png",
+      "bytes": 138225,
+      "sha256": "5c0187035d617e7d2c8f1d98b2d1575211cf3efcae63038cf3845bbded8fd496",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api37/pick-group-dark.png",
+      "bytes": 138588,
+      "sha256": "d42a4464a7da4a12b231d005714ccc79477e65c3b3637ca0e639f60195769780",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api37/pick-group-light.png",
+      "bytes": 137115,
+      "sha256": "40e773448816f2d5fa91c454f67579840a7d69805e74e1fd3fc47b3a44484ffe",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api37/pick-help-dark.png",
+      "bytes": 194779,
+      "sha256": "e17e65a4341cbb2104aad7dad440903d533874dc39f7ac396715aed76d5c595c",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api37/pick-help-light.png",
+      "bytes": 194091,
+      "sha256": "95a5cb41338bece6a76c2e9440fbfb705357612c8d7145ea3f999a052f7a32e3",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api37/pick-position-full-dark.png",
+      "bytes": 150981,
+      "sha256": "a59b7a8fe3c5a534472927c5e30bb2ee5cc29b13b85f13576a62ed5af56ba097",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api37/pick-position-full-light.png",
+      "bytes": 149615,
+      "sha256": "ff7df82f279c754b027e55ac76dde9355268f5ac1829d1e61caa985d67f6162f",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api37/pick-single-dark.png",
+      "bytes": 127089,
+      "sha256": "e2812de726b3db5d3c657529c2a160a9fd060b382f94c5fe7b0117213df4822e",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api37/pick-single-light.png",
+      "bytes": 125854,
+      "sha256": "5e2f43cb4cb3f0eef4bff6cce834f15208aa47757c07aba9b01a22feae0827b2",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api37/plans-dark.png",
+      "bytes": 123363,
+      "sha256": "bff4ee4252ed0116bdecd41082ef098d05e18b2952a2370eb583fd8153358031",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api37/plans-light.png",
+      "bytes": 122625,
+      "sha256": "f2373a258655529e9a7903b560031129ace89ae12640b99911951abaf82fb61c",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api37/settings-dark.png",
+      "bytes": 140279,
+      "sha256": "49cec96a4b10e84892bfd7c3469f72efc3cc8da9da5d57d4da67e881bfe09e15",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api37/settings-light.png",
+      "bytes": 139988,
+      "sha256": "8c618924fcea97c6a663486897d5dc98537b7b0a9dffdd6a0ab08fd1955ebdff",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api37/sheet-tooltip-regression.png",
+      "bytes": 180798,
+      "sha256": "709e34d90054c0d6ef697a08265646d8412fc76bb318eeeb8ee2a15128b95cc1",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api37/source-delete-dark.png",
+      "bytes": 148828,
+      "sha256": "432a020315cb8ccb1573e09346566f6b70115ac2ed98b05c8cc9868539c4c2de",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api37/source-delete-light.png",
+      "bytes": 148359,
+      "sha256": "d3fa2411a3ecebcbea52b1b36483a34aeb98d9bb7b52c9444cfee47d08a813a2",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api37/source-detail-dark.png",
+      "bytes": 123011,
+      "sha256": "bc00782af4a3d70ff6d1e1c00474c7dac598c6f6ba2a57572066c45a379d5eb3",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api37/source-detail-light.png",
+      "bytes": 122987,
+      "sha256": "071f0f58c1e30acd7c7ea568a1c1cd8c6eb4d2e3e6545bc6756407174aa817ae",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api37/source-edit-dark.png",
+      "bytes": 127091,
+      "sha256": "4ee2a007796f8d39556c296f2a7a6c86d1a85d07aaa34bf9ad1b26b71aaeedc2",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api37/sources-dark.png",
+      "bytes": 132850,
+      "sha256": "4f5c67315be07c8ccdc6c24acb33911c2a9a118cf1987b3679d389d60f085721",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api37/sources-light.png",
+      "bytes": 131709,
+      "sha256": "9c809a40188e8058fd469eddd3a2ecf77bce4c891b36dfae219d240bb85d59cf",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api37/template-full-title-dark.png",
+      "bytes": 169767,
+      "sha256": "586091b741fa92244da734ec034da4a9987c6b8cd6ea53f8b89db1cd29dbbf84",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api37/template-full-title-light.png",
+      "bytes": 170043,
+      "sha256": "6fa7e493a82f32b546455314fc4a522b33522117ee70a0c22d28904b3ba99109",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api37/templates-dark.png",
+      "bytes": 122309,
+      "sha256": "6508c0871c21eb82144454cd61351145ef9d10fdfc70a7eb1af87ac5c80d67a4",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api37/templates-light.png",
+      "bytes": 121581,
+      "sha256": "3d0e59866c63715844ef3a9f1bd057dd84fe42089b1338fce5bd6218465a1e46",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api37/tools-filter-dark.png",
+      "bytes": 109237,
+      "sha256": "b9cfb78dc08de19cb323ce8cc9354f36712579f670c300b507c060920d991015",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api37/tools-filter-light.png",
+      "bytes": 108018,
+      "sha256": "9d51ce9522ffc8a69e4dc1f1ddcac14d07bdc69a05518eab04614f19244dbfa4",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api37/trend-dark.png",
+      "bytes": 203970,
+      "sha256": "4278e4c3e3d7575e924293953a0dfea88c60fe03e14c3a2c3c7cd3b4de5233e0",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api37/trend-help-dark.png",
+      "bytes": 237765,
+      "sha256": "c181376de7ef52fc257ac7acb0051bb5117033e62a8ea3c35f478e3f65c4ef22",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api37/trend-help-light.png",
+      "bytes": 235436,
+      "sha256": "73272cd80a36b59b9e74a425e5bf5def84d7e07f908bbd8ebc4c64e7b5104f20",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-api37/trend-light.png",
+      "bytes": 201171,
+      "sha256": "84a8e9d5f7ea5b21d963c5a2935f48cd21f01edf760485894a031db592c1c98e",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-first/home-clipped-api26.png",
+      "bytes": 162495,
+      "sha256": "4566eea8e037fccaf3347f76546a8c7e1a5f11942d50d1ba4f766fec4ab61e12",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-first/navigation-contrast-api26.png",
+      "bytes": 154440,
+      "sha256": "4070f24be03a326a3ad9455dc591575fe6a6948dfba103250b138d2eb66de35a",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-first/pick-tight-api26.png",
+      "bytes": 161618,
+      "sha256": "0a22aca92e288c94cc68f46d5aa589f740065d17772ac187bcc0bd90405d85a5",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/impeccable-first/sheet-tooltip-regression.png",
+      "bytes": 159979,
+      "sha256": "023268c31eaa68fbe74612a46a062a989664664caf56617190798975049350c1",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api26/backtest-dark.png",
+      "bytes": 155295,
+      "sha256": "9828fc543aa2a9e924cbf85c94e0e33fc1f914ede87062591fbd65bdb49ecfea",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api26/backtest-light.png",
+      "bytes": 152834,
+      "sha256": "f4eef9edcaf5bcb8dcaef1a5b8c0035a7b73a27332fd5beef36f1b91a1ff8557",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api26/batch-dark.png",
+      "bytes": 151506,
+      "sha256": "e5aabad3ed42b976e29b76ab3d1bb30cb2ba7ed4eb3e40b6822619fc4d1fde1c",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api26/batch-light.png",
+      "bytes": 150579,
+      "sha256": "2017396d2dc0132ffb443c76b3272f1b1c62ca5b2e4308b82ffb4acadd91a9ba",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api26/condition-editor-dark.png",
+      "bytes": 137175,
+      "sha256": "f5721550e96cc58b1bb475b78716454d758faf8be4ca8b89a0b514094b10f7bc",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api26/condition-editor-light.png",
+      "bytes": 134398,
+      "sha256": "52aa74e93c3256d8e9911a830c356963273e4dd68d7bbbcd6bdbe7c259bb979c",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api26/condition-types-dark.png",
+      "bytes": 135940,
+      "sha256": "09097e206a5a1b6ddb55a44eb7e2d14f0996499e231e8fd2384067f23fb4ce53",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api26/condition-types-light.png",
+      "bytes": 133025,
+      "sha256": "2b12c766f54bf0a092042da880f02cc21e013df9f884fd22b2be11f661a74989",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api26/fixture-pick-empty-dark.png",
+      "bytes": 140569,
+      "sha256": "b8d3c09d8277cbcbd75ff3d4cb2f2af233e91ba7f6285f1881bec937c2eb4828",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api26/fixture-pick-empty-light.png",
+      "bytes": 138315,
+      "sha256": "945e6e3cd563bbcba4b1a5581389add3c35c75ed4d54587add0709772e49265e",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api26/fixture-plans-empty-dark.png",
+      "bytes": 96718,
+      "sha256": "69070cf740bfeb9bfda1edc00caddda17b4ff182f0fdd037d0820d07c0348f7d",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api26/fixture-plans-empty-light.png",
+      "bytes": 94841,
+      "sha256": "edf3bd48e2271db7e5b15ec83e2990260ed3b7f824d1a3f460fa1a771c907e6d",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api26/fixture-report-unavailable-dark.png",
+      "bytes": 98247,
+      "sha256": "0f7c1d363efb73a19cde0171ced67afe0fa8e75f292350d16e0e124b864795bf",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api26/fixture-report-unavailable-light.png",
+      "bytes": 95989,
+      "sha256": "737cd0550d5d795747ac2f83db4249c920b489e47f5051cb97b6b4af56f379f2",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api26/fixture-trend-empty-dark.png",
+      "bytes": 78200,
+      "sha256": "2f88b07382c2949272246657f573250beca7818f8c80d2d0b703d244cbaf00c6",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api26/fixture-trend-empty-light.png",
+      "bytes": 76691,
+      "sha256": "dd82d310e6914e1f89176be84a11e2b88f31f7d6c471ddcab0be4f6fe51b0a70",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api26/history-dark.png",
+      "bytes": 152638,
+      "sha256": "295381a76b3697b1ceab863a5a30706fa3b0360f3696ca06f3c79c5f56355f17",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api26/history-detail-dark.png",
+      "bytes": 153174,
+      "sha256": "f36a7a02ed0294ec8789ba437059e2b02fde93b88df2ec4be71736f75de081f7",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api26/history-detail-light.png",
+      "bytes": 149807,
+      "sha256": "0ea51b1561c04d743af718b3fb9716b72b1d48fbba0b4a49083124ca75a65a75",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api26/history-light.png",
+      "bytes": 150078,
+      "sha256": "07b63f23b908c230b8a9b78a9d50f48b0aa57a5bec1a7a33a50f81095cde9440",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api26/home-dark.png",
+      "bytes": 191904,
+      "sha256": "caf66b0e0ca15dac96c197ecf7096ff8142afc0bf66de750b29dd43bd70c0fbf",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api26/home-light.png",
+      "bytes": 186564,
+      "sha256": "df02cbfd047dd9d3a9aaa04b840fab41c4ab8d9dbf65e2175e1ad248b99255f8",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api26/home-offline-light.png",
+      "bytes": 189225,
+      "sha256": "902e684aedb74fa5ac0519121b5bec59248cf1ceb21de2679116ea6055e7dff6",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api26/issue-dark.png",
+      "bytes": 142689,
+      "sha256": "d4911ad80b70907b3ed7881f15efee31b5d5e204b9b4ad2ca7118eb8fde5dce0",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api26/issue-light.png",
+      "bytes": 140194,
+      "sha256": "4e9c80753c7e22b6b69866321b33a424bddb08e336b9a3b9bb4410a0469ab53d",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api26/merge-dialog-light.png",
+      "bytes": 161135,
+      "sha256": "a370ac0706d59d417b104e38a1de1b6d0a3a27d45997d0ab2cd72db782890add",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api26/notes-dark.png",
+      "bytes": 217177,
+      "sha256": "b1df3407f2bf992bb1cdc9b6a3ebd9762e7638d1eb0698bbb772e08c0a04e692",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api26/notes-light.png",
+      "bytes": 214867,
+      "sha256": "5013173432f5bb934a49d7dd6ed2fa7bec091713510660aa05f0af3564ade89a",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api26/numbers-dark.png",
+      "bytes": 145062,
+      "sha256": "d39975a7a0e2c71dde1dec7157cf79b24a063ce74529e98f3cc291f33c67c5f0",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api26/numbers-light.png",
+      "bytes": 141122,
+      "sha256": "2feeb6ddaf24b8ace36d630586456f98be6a0b6f0290272ffeace7c4017ceaef",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api26/pick-distinct-dark.png",
+      "bytes": 149618,
+      "sha256": "5a18e141c947d4c68018d37bb9440e4028e44cc91d7cb3d921e276e491c46b5f",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api26/pick-distinct-light.png",
+      "bytes": 147580,
+      "sha256": "9a76f7f90e55dbc33eabc9ca17fd068a9716716a5608977848e436f7f724023d",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api26/pick-group-dark.png",
+      "bytes": 150381,
+      "sha256": "6d8992cf92279aecf02383d2bff977075c5cdb37600e4623e544e38b3baa085a",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api26/pick-group-light.png",
+      "bytes": 148415,
+      "sha256": "3cadad65d3a16063a2a2377996f450eeea6922719ffea3284180ecf166278f0c",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api26/pick-help-dark.png",
+      "bytes": 181538,
+      "sha256": "18df329f68c03959870d5279a1da71f47662a5350bbaac471a4d962b68d11afb",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api26/pick-help-light.png",
+      "bytes": 178095,
+      "sha256": "1396b30f2060449fe787170145ad804ccba9f54b1c5199ebac0fc7d9fd20d69c",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api26/pick-position-dark.png",
+      "bytes": 161310,
+      "sha256": "7eaef35c3282da94665e5171a69c11a7084a1a09e3f00dfe8b8b690dee2c5020",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api26/pick-position-full-dark.png",
+      "bytes": 159491,
+      "sha256": "5ac5e5efcfd5c0ef6c74b9ad1a70048fa0da4b6e7ec1ae1cae1eda270e994619",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api26/pick-position-full-light.png",
+      "bytes": 159847,
+      "sha256": "e3f9bbce41ff7e208c17143d9b71fbe75117502f75def105a033901bc67ac0dc",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api26/pick-position-light.png",
+      "bytes": 156696,
+      "sha256": "7ecd121dddb0eb9aaf064c3786aeaa9858999198fd981c7e67ed9d20f334a8c9",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api26/pick-single-dark.png",
+      "bytes": 131352,
+      "sha256": "c622207544b28005ff34db771749cad322af51e2ba7b338b2bc2b9c62644f5f9",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api26/pick-single-light.png",
+      "bytes": 129361,
+      "sha256": "80534c1bf0646927af0e9b14968a7adf91daf20f68f580ea6989f1f0457e2bb7",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api26/plans-dark.png",
+      "bytes": 141626,
+      "sha256": "1105f5f84182b83447feee1a97d1c6ef10397d52d6261e642cdb724dd86dc4e6",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api26/plans-light.png",
+      "bytes": 139211,
+      "sha256": "72131e04f006710b5173b4a1b8039739a4327281c066001f0e8a14a69b257636",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api26/plans-merged-light.png",
+      "bytes": 123723,
+      "sha256": "8e6a2a12e655fecdee62ab1a62785c433e9f9f46c2c62abe461489c0b9ff78e8",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api26/settings-dark.png",
+      "bytes": 159439,
+      "sha256": "08134b514171ad2008d17dbbe8195f6baa19e5d36512984fd360d5bd07acaddb",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api26/settings-light.png",
+      "bytes": 156249,
+      "sha256": "b3fc457d131330de76f88f776a2377f808ad9118ac233b3cea159c318a1a2631",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api26/source-delete-dark.png",
+      "bytes": 147377,
+      "sha256": "f4da19776a23fdfdc5fe07d56f4ece80191475f17eae6fef8b7b4f7185e4e3e5",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api26/source-delete-light.png",
+      "bytes": 143196,
+      "sha256": "91d9d4a8632365ed90f28b0b23c8cf1054d4c6849995d085b7b4b42319c90ecf",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api26/source-detail-dark.png",
+      "bytes": 123896,
+      "sha256": "14910067c3a640c2cbfb1313791c8bd7cc7bec805635609dc4aa370a30544b41",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api26/source-detail-light.png",
+      "bytes": 120792,
+      "sha256": "ab400f111c4cf35796e193eefde01334e93d249bad3787271521a10913dde0d4",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api26/source-edit-dark.png",
+      "bytes": 150663,
+      "sha256": "f1b36bfffead81ee14676db2c232dc3baf5a6fc4de1e9a236909e50a0fe95798",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api26/sources-dark.png",
+      "bytes": 139946,
+      "sha256": "dc028759b7e133a510eecd8e360bc0541931e01e96dd060b425b6e3d59ae22f7",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api26/sources-light.png",
+      "bytes": 137492,
+      "sha256": "0795262c5792d0124c524dcdd0688f19f563ce929f917858faeea90fdd7ffd54",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api26/template-full-title-dark.png",
+      "bytes": 180952,
+      "sha256": "65167d5cf6d93d4f1e64fb2e9f73219a74c1cb1d5508cb8833de4c519a47419c",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api26/template-full-title-light.png",
+      "bytes": 176821,
+      "sha256": "47dae32058729202e6c593561c851b3047a811c6beb96436cde2693f937d42ff",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api26/templates-dark.png",
+      "bytes": 128046,
+      "sha256": "a53d232b2c93eba5d3e10bdb8e438e36d1f7eb7eca26d07954b289973022d300",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api26/templates-light.png",
+      "bytes": 136155,
+      "sha256": "593e978b151bc780ae4dec15a98f0268746a8b507bcfd001a3b1fca8de067239",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api26/tools-filter-dark.png",
+      "bytes": 125104,
+      "sha256": "ccd7280d398f93be889487dc78b45f52415ae274a1103f4d94430285108de89b",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api26/tools-filter-light.png",
+      "bytes": 123965,
+      "sha256": "de2bdff2989f7fc47fe4dd813eebecd04a238ef6a85ee9671911ffba8ec255a7",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api26/trend-dark.png",
+      "bytes": 201403,
+      "sha256": "3074d6643c67eda1388782265a4551ea2b00e6d6f658f33d00398eef3269d0f1",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api26/trend-help-dark.png",
+      "bytes": 212458,
+      "sha256": "92b7eef40c8cff9a66e5a087bd2a566c3f362894a92465b597d2dc5e0fa717bb",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api26/trend-help-light.png",
+      "bytes": 207338,
+      "sha256": "2f0a428f84293e29574b454919d7157ab23ca98af96a924190719b37ef4f7adc",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api26/trend-light.png",
+      "bytes": 197608,
+      "sha256": "626819b6d0363bd0907b2da7a2dfeb98425cc99ef593a0706f8c12165c8c2536",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api37/backtest-dark.png",
+      "bytes": 151218,
+      "sha256": "24437c22793f363023c0f741e1ea0be6f05ef4af294058d4382d878bfe0da136",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api37/backtest-light.png",
+      "bytes": 148641,
+      "sha256": "f6b74c85c338805588e7b8b8546030e27003d2f2ecf24596d1c3640830c4c62e",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api37/batch-dark.png",
+      "bytes": 121669,
+      "sha256": "fe57869762df161acfd1157a90e7ddd6a4cbba5746e763611498c9cba8ddd9cb",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api37/batch-light.png",
+      "bytes": 119921,
+      "sha256": "455604e32d4e44b68be543b4790cd9c2cd8411958a0628d35a9ef90e2c15f23f",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api37/condition-editor-dark.png",
+      "bytes": 131103,
+      "sha256": "e2a947a5c84a5ec77d75a58677a3d0e763021d148b85bf4609c6143ff99208c9",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api37/condition-editor-light.png",
+      "bytes": 129663,
+      "sha256": "43bf78a340004a295f45a30eb8369fb9be61ca1f6ac88a5c5874d1c1b4b9832c",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api37/condition-types-dark.png",
+      "bytes": 130666,
+      "sha256": "211a596d100544e9736706de9733a953babd331d59bbc33cfde1e3716795d530",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api37/condition-types-light.png",
+      "bytes": 129363,
+      "sha256": "cdb9848e2cdea5030a267cebc9abfabd348126a6cae8044b80af501fa093806f",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api37/fixture-pick-empty-dark.png",
+      "bytes": 132819,
+      "sha256": "e71672a5edfdf9ffde44ce71beecd9333018d1bf7c1f788f4fa9e937e49f27b2",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api37/fixture-pick-empty-light.png",
+      "bytes": 128723,
+      "sha256": "9aa40c9161c4a366bbc601368dc2e0e2925f9215862e84bfb01601f37a591809",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api37/fixture-plans-empty-dark.png",
+      "bytes": 89723,
+      "sha256": "5ea251600235a2148187a82d0f684724880feb03cf55fdede94f8b796cd3cd62",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api37/fixture-plans-empty-light.png",
+      "bytes": 84592,
+      "sha256": "afdd942e2372d25da544b32fb6751ee2922c8379100439072e05ed77b5e1fa88",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api37/fixture-report-unavailable-dark.png",
+      "bytes": 91268,
+      "sha256": "58c2de4b1068621b465f174ad787f982f30bf0c62b4b7a12116ccce856c4d24b",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api37/fixture-report-unavailable-light.png",
+      "bytes": 86387,
+      "sha256": "9ecb0574ab9c51bc86949de32e68c6163e5ae3ab5ac964d8cf31fb24ff5ee7ff",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api37/fixture-trend-empty-dark.png",
+      "bytes": 72648,
+      "sha256": "769841211e30afec92c7031d307dd6d2eb4055d9770726007449f5c3d7a4650a",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api37/fixture-trend-empty-light.png",
+      "bytes": 69184,
+      "sha256": "75ddd70c7626e6ecde143a18ddac8311d02c34ad9c1eb1caf7da64d7d7ebdaaf",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api37/history-dark.png",
+      "bytes": 146066,
+      "sha256": "2618e302eed453982168d937f36abb831fcbfefd3fa3622c3eca046d952ec387",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api37/history-detail-dark.png",
+      "bytes": 150533,
+      "sha256": "c4fa2a31be55c8ed48e2116928cf2c8ae52206828e91549bacf2c79a40494b98",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api37/history-detail-light.png",
+      "bytes": 148465,
+      "sha256": "464742cd0d6574a0c2e176980cad509c78d6956b0d4294fd68725bc343a6ef30",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api37/history-light.png",
+      "bytes": 143564,
+      "sha256": "d82b341facfde5268dce172fddce2b1eaacc9f518f67b740db1fd4440454f026",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api37/home-dark.png",
+      "bytes": 181850,
+      "sha256": "2350026c6739c5180ab3c79d60a73173361f09d5abba5e20672b2ea9722a7a3c",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api37/home-light.png",
+      "bytes": 177785,
+      "sha256": "9523206d7eb0385cd4c6a7f5f8651396568718fbe09f8ab74ec7ed5446bb20c2",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api37/home-offline-light.png",
+      "bytes": 173436,
+      "sha256": "070f139cf2b24b67c816d487b4aaf325b374303ec09ebec41327e7f0666e50cd",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api37/issue-dark.png",
+      "bytes": 140489,
+      "sha256": "171f9c972c6c88800481dd57b609acd7b61c2b59c636d35d22eb7358b0bc4b6a",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api37/issue-light.png",
+      "bytes": 139580,
+      "sha256": "6692c24dbd049d65a2724bfc7b5703adcb4a7b1eff277839392fc1e2e9573fc7",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api37/merge-dialog-light.png",
+      "bytes": 162430,
+      "sha256": "4e88872db9d20bbc57e7bc3a1d13b9c4edc0814e1131a177b31375cb73e6b529",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api37/notes-dark.png",
+      "bytes": 214528,
+      "sha256": "12a8774df12c4c4efe08225f855744f6ad52e389d8345662b334e0aa0c0b5335",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api37/notes-light.png",
+      "bytes": 210802,
+      "sha256": "4f2c5ff576a2f7cd372f475cfa60a49b21296791fec50214b6bee77a5ae8164b",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api37/numbers-dark.png",
+      "bytes": 139247,
+      "sha256": "111e0027fba786a2725eb31f935669d8890d27bbe14d20132b1bc19c46ffdb66",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api37/numbers-light.png",
+      "bytes": 135305,
+      "sha256": "ac4441caf3469cf90849d776b7cf5572e2898c965d98ee647157d6eb7b446752",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api37/pick-distinct-dark.png",
+      "bytes": 141402,
+      "sha256": "c4e4c7885c61d166b63b13e71163891952268ffd7014bd52fa5fb17632672bef",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api37/pick-distinct-light.png",
+      "bytes": 139071,
+      "sha256": "952f4ce37e49c4c34cf07db4062aac7a2921a90c826cb320864a9656a02df5e4",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api37/pick-group-dark.png",
+      "bytes": 141560,
+      "sha256": "f7459d55ff78f3a4398c801829311a1715bf5345f3082c759befa2ec8aa89d2e",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api37/pick-group-light.png",
+      "bytes": 139434,
+      "sha256": "24843fb0e369d05e07fd5f679e5b563e1a67a299525e490ab52386649adea771",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api37/pick-help-dark.png",
+      "bytes": 177776,
+      "sha256": "d5f697cfa21641ef22abaa345b7d95c3f9c5e1adff9a1c211a2c6588df8b2222",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api37/pick-help-light.png",
+      "bytes": 175615,
+      "sha256": "9a4d1ea63f680f9e52744aa6e70b76d4430ce44e0c2c620d8093640f2b2e0039",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api37/pick-position-dark.png",
+      "bytes": 151891,
+      "sha256": "a814a307e2a3c2b26180f1cc772c5ff4c00c819168b6ceb391839208f3ae3f67",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api37/pick-position-full-dark.png",
+      "bytes": 151448,
+      "sha256": "5ad74b33c5f7151bf25c347f347ca194027305c044cd97e0fb1f46fc45a4f785",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api37/pick-position-full-light.png",
+      "bytes": 149491,
+      "sha256": "4c29c1501ceb87e24456a3dab9eff95869e00eb696f1423350d03d58df4e0ecf",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api37/pick-position-light.png",
+      "bytes": 147149,
+      "sha256": "f00e53471e66313a2bd22d81beccbef1e1f1fa9a94557cd0167dad3aa7e280e5",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api37/pick-single-dark.png",
+      "bytes": 125319,
+      "sha256": "eb1a6a0a710ddadb6877fd51012378eff665650305892860144e7dd17ef33d3e",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api37/pick-single-light.png",
+      "bytes": 122960,
+      "sha256": "30a07a7850102f6e4a26e9b1350c24eb8d49efc10b43ac02cdad910bf7acf272",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api37/plans-dark.png",
+      "bytes": 133657,
+      "sha256": "8251dc01df55b3d61b541b494426454d205c5abd456d17365f2e678bf4b0a6ce",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api37/plans-light.png",
+      "bytes": 130324,
+      "sha256": "9fe428735d733ce27bd2d644baebac701e074976ae75b750ebef1f03d58396d8",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api37/plans-merged-light.png",
+      "bytes": 116500,
+      "sha256": "88a0bb4860ea3889659fdfadce17b3290855c838abca03b90f764dbd65734a75",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api37/settings-dark.png",
+      "bytes": 147323,
+      "sha256": "05885c0ddc891ac8aebc459221a058db0b7393b665ac4bf886d3ea17e782cf9c",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api37/settings-light.png",
+      "bytes": 143892,
+      "sha256": "1b9de6a705366bd1057f6f8a52abb88793c5d5a0fb49d57eeb5cf8316ff6bc2e",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api37/source-delete-dark.png",
+      "bytes": 145550,
+      "sha256": "5bb80d37fe0bfff59504793cefc3be5ef6143cdcc272c020ca59c423580de36b",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api37/source-delete-light.png",
+      "bytes": 143859,
+      "sha256": "3c2b8745a0363801d65f359e50304e9372fed6613d1a43e6aa30ff7b03b804a6",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api37/source-detail-dark.png",
+      "bytes": 122643,
+      "sha256": "7744a46603b8362f50415dd3a3250bcc396cc08bb6f9f018b9dccb44b03f5c2f",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api37/source-detail-light.png",
+      "bytes": 121820,
+      "sha256": "7b20acdae14ead2a9be9de308511b550c9e346cff880270cb53a99410084bf4f",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api37/source-edit-dark.png",
+      "bytes": 152177,
+      "sha256": "964717bb37a242afcd08516ddd963eb1334517a6703942f37d522d06b958421d",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api37/sources-dark.png",
+      "bytes": 138771,
+      "sha256": "224c148370aab6d1ee4b80261ae3ca876b142d422043c892dec49d64f17c0c42",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api37/sources-light.png",
+      "bytes": 137233,
+      "sha256": "afced35f12a5d0c42d3fc010e25df3793179bba89046c4afd6e1ec14e02468d4",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api37/template-full-title-dark.png",
+      "bytes": 173087,
+      "sha256": "ef5a18c18f561db72d5313a8884fc06ddc2ed0ec50910147aff43745927aae45",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api37/template-full-title-light.png",
+      "bytes": 171272,
+      "sha256": "acc6f7eb2b5466768ae40d4db377c5e6479924f3543c862764a7e8bb4c5ba9b6",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api37/templates-dark.png",
+      "bytes": 125744,
+      "sha256": "0efd8c81aa902154e177d0160e77ed059ca61816e94eeea703550cbb6aeed773",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api37/templates-light.png",
+      "bytes": 133268,
+      "sha256": "dadceb837f9cf19be82230acc2d6b5958c8787d44daf421fcee988cab6bf6978",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api37/tools-filter-dark.png",
+      "bytes": 117688,
+      "sha256": "f1818f6ff242762df08450d7b842d321d1e35cf66d9dc8eaedc2a3aaf905cd25",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api37/tools-filter-light.png",
+      "bytes": 115686,
+      "sha256": "184f82c7d55a29d2f2f7fe6c7b7f03bc159c14457cd06cba769ef3f9e5f5fd3c",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api37/trend-dark.png",
+      "bytes": 207134,
+      "sha256": "c21f281003382bcca2f7adb0b5d3fd3bf221ed252b1ea29600cce7e1559e2573",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api37/trend-help-dark.png",
+      "bytes": 227839,
+      "sha256": "222e87a1070d1660c279404ca8235b082938731727fcd82321bf650883c635a9",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api37/trend-help-light.png",
+      "bytes": 224406,
+      "sha256": "8352abe4f7c1d4159ba9918ed40f95ca04773a82500ac1a29561281beb28b007",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-api37/trend-light.png",
+      "bytes": 205008,
+      "sha256": "7d176ed9a3493e409c769fed72ae5493e5b159d0696a75163718e9e37846e8c4",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-first/home.png",
+      "bytes": 177065,
+      "sha256": "59ef574ce95426af693805903a04add54b6f20f78c5c5466b1812eeee6de6110",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/redesign-first/pick-position.png",
+      "bytes": 145530,
+      "sha256": "5ac8b8a325b3f08d3c1c8df66b5e017b88e28d839635d35d251016143a846f97",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/release-1.0.1-api26/home-dark.png",
+      "bytes": 191904,
+      "sha256": "caf66b0e0ca15dac96c197ecf7096ff8142afc0bf66de750b29dd43bd70c0fbf",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/release-1.0.1-api26/home-light.png",
+      "bytes": 186564,
+      "sha256": "df02cbfd047dd9d3a9aaa04b840fab41c4ab8d9dbf65e2175e1ad248b99255f8",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/release-1.0.1-api26/pick-position-light.png",
+      "bytes": 173394,
+      "sha256": "126f82bb69b4862c4e963666e0f1a253eceef323180843cfd0ea2a41ea19d666",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/release-1.0.1-api26/plans-light.png",
+      "bytes": 152132,
+      "sha256": "773d139b46b458af9fc073e2366aae534f095438df11202831251b84fb4bf7d5",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/release-1.0.1-api26/trend-dark.png",
+      "bytes": 224209,
+      "sha256": "e0b189e7f6db01efc3770b7262f19ae72aa1d92f29fc170e2352aa83900a5878",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/release-1.0.1-api37/home-dark.png",
+      "bytes": 181850,
+      "sha256": "2350026c6739c5180ab3c79d60a73173361f09d5abba5e20672b2ea9722a7a3c",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/release-1.0.1-api37/home-light.png",
+      "bytes": 177785,
+      "sha256": "9523206d7eb0385cd4c6a7f5f8651396568718fbe09f8ab74ec7ed5446bb20c2",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/release-1.0.1-api37/pick-position-light.png",
+      "bytes": 163952,
+      "sha256": "a7a514630d4c48a618e3e9c4c6e189946c308c8d8736ad59e81fd6dc25e572f2",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/release-1.0.1-api37/plans-light.png",
+      "bytes": 143237,
+      "sha256": "b96dafdca69bd6d33fbad30bc6d3ba09c0233a756fd6413e191a177b22d176a3",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/release-1.0.1-api37/trend-dark.png",
+      "bytes": 231972,
+      "sha256": "9ad28cb921ee82fa15a00ad4841fac04206bafa370dbce5d892a2a312a099eea",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/release-api26/home-dark.png",
+      "bytes": 231552,
+      "sha256": "8423cb7c1fec590aadc047436a92f5213c9dd9be7cd19b2708c76f7b6e276fbe",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/release-api26/home-light.png",
+      "bytes": 228597,
+      "sha256": "f8f612c61026c8fd219bbc60dd8d0e32968e7adef54f3267f4758853dd45008a",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/release-api26/pick-position-light.png",
+      "bytes": 208762,
+      "sha256": "cf74b37e68ee0620ba56f602090bcc6cbba5fc7b6a26d9a8d96509bc455d57ef",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/release-api26/plans-light.png",
+      "bytes": 196714,
+      "sha256": "79b22671b951a615967454f3ba5c274afc87c333ecc04b7307ef77c5cb322b4c",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/release-api26/trend-dark.png",
+      "bytes": 258901,
+      "sha256": "978ba3eea13573547fcf6333eaf486dc1fd137f688bf0ab2cf5a6af54dc828d1",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/release-api37/home-dark.png",
+      "bytes": 196151,
+      "sha256": "1ea4a47a3512fcaa574ad8422f526043c72bf8659b617b89acf2660edb1799d4",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/release-api37/home-light.png",
+      "bytes": 194950,
+      "sha256": "4aff93b16c030fefcf1fc1f9ed2469f610aa1b0e7fcf08bc578a8b17d777faee",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/release-api37/pick-position-light.png",
+      "bytes": 173030,
+      "sha256": "d0945e0f4bd3ab401766b9432d297ac803699d9081dcad612fd238a22009da8b",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/release-api37/plans-light.png",
+      "bytes": 169104,
+      "sha256": "650ddb14bc69415de0b7c5bea05b99db8df67e04fe997b3ad183b0a3aa49578c",
+      "reason": "historical-or-redundant-ui-screenshot"
+    },
+    {
+      "path": "docs/evidence/release-api37/trend-dark.png",
+      "bytes": 223300,
+      "sha256": "692295f1298d2443df3b8619eafc8835cdac5d4831b241e12af047f8f8082580",
+      "reason": "historical-or-redundant-ui-screenshot"
+    }
+  ],
+  "imageCount": 350,
+  "imageBytes": 64945791,
+  "sidecarCount": 13,
+  "originalProjectTouched": false,
+  "sidecarsRemoved": 13,
+  "completedAt": "2026-10-02T19:49:26.8581801+08:00"
+}

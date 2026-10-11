@@ -42,7 +42,7 @@ import kotlinx.coroutines.withContext
             PanelHeading(methodLabel(input.method)){ContextTag("每期1倍",Modifier.padding(end=8.dp))}
             if(result==null)LinearProgressIndicator(Modifier.fillMaxWidth().padding(16.dp))
             else {
-                Row(Modifier.fillMaxWidth().testTag("backtest_ready").padding(horizontal=16.dp,vertical=8.dp)){
+                Row(Modifier.fillMaxWidth().testTag("backtest_ready").padding(horizontal=12.dp,vertical=8.dp)){
                     Metric("${result.coveredCount}/${result.eligibleCount}","覆盖期数",Modifier.weight(1f))
                     Metric(result.coverageRate?.let{"%.1f%%".format(it*100)} ?: "—","覆盖率",Modifier.weight(1f))
                     Metric("¥${result.cumulativeAmountYuan}","模拟金额",Modifier.weight(1f))
@@ -54,13 +54,13 @@ import kotlinx.coroutines.withContext
         if(result!=null) {
             if(result.eligibleCount==0)EmptyPanel("历史样本不足","至少需要目标期之前30期历史。")
             else WorkspacePanel(Modifier.weight(1f)) {
-                Row(Modifier.fillMaxWidth().padding(horizontal=16.dp,vertical=12.dp)){SmallLabel("期号",Modifier.weight(1f));SmallLabel("当期注数",Modifier.width(80.dp));SmallLabel("核对结果")}
+                Row(Modifier.fillMaxWidth().padding(horizontal=12.dp,vertical=12.dp)){SmallLabel("期号",Modifier.weight(1f));SmallLabel("当期注数",Modifier.width(80.dp));SmallLabel("核对结果")}
                 HorizontalDivider(color=MaterialTheme.colorScheme.outlineVariant)
                 LazyColumn(Modifier.fillMaxSize()){items(result.results.filter{it.status==BacktestStatus.EVALUATED}.asReversed(),key={it.targetIssue}){row->
-                    Row(Modifier.fillMaxWidth().heightIn(min=48.dp).padding(horizontal=12.dp),verticalAlignment=Alignment.CenterVertically){
-                        Text(row.targetIssue,Modifier.weight(1f),fontFamily=NumberFont,fontSize=14.sp)
-                        Text(row.candidateCount.toString(),Modifier.width(80.dp),fontFamily=NumberFont,fontSize=14.sp)
-                        Text(if(row.covered==true)"✓ 覆盖" else "— 未覆盖",fontSize=12.sp,fontWeight=FontWeight.Medium,color=if(row.covered==true)MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurfaceVariant)
+                    Row(Modifier.fillMaxWidth().heightIn(min=36.dp).padding(horizontal=12.dp),verticalAlignment=Alignment.CenterVertically){
+                        Text(row.targetIssue,Modifier.weight(1f),fontFamily=NumberFont,fontSize=13.sp)
+                        Text(row.candidateCount.toString(),Modifier.width(80.dp),fontFamily=NumberFont,fontSize=13.sp)
+                        Text(if(row.covered==true)"✓ 覆盖" else "— 未覆盖",fontSize=11.sp,fontWeight=FontWeight.Medium,color=if(row.covered==true)MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurfaceVariant)
                     };HorizontalDivider(Modifier.padding(horizontal=12.dp),color=MaterialTheme.colorScheme.outlineVariant.copy(alpha=.6f))
                 }}
             }

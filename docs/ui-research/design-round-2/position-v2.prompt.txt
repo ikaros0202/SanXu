@@ -1,0 +1,5 @@
+Use case: ui-mockup. Precisely edit this SanXu 位选 candidate. Keep complete appchrome, graphite three-column editor with values百位0 1 / 十位0 / 个位2 7, wine accent, allfourchecked results002007102107, bottom4注1倍¥8加入本期, and overall portraitedge-toedgeproportions.
+Change ONLY two density/details:
+1 The center equation '2 × 1 × 2 = 4种组合' is oversized and visually louder than the real results. Replace it with a SMALL SECONDARY LEFT-ALIGNED sentence at13sp, on ONE36dp-high row just below the editor: '2 × 1 × 2 = 4种组合'. Entireline mutedgraphite/gray, only4semibold, no giantwine4. Move resultpanel upward by reclaimedspace. Do not stretch anyotherregion tofillspace.
+2 Narrow the active underline beneath 十位value0 to48dp logical, centered under0, and about2dp thick. It must not stretch the entirecolumnwidth. This is the currentlyselected position for a tap-to-edit action, not a progressbar.
+Preserve the ability to select anyposition; no arrows or nextbuttons. Labelsdigits remain legible andcompact, largeblankspacebelow remains intentional. Do not addcontrols. This is an unapproved design proposal.

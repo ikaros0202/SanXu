@@ -1,5 +1,8 @@
 # 叁序 1.0.2 · 酒红与紧凑布局验收
 
+> 2026-10-02按用户要求清理淘汰/重复设计图片，已移除本文相关图片链接；[清理清单](ui-research/number-studio/image-cleanup.json)保留原路径和哈希。本文测试与验收结论仅为当时历史记录，不代表下一版新交互已实装或验收。
+
+
 2026-10-02。本轮回应用户对苍白配色、组件过大、首页缺少排版和满屏数字的反馈。在独立工程 `D:\codexproject\SanXu` 完成原生重设计、安装验收和资源收尾；原 `D:\codexproject\lucky3D` 只读保留。以下区分原生实现结果、技能自动流程限制与用户审美决定。
 
 ## 交付内容
@@ -51,7 +54,7 @@
 
 [Debug APK](../artifacts/Sanxu-1.0.2-debug.apk) 与旧1.0.0/1.0.1产物均保留；[汇总](evidence/impeccable-tests-and-apks.json)。`apksigner verify --verbose --print-certs`成功，v2签名，Android Debug开发证书SHA-256为 `f156a6efd9eb66dcf814f32999ee43ffe05a5e1ab2e30a8f7f9b9e24f3c9e1d3`，见 [签名](evidence/impeccable-apk-signature.txt)、[包元数据](evidence/impeccable-apk-badging.txt)。
 
-两台均实际执行`adb -s <serial> install -r artifacts/Sanxu-1.0.2-local.apk`以及`python tools/verify-installed-release.py <serial>`，结果成功：与旧`com.lucky3d.app`并存、UID及数据目录独立；强制停止后的冷启动正常，26元/10号码/13注/4记录保留；四方法、4号码8元、深浅色、系统返回与下拖关闭验证成功，无SanXu崩溃记录。[API26](evidence/release-1.0.2-smoke-api26.json)、[API37](evidence/release-1.0.2-smoke-api37.json)、[实际首页与位选](evidence/impeccable-release-overview.png)。
+两台均实际执行`adb -s <serial> install -r artifacts/Sanxu-1.0.2-local.apk`以及`python tools/verify-installed-release.py <serial>`，结果成功：与旧`com.lucky3d.app`并存、UID及数据目录独立；强制停止后的冷启动正常，26元/10号码/13注/4记录保留；四方法、4号码8元、深浅色、系统返回与下拖关闭验证成功，无SanXu崩溃记录。[API26](evidence/release-1.0.2-smoke-api26.json)、[API37](evidence/release-1.0.2-smoke-api37.json)、实际首页与位选（历史图片已清理）。
 
 独立初评要求修复的F1/F2已在同一评审者的Verdict Pass中均判resolved；`ship`仅覆盖该修复清单及直接回归，不扩展为完整自动流程通过或用户审美认可。
 

@@ -1,0 +1,50 @@
+{
+  "checkedAt": "2026-10-02T19:59:46.971266+08:00",
+  "status": "handoff-complete-implementation-deferred-by-user",
+  "approvedReferences": [
+    ".impeccable/mocks/approved/distinct-permutations.png",
+    ".impeccable/mocks/approved/single-direct-edit.png"
+  ],
+  "approvedImagesByteIdenticalToAttachments": true,
+  "deletedImages": 350,
+  "deletedImageBytes": 64945791,
+  "deletedSidecars": 13,
+  "remainingReferenceImages": 15,
+  "missingActiveDocumentLinks": [],
+  "applicationSourceTestsDependenciesAndVersionUnchanged": true,
+  "existingVersion": "1.0.2 (3)",
+  "originalPathsUnchanged": 290,
+  "originalGitStatusUnchanged": true,
+  "resources": {
+    "checkedAt": "2026-10-02T19:58:10.4554672+08:00",
+    "devices": "List of devices attached\n",
+    "javaOrEmulatorProcesses": [],
+    "startedBuildOrEmulatorThisRound": false,
+    "sharedAdbServerPreserved": true,
+    "closedUnrelatedResources": false
+  },
+  "checks": [
+    {
+      "command": "python tools/verify.py",
+      "result": "passed; original project, seed, database and dependency direction"
+    },
+    {
+      "command": "git diff --check",
+      "result": "passed; CRLF-to-LF informational warnings only"
+    },
+    {
+      "command": "git diff --exit-code -- app core tools gradle gradlew gradlew.bat settings.gradle.kts build.gradle.kts",
+      "result": "passed; no runtime/code changes"
+    },
+    {
+      "command": "PowerShell / Python inline handoff validation",
+      "result": "passed; attachments, image manifest, remaining images, approval metadata and document links"
+    },
+    {
+      "command": "adb devices + Get-CimInstance Win32_Process",
+      "result": "no devices, no Java/Gradle/Kotlin/emulator processes"
+    }
+  ],
+  "newBuildOrUiTestsRun": false,
+  "gitCommitOrPushPerformed": false
+}

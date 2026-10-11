@@ -2,7 +2,7 @@
 
 2026-10-02 按用户要求搜索并安装；原 Lucky3D 目录不修改。
 
-## 本轮新增
+## 2026-10-02 前一对话的安装记录
 
 - 项目：pbakaus/impeccable，https://github.com/pbakaus/impeccable
 - GitHub API 核对时星标：73,903，大于15,000。
@@ -11,7 +11,7 @@
 - 安装位置：C:/Users/jiqin/.codex/skills/impeccable。
 - 安装命令：`python C:/Users/jiqin/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py --repo pbakaus/impeccable --ref 508d7e8955de3b3caf2d8676e85206723d41a887 --path .agents/skills/impeccable`。
 - 安装成功；已执行 `scripts/impeccable.cmd context --target app/src/main/kotlin/com/sanxu`，直接阅读并应用 Android、Operate、新视觉工作及效果图流程。
-- 新安装 skill 下轮自动发现；本轮通过读取安装文件和执行其工具使用。
+- 安装当轮通过读取安装文件和执行其工具使用；当前会话已暴露 Impeccable，无需重复搜索或安装。
 - 仓库许可证 Apache-2.0；安装 skill 不改变本应用技术栈。
 
 ## 同时核对的候选
@@ -27,4 +27,6 @@
 
 ## 原生适配与验收范围
 
-Impeccable网页comp流水线的COMPS阶段要求仅一张approved图片，本任务同时确认了首页和B选号两张页面，并再次明确要求缩小组件；没有强制绕过该检查或宣称网页门禁通过。采用其Android/Operate规则，以独立原生评审、dp区域规格和整屏边界测试验收。网页HTML/CSS检测器不运行。收尾文档由独立documenter整理，最终评审记录单独保存。
+1.0.2 实施时，Impeccable网页comp流水线的COMPS阶段要求仅一张approved图片，当时同时确认了首页和B选号两张页面，并再次要求缩小组件；没有强制绕过检查或宣称网页门禁通过。该轮采用Android/Operate规则、原生评审、dp区域规格和整屏边界测试；当时的documenter与评审记录仅为历史证据。
+
+当前获选的是另一轮两张图：单选直接改号与单选单展开排列，详情见 [design-next.md](design-next.md)。`.impeccable/build/state.json` 仍停在comps；两张图的用户批准已存在，不能因工具阶段未推进而要求重选。续接时明确一个主comp及另一对应玩法参考，逐项如实推进，不手改门禁通过状态。原生页面不运行只检验HTML/CSS的检测器；未经用户明确请求不启动子智能体。

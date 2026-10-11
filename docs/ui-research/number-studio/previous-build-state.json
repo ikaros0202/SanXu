@@ -1,0 +1,98 @@
+{
+  "tool": "build-phase",
+  "version": 2,
+  "startedAt": "2026-10-02T09:00:01.955Z",
+  "comp": null,
+  "direction": "6ce39af8",
+  "breakpoint": null,
+  "artifact": "app/src/main/kotlin/com/sanxu/PickPage.kt",
+  "phase": "comps",
+  "phases": {
+    "comps": {
+      "status": "open",
+      "openedAt": "2026-10-02T09:00:01.955Z",
+      "closedAt": null,
+      "attempts": 1,
+      "notes": [
+        {
+          "at": "2026-10-02T09:28:53.452Z",
+          "text": "Native Android: user approved B accordion and Home; latest instruction explicitly requires denser components and stronger palette. Comp proportions superseded by 48dp targets and 360x800/393x851 one-screen acceptance. No raster artwork ships; Native Compose controls and real Room data are authoritative."
+        }
+      ],
+      "gate": {
+        "ok": false,
+        "reasons": [
+          "2 comps carry \"approved\": true; exactly one is the approved comp: home-direction.png, pick-b-accordion.png"
+        ],
+        "summary": "6 comps, 2 approved",
+        "at": "2026-10-02T10:07:43.129Z"
+      },
+      "forced": null
+    },
+    "spec": {
+      "status": "pending",
+      "openedAt": null,
+      "closedAt": null,
+      "attempts": 0,
+      "notes": [],
+      "gate": null,
+      "forced": null
+    },
+    "plates": {
+      "status": "pending",
+      "openedAt": null,
+      "closedAt": null,
+      "attempts": 0,
+      "notes": [],
+      "gate": null,
+      "forced": null
+    },
+    "hero": {
+      "status": "pending",
+      "openedAt": null,
+      "closedAt": null,
+      "attempts": 0,
+      "notes": [],
+      "gate": null,
+      "forced": null
+    },
+    "sections": {
+      "status": "pending",
+      "openedAt": null,
+      "closedAt": null,
+      "attempts": 0,
+      "notes": [],
+      "gate": null,
+      "forced": null
+    },
+    "motion": {
+      "status": "pending",
+      "openedAt": null,
+      "closedAt": null,
+      "attempts": 0,
+      "notes": [],
+      "gate": null,
+      "forced": null
+    },
+    "responsive": {
+      "status": "pending",
+      "openedAt": null,
+      "closedAt": null,
+      "attempts": 0,
+      "notes": [],
+      "gate": null,
+      "forced": null
+    },
+    "review": {
+      "status": "pending",
+      "openedAt": null,
+      "closedAt": null,
+      "attempts": 0,
+      "notes": [],
+      "gate": null,
+      "forced": null
+    }
+  },
+  "finish": null,
+  "sessionId": "01a0facf-ccdd-7d63-bdd9-dcd25ea11f8b"
+}

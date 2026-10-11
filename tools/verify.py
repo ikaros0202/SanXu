@@ -1,16 +1,22 @@
 """Independent, read-only delivery checks. Run from the new project only."""
 from pathlib import Path
-import hashlib,json,sqlite3,datetime,re,subprocess
+import hashlib,json,sqlite3,datetime,re,subprocess,argparse
 
 root=Path(__file__).resolve().parents[1]
-old=Path(r'D:\codexproject\lucky3D')
-manifest=json.loads((root/'docs/evidence/original-project-manifest.json').read_text(encoding='utf-8'))
+parser=argparse.ArgumentParser()
+parser.add_argument('--audit-original', action='store_true', help='Also run the historical Lucky3D isolation audit.')
+args=parser.parse_args()
 def digest(path): return hashlib.sha256(path.read_bytes()).hexdigest() if path.is_file() else None
-changed=[name for name,expected in manifest.items() if digest(old/name)!=expected]
-assert not changed, f'Original project changed: {changed}'
-current=subprocess.check_output(['git','status','--porcelain'],cwd=old).decode('utf-8').strip()
-previous=(root/'docs/evidence/original-git-status.txt').read_text(encoding='utf-8-sig').strip()
-assert current.replace('\r\n','\n')==previous.replace('\r\n','\n'), 'Original git status changed'
+original_paths=None
+if args.audit_original:
+    old=root.parent/'lucky3D'
+    manifest=json.loads((root/'docs/evidence/original-project-manifest.json').read_text(encoding='utf-8'))
+    changed=[name for name,expected in manifest.items() if digest(old/name)!=expected]
+    assert not changed, f'Original project changed: {changed}'
+    current=subprocess.check_output(['git','status','--porcelain'],cwd=old).decode('utf-8').strip()
+    previous=(root/'docs/evidence/original-git-status.txt').read_text(encoding='utf-8-sig').strip()
+    assert current.replace('\r\n','\n')==previous.replace('\r\n','\n'), 'Original git status changed'
+    original_paths=len(manifest)
 seed=json.loads((root/'data/fc3d-seed.json').read_text(encoding='utf-8-sig'))
 draws=seed['draws']
 assert draws[0]['issue']=='2017001'
@@ -36,6 +42,6 @@ for file in (root/'core/domain/src/main/kotlin').rglob('*.kt'):
     assert not re.search(r'^import (android\.|androidx\.|com.sanxu.data\.)',file.read_text(encoding='utf-8'),re.M),file
 for file in (root/'app/src/main/kotlin').rglob('*.kt'):
     assert not re.search(r'^import com.sanxu.data\.',file.read_text(encoding='utf-8'),re.M),file
-report={'originalPathsUnchanged':len(manifest),'originalGitStatusUnchanged':True,'seedRecords':len(draws),'firstIssue':draws[0]['issue'],'lastIssue':draws[-1]['issue'],'seedSha256':digest(root/'data/fc3d-seed.json'),'databaseSha256':digest(dbpath),'databaseIntegrity':'ok','emptyUserTables':True,'dependencyDirection':'passed','checkedAt':datetime.datetime.now().astimezone().isoformat()}
+report={'originalAuditRequested':args.audit_original,'originalPathsUnchanged':original_paths,'originalGitStatusUnchanged':True if args.audit_original else None,'seedRecords':len(draws),'firstIssue':draws[0]['issue'],'lastIssue':draws[-1]['issue'],'seedSha256':digest(root/'data/fc3d-seed.json'),'databaseSha256':digest(dbpath),'databaseIntegrity':'ok','emptyUserTables':True,'dependencyDirection':'passed','checkedAt':datetime.datetime.now().astimezone().isoformat()}
 (root/'docs/evidence/data-and-original-verification.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
 print(json.dumps(report,ensure_ascii=False,indent=2))

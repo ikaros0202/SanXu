@@ -55,30 +55,30 @@ import com.sanxu.ui.*
             WorkspacePanel { EmptyPanel(if(entries.isEmpty())"还没有本期方案" else "这里还没有方案",if(past)"已有方案开奖后，会在这里显示核对结果。" else "选择号码并加入，同一期的记录会自动整理。","去选号",onPick) }
         } else {
             WorkspacePanel(Modifier.weight(1f)) {
-                Surface(color=MaterialTheme.colorScheme.primaryContainer) {
+                Surface(color=MaterialTheme.colorScheme.surfaceContainerLow) {
                 Column(Modifier.fillMaxWidth().padding(horizontal=12.dp,vertical=8.dp)) {
                     Row(Modifier.fillMaxWidth(),verticalAlignment=Alignment.CenterVertically){SmallLabel("第 $issue 期 · 合计",Modifier.weight(1f));ContextTag(if(draw!=null)"已核对" else if(locked)"等待补齐开奖" else "待开奖")}
                     Row(Modifier.fillMaxWidth().padding(top=4.dp),verticalAlignment=Alignment.CenterVertically) {
-                        Text("¥ ${summary.amountYuan}",Modifier.weight(1f).testTag("plan_amount"),fontSize=24.sp,fontFamily=NumberFont,fontWeight=FontWeight.SemiBold)
-                        Column(horizontalAlignment=Alignment.End){Text("${summary.numberCount} 个号码",fontSize=16.sp,fontWeight=FontWeight.Medium,modifier=Modifier.testTag("plan_count"));Text("${summary.unitCount} 注 · ${sources.size} 条记录",fontSize=12.sp,color=MaterialTheme.colorScheme.onSurfaceVariant,modifier=Modifier.testTag("plan_units"))}
+                        Text("¥ ${summary.amountYuan}",Modifier.weight(1f).testTag("plan_amount"),fontSize=20.sp,fontFamily=NumberFont,fontWeight=FontWeight.SemiBold)
+                        Column(horizontalAlignment=Alignment.End){Text("${summary.numberCount} 个号码",fontSize=13.sp,fontWeight=FontWeight.Medium,modifier=Modifier.testTag("plan_count"));Text("${summary.unitCount} 注 · ${sources.size} 条记录",fontSize=11.sp,color=MaterialTheme.colorScheme.onSurfaceVariant,modifier=Modifier.testTag("plan_units"))}
                     }
                     if(draw!=null) {
                         HorizontalDivider(Modifier.padding(vertical=12.dp),color=MaterialTheme.colorScheme.outlineVariant)
                         val matches=summary.bets.filter{PickEngine.matches(it,draw.number.value)}
-                        Row(verticalAlignment=Alignment.CenterVertically){Icon(if(matches.isEmpty())Icons.Outlined.RemoveCircleOutline else Icons.Outlined.CheckCircle,null,Modifier.size(18.dp),tint=MaterialTheme.colorScheme.primary);Spacer(Modifier.width(8.dp));Text("开奖 ${draw.number.value}   ·   ${if(matches.isEmpty())"本期未命中" else "命中 ${matches.sumOf{it.multiplier}} 注"}",fontSize=14.sp,modifier=Modifier.testTag("replay_result"))}
+                        Row(verticalAlignment=Alignment.CenterVertically){Icon(if(matches.isEmpty())Icons.Outlined.RemoveCircleOutline else Icons.Outlined.CheckCircle,null,Modifier.size(18.dp),tint=MaterialTheme.colorScheme.primary);Spacer(Modifier.width(8.dp));Text("开奖 ${draw.number.value}   ·   ${if(matches.isEmpty())"本期未命中" else "命中 ${matches.sumOf{it.multiplier}} 注"}",fontSize=13.sp,modifier=Modifier.testTag("replay_result"))}
                     }
                 }
                 }
                 HorizontalDivider(color=MaterialTheme.colorScheme.outlineVariant)
                 ChoiceRail(listOf("合并号码","选号记录 ${sources.size}"),section,{section=it},Modifier,tags=listOf("plan_numbers","plan_sources"))
-                if(section==0) LazyColumn(Modifier.weight(1f),contentPadding=PaddingValues(start=16.dp,end=16.dp,bottom=12.dp)) {
+                if(section==0) LazyColumn(Modifier.weight(1f),contentPadding=PaddingValues(start=12.dp,end=12.dp,bottom=12.dp)) {
                     summary.bets.groupBy{it.play}.forEach{(play,bets)->
-                        item(key="heading_$play"){Row(Modifier.fillMaxWidth().height(36.dp),verticalAlignment=Alignment.CenterVertically){Text(playLabel(play),fontWeight=FontWeight.Medium,fontSize=14.sp);Spacer(Modifier.width(8.dp));SmallLabel("${bets.size} 个号码")}}
+                        item(key="heading_$play"){Row(Modifier.fillMaxWidth().height(36.dp),verticalAlignment=Alignment.CenterVertically){Text(playLabel(play),fontWeight=FontWeight.Medium,fontSize=13.sp);Spacer(Modifier.width(8.dp));SmallLabel("${bets.size} 个号码")}}
                         items(bets.chunked(3)){row->
-                            Row(Modifier.fillMaxWidth().heightIn(min=48.dp),verticalAlignment=Alignment.CenterVertically){
+                            Row(Modifier.fillMaxWidth().heightIn(min=36.dp),verticalAlignment=Alignment.CenterVertically){
                                 row.forEach{bet->Row(Modifier.weight(1f).padding(end=8.dp),verticalAlignment=Alignment.CenterVertically){
-                                    Text(bet.number,fontFamily=NumberFont,fontSize=17.sp,fontWeight=FontWeight.SemiBold,color=MaterialTheme.colorScheme.primary)
-                                    Text(" ×${bet.multiplier}",fontSize=12.sp,color=MaterialTheme.colorScheme.onSurfaceVariant)
+                                    Text(bet.number,fontFamily=NumberFont,fontSize=16.sp,fontWeight=FontWeight.SemiBold,color=MaterialTheme.colorScheme.primary)
+                                    Text(" ×${bet.multiplier}",fontSize=11.sp,color=MaterialTheme.colorScheme.onSurfaceVariant)
                                     if(draw!=null&&PickEngine.matches(bet,draw.number.value))Icon(Icons.Outlined.Check,"命中",Modifier.padding(start=2.dp).size(12.dp))
                                 }}
                                 repeat(3-row.size){Spacer(Modifier.weight(1f))}
@@ -89,9 +89,9 @@ import com.sanxu.ui.*
                 } else LazyColumn(Modifier.weight(1f),contentPadding=PaddingValues(bottom=8.dp)) {
                     items(sources,key={it.id}){entry->
                         var sourceMenu by remember{mutableStateOf(false)}
-                        Row(Modifier.fillMaxWidth().heightIn(min=72.dp).clickable{detail=entry}.padding(start=16.dp,end=4.dp),verticalAlignment=Alignment.CenterVertically){
+                        Row(Modifier.fillMaxWidth().heightIn(min=64.dp).clickable{detail=entry}.padding(start=16.dp,end=4.dp),verticalAlignment=Alignment.CenterVertically){
                             Column(Modifier.weight(1f).padding(vertical=10.dp)){
-                                Text(methodLabel(entry.input.method),fontSize=15.sp,fontWeight=FontWeight.SemiBold)
+                                Text(methodLabel(entry.input.method),fontSize=13.sp,fontWeight=FontWeight.SemiBold)
                                 Text(entry.numbers.take(5).joinToString("  ")+if(entry.numbers.size>5)" …" else "",fontFamily=NumberFont,fontSize=13.sp,maxLines=1,overflow=TextOverflow.Ellipsis)
                                 SmallLabel("${entry.numbers.size} 个 × ${entry.multiplier} 倍${if(entry.note.isNotBlank())" · 有备注" else ""}")
                             }
@@ -109,15 +109,15 @@ import com.sanxu.ui.*
                     }
                 }
             }
-            Row(Modifier.fillMaxWidth().padding(vertical=8.dp),verticalAlignment=Alignment.CenterVertically){SmallLabel(if(locked)"原记录已锁定，可复制到新一期" else if(section==0)"同玩法同号合并，倍数相加" else "每条记录可单独调整",Modifier.weight(1f));Button(onClick=onPick,modifier=Modifier.height(48.dp),shape=RoundedCornerShape(10.dp)){Icon(Icons.Outlined.Add,null,Modifier.size(18.dp));Spacer(Modifier.width(4.dp));Text("继续选号")}}
+            Row(Modifier.fillMaxWidth().padding(vertical=8.dp),verticalAlignment=Alignment.CenterVertically){SmallLabel(if(locked)"原记录已锁定，可复制到新一期" else if(section==0)"同玩法同号合并，倍数相加" else "每条记录可单独调整",Modifier.weight(1f));Button(onClick=onPick,modifier=Modifier.height(48.dp),shape=RoundedCornerShape(6.dp)){Icon(Icons.Outlined.Add,null,Modifier.size(18.dp));Spacer(Modifier.width(4.dp));Text("继续选号")}}
         }
     }
     detail?.let{entry->WorkspaceSheet("${methodLabel(entry.input.method)} · 记录详情",{detail=null}) {
         Column(Modifier.heightIn(max=460.dp).verticalScroll(rememberScrollState()),verticalArrangement=Arrangement.spacedBy(8.dp)){
             Text("${entry.issue} 期 · ${entry.numbers.size} 个号码 × ${entry.multiplier} 倍",style=MaterialTheme.typography.titleMedium)
-            if(entry.note.isNotBlank()){SmallLabel("备注");Text(entry.note,fontSize=14.sp)}
+            if(entry.note.isNotBlank()){SmallLabel("备注");Text(entry.note,fontSize=13.sp)}
             HorizontalDivider(color=MaterialTheme.colorScheme.outlineVariant)
-            Text(entry.numbers.joinToString("   "),fontFamily=NumberFont,fontSize=15.sp,lineHeight=28.sp)
+            Text(entry.numbers.joinToString("   "),fontFamily=NumberFont,fontSize=13.sp,lineHeight=24.sp)
         }
     }}
     remove?.let{entry->WorkspaceSheet("删除这条选号记录？",{remove=null}){

@@ -1,0 +1,23 @@
+{
+  "artifactType": "approved-design-reference",
+  "approved": true,
+  "approvedAt": "2026-10-02",
+  "approvalEvidence": "User reviewed home, group and position candidates and replied: 暂时差不多，实施吧",
+  "page": "首页",
+  "nativeBuild": false,
+  "implementationStatus": "source-written-tests-deferred-by-user",
+  "generator": "built-in image_gen",
+  "prompt": "Use case: ui-mockup. Precisely edit this SanXu 首页 candidate, preserve its complete screen content, warmwhite/graphite/wine identity and real historical table values. ONLY correct the latest draw zone's size and action ownership. Do not redesign the rest.\nThe number '9 8 7' is visibly too large. Reduce it to roughly TWO THIRDS of its current glyph height, about26sp logical size, same overall emphasis as a small data summary, no huge result/balls. Reduce its horizontal letter spacing as well, to a compact single numbergroup. Keep '和值24 · 跨度2 · 组六' as small readable secondary line underneath.\nMove '详情 ›' to the LEFT official-result subsection, beside the compact 987 number group, clearly belonging to the official draw. Remove '详情' from below the trial waiting state. Right section has ONLY '试机号', '— — —', '等待更新'. Keep vertical divider between officialdraw and trial.\nKeep the whole latest-result panel compact, with headerline期号/date/latest/refresh and the two data sections below. No extra actionrow or inflated whitespace inside the panel.\nPreserve ALL ten historyrows exactly, preserve bottomplan '2026300期 · 8注 · ¥16' and '继续选号', preserve appbar and bottomnavigation, same portrait edge-toedge841x1870 proportions. Keep fine typography and hairlines. No invented values. This remains an unapproved design proposal.\n",
+  "sha256": "78248a8a2a141b5347410e7c2f00e975109a008b9eae7e085683e22c23e6949e",
+  "notes": "Provisional implementation direction; native verification and user visual feedback are still required.",
+  "implementationHistory": [
+    {
+      "date": "2026-10-02",
+      "previousStatus": "authorized-not-yet-implemented",
+      "authorization": "暂时差不多，实施吧",
+      "stopBoundary": "写好代码后就停止任务，我们下次再进行测试。"
+    }
+  ],
+  "implementationRecord": "docs/implementation-number-studio.md",
+  "note": "Exact reference retained. Source written; build, tests and native visual acceptance deferred at user request."
+}

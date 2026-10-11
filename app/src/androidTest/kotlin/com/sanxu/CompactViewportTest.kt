@@ -18,7 +18,10 @@ class CompactViewportTest {
 
     @Test fun homeActionFitsAboveNavigationWithoutScrolling() {
         tag("nav_0").performClick()
-        compose.waitUntil(15_000){compose.onAllNodesWithTag("recent_2026258").fetchSemanticsNodes().isNotEmpty()}
+        compose.waitUntil(15_000){compose.onAllNodesWithTag("recent_2026253").fetchSemanticsNodes().isNotEmpty()}
+        tag("recent_2026253").assertIsDisplayed().assertHasNoClickAction()
+        tag("latest_draw_details").assertHeightIsAtLeast(48.dp)
+        tag("home_start_pick").assertIsDisplayed()
         val navigation=tag("nav_0").getUnclippedBoundsInRoot()
         assertThat(tag("home_start_pick").getUnclippedBoundsInRoot().bottom.value).isAtMost(navigation.top.value)
     }

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "generatedAt": "2026-10-02T10:28:05.240511Z",
-  "title": "Design System: 叁序 · SanXu",
+  "title": "Historical Design System: SanXu 1.0.2",
   "extensions": {
     "colorMeta": {
       "light-primary": {
@@ -1100,6 +1100,13 @@
           }
         ]
       }
+    },
+    "catalogStatus": {
+      "kind": "historical-1.0.2",
+      "supersededBy": "../DESIGN.md",
+      "newImplementation": "source-written-unverified",
+      "verification": "deferred-by-user",
+      "note": "The stored HTML previews and tokens describe 1.0.2. Do not use them as the current direct-editor design or claim native acceptance."
     }
   },
   "components": [
@@ -1328,7 +1335,7 @@
   ],
   "narrative": {
     "northStar": "酒红与紧凑步骤",
-    "overview": "叁序是日常使用的原生 Android 数据工具。酒红身份区承担页面识别，石墨文字承担阅读，暖灰底与浅色内容面承托数字。视觉重心来自开奖号、正在编辑的位置和当前动作，减少大块留白，让用户在手机上完成一件清楚的事。\n\n用户已经选择 B 纵向位选与开奖号优先的首页，随后明确要求颜色更有力度、组件更小、单屏信息更多。本文件提取修订后的 Compose 实现；这些选择不等于最终审美已获认可。记录时原生截图 QA 仍在进行，本文不宣布截图、业务流程或最终发布验收完成。",
+    "overview": "历史1.0.2设计目录；当前源码已改为号码直接编辑，见DESIGN.md。用户要求测试留待下次，本目录尚未重新提取，以下内容不能覆盖最新设计。\n\n叁序是日常使用的原生 Android 数据工具。酒红身份区承担页面识别，石墨文字承担阅读，暖灰底与浅色内容面承托数字。视觉重心来自开奖号、正在编辑的位置和当前动作，减少大块留白，让用户在手机上完成一件清楚的事。\n\n用户已经选择 B 纵向位选与开奖号优先的首页，随后明确要求颜色更有力度、组件更小、单屏信息更多。本文件提取修订后的 Compose 实现；这些选择不等于最终审美已获认可。记录时原生截图 QA 仍在进行，本文不宣布截图、业务流程或最终发布验收完成。",
     "keyCharacteristics": [
       "酒红身份区、暖灰背景、石墨正文；浅色与深色分别定义原生角色。",
       "紧凑内容分组，操作至少 48dp；内容区与系统安全区分别计算。",

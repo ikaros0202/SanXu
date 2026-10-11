@@ -48,14 +48,14 @@ import com.sanxu.ui.ContextTag
                     Surface(color=MaterialTheme.colorScheme.surface) {
                     Column(Modifier.navigationBarsPadding()) {
                     HorizontalDivider(color=MaterialTheme.colorScheme.outlineVariant)
-                    Row(Modifier.fillMaxWidth().height(64.dp).selectableGroup()) {
+                    Row(Modifier.fillMaxWidth().height(56.dp).selectableGroup()) {
                         val names=listOf("首页","走势","选号","方案","彩报")
                         val icons=listOf(Icons.Outlined.Home,Icons.Outlined.ShowChart,Icons.Outlined.GridView,Icons.Outlined.FolderOpen,Icons.Outlined.Article)
                         names.forEachIndexed { index,name ->
                             val active=tab==index
                             Column(Modifier.weight(1f).fillMaxHeight().selectable(selected=active,onClick={tab=index},role=Role.Tab).testTag("nav_$index"),horizontalAlignment=Alignment.CenterHorizontally,verticalArrangement=Arrangement.Center) {
-                                Icon(icons[index],null,Modifier.size(23.dp),tint=if(active) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurfaceVariant)
-                                Text(name,fontSize=12.sp,fontWeight=if(active) FontWeight.SemiBold else FontWeight.Normal,color=if(active) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurfaceVariant)
+                                Icon(icons[index],null,Modifier.size(20.dp),tint=if(active) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurfaceVariant)
+                                Text(name,fontSize=11.sp,fontWeight=if(active) FontWeight.SemiBold else FontWeight.Normal,color=if(active) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurfaceVariant)
                                 Box(Modifier.padding(top=3.dp).size(18.dp,2.dp).background(if(active) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.surface,RoundedCornerShape(1.dp)))
                             }
                         }
@@ -64,13 +64,12 @@ import com.sanxu.ui.ContextTag
                     }
                 }) { padding ->
                     Column(Modifier.fillMaxSize().padding(padding)) {
-                        Box(Modifier.fillMaxWidth().background(MaterialTheme.colorScheme.secondaryContainer).windowInsetsTopHeight(WindowInsets.statusBars))
-                        if(tab!=1&&tab!=4) PageHeader(listOf("叁序","走势","选号","方案","彩报")[tab],tag=if(tab==0) "福彩3D" else null) {
+                        Box(Modifier.fillMaxWidth().background(MaterialTheme.colorScheme.surface).windowInsetsTopHeight(WindowInsets.statusBars))
+                        if(tab==0||tab==3) PageHeader(listOf("叁序","走势","选号","方案","彩报")[tab],tag=if(tab==0) "福彩3D" else null) {
                             if(tab==0) IconButton(onClick={navigate("settings")}){Icon(Icons.Outlined.Settings,"偏好设置")}
-                            if(tab==2) TextButton(onClick={navigate("tools")},colors=ButtonDefaults.textButtonColors(contentColor=LocalContentColor.current)) { Icon(Icons.Outlined.Tune,null,Modifier.size(18.dp));Spacer(Modifier.width(4.dp));Text("工具") }
                         }
                         when(tab) {
-                            0->HomePage(model,onSettings={navigate("settings")},onHistory={stack.add(Detail("history",it))},onPick={tab=2},onPlan={tab=3})
+                            0->HomePage(model,onHistory={stack.add(Detail("history",it))},onPick={tab=2},onPlan={tab=3})
                             1->TrendPage(model,onPick={tab=2})
                             2->PickPage(model,onTools={navigate("tools")},onDetails={navigate("numbers")})
                             3->PlansPage(model,onPick=goPick)
@@ -85,7 +84,7 @@ import com.sanxu.ui.ContextTag
                 }) { padding -> Box(Modifier.fillMaxSize().padding(padding)) {
                     when(detail.page) {
                         "tools"->ToolsPage(model,onPick=goPick,onBacktest={navigate("backtest")})
-                        "numbers"->NumbersPage(model)
+                        "numbers"->NumbersPage(model,onEditNumber=goPick)
                         "settings"->SettingsPage(model)
                         "history"->HistoryPage(model,detail.issue)
                         "backtest"->BacktestPage(model)
@@ -96,8 +95,8 @@ import com.sanxu.ui.ContextTag
         val snackbarBottom=when {
             (stack.lastOrNull() as? Detail)?.page=="tools"->84.dp
             stack.size>1->16.dp
-            tab==2->142.dp
-            else->72.dp
+            tab==2->128.dp
+            else->64.dp
         }
         SnackbarHost(snackbar,Modifier.align(Alignment.BottomCenter).navigationBarsPadding().padding(bottom=snackbarBottom))
     }
@@ -115,16 +114,21 @@ import com.sanxu.ui.ContextTag
 }
 
 @Composable fun PageHeader(title:String,tag:String?=null,actions:@Composable RowScope.()->Unit={}) {
-    Surface(color=MaterialTheme.colorScheme.secondaryContainer,contentColor=MaterialTheme.colorScheme.onSecondaryContainer) {
-    Row(Modifier.fillMaxWidth().height(48.dp).padding(start=16.dp,end=8.dp),verticalAlignment=Alignment.CenterVertically) {
+    Surface(color=MaterialTheme.colorScheme.surface,contentColor=MaterialTheme.colorScheme.onSurface) {
+    Row(Modifier.fillMaxWidth().height(48.dp).padding(start=12.dp,end=4.dp),verticalAlignment=Alignment.CenterVertically) {
+        if(tag!=null) {
+            Row(Modifier.padding(end=8.dp).size(16.dp),horizontalArrangement=Arrangement.spacedBy(2.dp),verticalAlignment=Alignment.Bottom) {
+                listOf(9,16,12).forEach { height -> Box(Modifier.width(4.dp).height(height.dp).background(MaterialTheme.colorScheme.primary,RoundedCornerShape(1.dp))) }
+            }
+        }
         Text(title,style=MaterialTheme.typography.headlineMedium)
-        if(tag!=null){Spacer(Modifier.width(12.dp));Text(tag,fontSize=12.sp,color=LocalContentColor.current.copy(alpha=.85f))}
+        if(tag!=null){Spacer(Modifier.width(8.dp));Text(tag,fontSize=11.sp,color=MaterialTheme.colorScheme.onSurfaceVariant)}
         Spacer(Modifier.weight(1f));actions()
     }
     }
 }
 @Composable fun SecondaryHeader(title:String,onBack:()->Unit) {
-    Surface(color=MaterialTheme.colorScheme.secondaryContainer,contentColor=MaterialTheme.colorScheme.onSecondaryContainer) {
+    Surface(color=MaterialTheme.colorScheme.surface,contentColor=MaterialTheme.colorScheme.onSurface) {
     Row(Modifier.fillMaxWidth().statusBarsPadding().height(48.dp),verticalAlignment=Alignment.CenterVertically) {
         IconButton(onClick=onBack) { Icon(Icons.AutoMirrored.Outlined.ArrowBack,"返回") }
         Text(title,style=MaterialTheme.typography.titleLarge)
@@ -132,8 +136,8 @@ import com.sanxu.ui.ContextTag
     }
 }
 @Composable fun EmptyPanel(title:String,body:String,action:String?=null,onAction:()->Unit={}) {
-    Column(Modifier.fillMaxWidth().padding(24.dp),horizontalAlignment=Alignment.CenterHorizontally,verticalArrangement=Arrangement.spacedBy(12.dp)) {
-        Icon(Icons.Outlined.Inbox,null,Modifier.size(36.dp),tint=MaterialTheme.colorScheme.onSurfaceVariant)
+    Column(Modifier.fillMaxWidth().padding(16.dp),horizontalAlignment=Alignment.CenterHorizontally,verticalArrangement=Arrangement.spacedBy(8.dp)) {
+        Icon(Icons.Outlined.Inbox,null,Modifier.size(24.dp),tint=MaterialTheme.colorScheme.onSurfaceVariant)
         Text(title,style=MaterialTheme.typography.titleMedium)
         Text(body,style=MaterialTheme.typography.bodyMedium,color=MaterialTheme.colorScheme.onSurfaceVariant)
         if(action!=null) OutlinedButton(onClick=onAction){Text(action)}

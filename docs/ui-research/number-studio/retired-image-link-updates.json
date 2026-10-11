@@ -1,0 +1,18 @@
+[
+  {
+    "path": "docs/acceptance-impeccable.md",
+    "replacedImageLinks": 1
+  },
+  {
+    "path": "docs/acceptance.md",
+    "replacedImageLinks": 16
+  },
+  {
+    "path": "docs/impeccable-qa.md",
+    "replacedImageLinks": 126
+  },
+  {
+    "path": "docs/redesign-qa.md",
+    "replacedImageLinks": 56
+  }
+]

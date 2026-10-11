@@ -1,0 +1,5 @@
+Transcript of first concept-seed result (not a full raw log):
+SURFACE CONCEPT SEED key=f591e32b; mode=operate; source=api; approved pool=c3b204a1eed6; 306/564 human-approved
+DEALT INDICES: 4, 7, 3 (index 4 leads)
+Candidates are documented in brief.md. The replay command printed "choice ping skipped", so it did not recover the full initial output.
+Operate mode rules were independently read from reference/mode-operate.md.

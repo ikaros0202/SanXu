@@ -38,7 +38,7 @@ class DesignScreensTest {
             shot("settings-$suffix");back();tag("recent_2026258").assertIsDisplayed();tag("home_start_pick").assertIsDisplayed()
             assertThat(tag("home_start_pick").getUnclippedBoundsInRoot().bottom.value).isAtMost(tag("nav_0").getUnclippedBoundsInRoot().top.value)
             shot("home-$suffix")
-            text("第 2026263 期").performClick()
+            tag("latest_draw_details").performClick()
             compose.waitUntil(15_000){compose.onAllNodesWithContentDescription("关闭弹层").fetchSemanticsNodes().isNotEmpty()}
             shot("history-detail-$suffix");close();shot("history-$suffix");back()
             tag("nav_1").performClick();waitTag("trend_ready");shot("trend-$suffix")
@@ -48,13 +48,7 @@ class DesignScreensTest {
             tag("method_GROUP").performClick();shot("pick-group-$suffix")
             tag("method_DISTINCT").performClick();shot("pick-distinct-$suffix")
             tag("method_POSITION").performClick()
-            for(position in 0..2) {
-                tag("position_$position").performClick()
-                for(digit in 0..9) {
-                val node=tag("pos${position}_$digit")
-                if(node.fetchSemanticsNode().config[SemanticsProperties.Selected]!=true)node.performClick()
-            }
-            }
+            for(position in 0..2) compose.setStudioDigits("position_$position","0123456789")
             tag("pick_count").assertTextEquals("1000 个号码 · 1000 注")
             desc("查看 1000 个号码").assertIsDisplayed();tag("save_plan").assertIsDisplayed()
             assertThat(desc("查看 1000 个号码").getUnclippedBoundsInRoot().bottom.value).isAtMost(tag("save_plan").getUnclippedBoundsInRoot().top.value)
@@ -93,7 +87,7 @@ class DesignScreensTest {
         // A real edit followed by undo must preserve all other source contributions.
         compose.onAllNodes(hasContentDescription("编辑记录",substring=true)).onFirst().performClick()
         tag("save_plan").assertTextEquals("更新记录");shot("source-edit-dark")
-        desc("增加倍数").performClick();tag("save_plan").performClick()
+        compose.incrementStudioMultiplier();tag("save_plan").performClick()
         compose.waitUntil(15_000){compose.onAllNodesWithText("撤销本次").fetchSemanticsNodes().isNotEmpty()}
         text("撤销本次").performClick();tag("nav_3").performClick()
         tag("plan_amount").assertTextEquals("¥ 26");tag("plan_units").assertTextEquals("13 注 · 4 条记录")

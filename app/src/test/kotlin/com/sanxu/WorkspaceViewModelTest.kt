@@ -51,6 +51,30 @@ class WorkspaceViewModelTest {
         } finally {vm.viewModelScope.cancel();Dispatchers.resetMain()}
     }
 
+    @Test fun uncollectedNumberSurvivesMethodSwitchAndNewViewModelWithoutChangingPlan()=runTest {
+        Dispatchers.setMain(StandardTestDispatcher(testScheduler))
+        val plans=MemoryPlans();val vm=workspace(plans)
+        var restored:WorkspaceViewModel?=null
+        try {
+            advanceUntilIdle()
+            vm.updateDraft { it.copy(issue="2026300",input=it.input.copy(manual=listOf("007"))) }
+            vm.updateDraft { SingleNumberEditor.setValue(SingleNumberEditor.begin(it,"007"),"00") }
+            vm.chooseMethod(PickMethod.POSITION);advanceUntilIdle()
+            vm.updateInput { it.copy(positions=listOf(setOf(0,1),setOf(0),setOf(2,7))) }
+            vm.chooseMethod(PickMethod.SINGLE);advanceUntilIdle()
+            assertThat(vm.editor.value.draft.singleEdit).isEqualTo(SingleNumberEdit("00","007"))
+            assertThat(vm.editor.value.draft.input.manual).containsExactly("007")
+            vm.viewModelScope.cancel()
+            val reloaded=workspace(plans);restored=reloaded;advanceUntilIdle()
+            assertThat(reloaded.editor.value.draft.singleEdit).isEqualTo(SingleNumberEdit("00","007"))
+            assertThat(plans.records.value).isEmpty()
+            reloaded.newEntry();advanceUntilIdle()
+            assertThat(reloaded.editor.value.draft.singleEdit).isEqualTo(SingleNumberEdit())
+            reloaded.chooseMethod(PickMethod.POSITION);advanceUntilIdle()
+            assertThat(PickEngine.generate(reloaded.editor.value.draft.input).numbers).containsExactly("002","007","102","107")
+        } finally {vm.viewModelScope.cancel();restored?.viewModelScope?.cancel();Dispatchers.resetMain()}
+    }
+
     private fun workspace(plans:PlanRepository)=WorkspaceViewModel(EmptyDraws,plans,EmptyLive,EmptyFeed,MemorySettings())
 }
 private class MemoryPlans:PlanRepository {

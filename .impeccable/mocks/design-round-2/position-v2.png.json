@@ -1,0 +1,23 @@
+{
+  "artifactType": "approved-design-reference",
+  "approved": true,
+  "approvedAt": "2026-10-02",
+  "approvalEvidence": "User reviewed home, group and position candidates and replied: 暂时差不多，实施吧",
+  "page": "位选",
+  "nativeBuild": false,
+  "implementationStatus": "source-written-tests-deferred-by-user",
+  "generator": "built-in image_gen",
+  "prompt": "Use case: ui-mockup. Precisely edit this SanXu 位选 candidate. Keep complete appchrome, graphite three-column editor with values百位0 1 / 十位0 / 个位2 7, wine accent, allfourchecked results002007102107, bottom4注1倍¥8加入本期, and overall portraitedge-toedgeproportions.\nChange ONLY two density/details:\n1 The center equation '2 × 1 × 2 = 4种组合' is oversized and visually louder than the real results. Replace it with a SMALL SECONDARY LEFT-ALIGNED sentence at13sp, on ONE36dp-high row just below the editor: '2 × 1 × 2 = 4种组合'. Entireline mutedgraphite/gray, only4semibold, no giantwine4. Move resultpanel upward by reclaimedspace. Do not stretch anyotherregion tofillspace.\n2 Narrow the active underline beneath 十位value0 to48dp logical, centered under0, and about2dp thick. It must not stretch the entirecolumnwidth. This is the currentlyselected position for a tap-to-edit action, not a progressbar.\nPreserve the ability to select anyposition; no arrows or nextbuttons. Labelsdigits remain legible andcompact, largeblankspacebelow remains intentional. Do not addcontrols. This is an unapproved design proposal.\n",
+  "sha256": "01a7cbbea06fcc082b2b8d08320024da233228d8d6fef2208a38dc29086a7de8",
+  "notes": "Provisional implementation direction; native verification and user visual feedback are still required.",
+  "implementationHistory": [
+    {
+      "date": "2026-10-02",
+      "previousStatus": "authorized-not-yet-implemented",
+      "authorization": "暂时差不多，实施吧",
+      "stopBoundary": "写好代码后就停止任务，我们下次再进行测试。"
+    }
+  ],
+  "implementationRecord": "docs/implementation-number-studio.md",
+  "note": "Exact reference retained. Source written; build, tests and native visual acceptance deferred at user request."
+}

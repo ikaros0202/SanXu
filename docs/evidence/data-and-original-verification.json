@@ -1,6 +1,7 @@
 {
-  "originalPathsUnchanged": 290,
-  "originalGitStatusUnchanged": true,
+  "originalAuditRequested": false,
+  "originalPathsUnchanged": null,
+  "originalGitStatusUnchanged": null,
   "seedRecords": 3399,
   "firstIssue": "2017001",
   "lastIssue": "2026263",
@@ -9,5 +10,5 @@
   "databaseIntegrity": "ok",
   "emptyUserTables": true,
   "dependencyDirection": "passed",
-  "checkedAt": "2026-10-02T18:41:13.294045+08:00"
+  "checkedAt": "2026-10-11T11:36:42.270785+08:00"
 }

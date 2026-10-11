@@ -1,0 +1,37 @@
+{
+  "originalPathsUnchanged": 290,
+  "originalGitStatusUnchanged": true,
+  "proposals": [
+    {
+      "name": "d-permutations.png",
+      "size": [
+        841,
+        1870
+      ],
+      "approved": false,
+      "nativeBuild": false
+    },
+    {
+      "name": "e-quick-entry.png",
+      "size": [
+        841,
+        1870
+      ],
+      "approved": false,
+      "nativeBuild": false
+    },
+    {
+      "name": "f-direct-edit.png",
+      "size": [
+        841,
+        1870
+      ],
+      "approved": false,
+      "nativeBuild": false
+    }
+  ],
+  "scope": "Design proposals only; no Gradle or emulator started in this round.",
+  "checkCorrection": "Initial ad hoc check misclassified manifest null entries as missing; corrected to match tools/verify.py digest semantics. No original-project mismatch remains.",
+  "recordType": "historical-before-user-selection-and-image-cleanup",
+  "supersededBy": "handoff-verification.json"
+}

@@ -22,15 +22,15 @@ import java.time.format.DateTimeFormatter
     val metadata by model.metadata.collectAsStateWithLifecycle()
     val draws by model.draws.collectAsStateWithLifecycle()
     val refreshing by model.refreshing.collectAsStateWithLifecycle()
-    Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(16.dp),verticalArrangement=Arrangement.spacedBy(8.dp)) {
+    Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(12.dp),verticalArrangement=Arrangement.spacedBy(8.dp)) {
         WorkspacePanel {
             PanelHeading("外观")
             ChoiceRail(listOf("跟随系统","浅色","深色"),ThemeChoice.entries.indexOf(settings.theme),{model.setTheme(ThemeChoice.entries[it])},Modifier.padding(start=12.dp,end=12.dp,bottom=12.dp))
         }
         WorkspacePanel {
-            Row(Modifier.fillMaxWidth().heightIn(min=64.dp).padding(horizontal=12.dp),verticalAlignment=Alignment.CenterVertically){Column(Modifier.weight(1f)){Text("首页核对提示",style=MaterialTheme.typography.titleMedium);SmallLabel("已有方案开奖后显示核对入口")};Switch(settings.showReplayNotice,model::setNotice)}
+            Row(Modifier.fillMaxWidth().heightIn(min=56.dp).padding(horizontal=12.dp),verticalAlignment=Alignment.CenterVertically){Column(Modifier.weight(1f)){Text("首页核对提示",style=MaterialTheme.typography.titleMedium);SmallLabel("已有方案开奖后显示核对入口")};Switch(settings.showReplayNotice,model::setNotice)}
             HorizontalDivider(color=MaterialTheme.colorScheme.outlineVariant)
-            Row(Modifier.fillMaxWidth().heightIn(min=64.dp).padding(start=16.dp,end=4.dp),verticalAlignment=Alignment.CenterVertically){
+            Row(Modifier.fillMaxWidth().heightIn(min=56.dp).padding(start=12.dp,end=4.dp),verticalAlignment=Alignment.CenterVertically){
                 Column(Modifier.weight(1f)){Text("开奖数据 · ${draws.size} 期",style=MaterialTheme.typography.titleMedium)
                     SmallLabel(metadata?.lastSuccessEpochMillis?.let{"上次更新 ${Instant.ofEpochMilli(it).atZone(ZoneId.of("Asia/Shanghai")).format(DateTimeFormatter.ofPattern("MM-dd HH:mm"))}"} ?: "尚未完成首次更新")
                 }
@@ -39,7 +39,7 @@ import java.time.format.DateTimeFormatter
         }
         WorkspacePanel {
             PanelHeading("叁序"){ContextTag(BuildConfig.VERSION_NAME,Modifier.padding(end=8.dp))}
-            Column(Modifier.padding(start=16.dp,end=16.dp,bottom=16.dp),verticalArrangement=Arrangement.spacedBy(10.dp)){
+            Column(Modifier.padding(start=12.dp,end=12.dp,bottom=12.dp),verticalArrangement=Arrangement.spacedBy(10.dp)){
                 Text("福彩3D 数据分析与个人方案整理",style=MaterialTheme.typography.bodyMedium)
                 SmallLabel("历史统计用于观察与复盘，不表示未来中奖概率。")
                 SmallLabel("记录保存在这台设备，卸载会删除个人记录。")

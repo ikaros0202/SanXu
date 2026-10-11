@@ -38,7 +38,7 @@ import com.sanxu.ui.*
     var detail by remember{mutableStateOf<SavedMethod?>(null)}
     Column(Modifier.fillMaxSize()) {
         ChoiceRail(listOf("筛选","模板","备注"),section,{section=it},Modifier.padding(horizontal=12.dp),tags=listOf("tool_filters","tool_templates","tool_note"))
-        Column(Modifier.weight(1f).fillMaxWidth().verticalScroll(rememberScrollState()).padding(16.dp),verticalArrangement=Arrangement.spacedBy(8.dp)) {
+        Column(Modifier.weight(1f).fillMaxWidth().verticalScroll(rememberScrollState()).padding(12.dp),verticalArrangement=Arrangement.spacedBy(8.dp)) {
             when(section) {
                 0->WorkspacePanel {
                     PanelHeading("生成范围"){ContextTag(methodLabel(input.method),Modifier.padding(end=8.dp))}
@@ -46,9 +46,9 @@ import com.sanxu.ui.*
                         ChoiceRail(listOf("全号码筛选","胆拖选号"),when(input.method){PickMethod.FILTER->0;PickMethod.DAN_TUO->1;else->-1},{model.chooseMethod(if(it==0)PickMethod.FILTER else PickMethod.DAN_TUO)})
                         if(input.method==PickMethod.FILTER||input.method==PickMethod.DAN_TUO)ChoiceRail(PlayType.entries.map(::playLabel),PlayType.entries.indexOf(input.play),{index->model.updateInput{it.copy(play=PlayType.entries[index],excluded=emptySet())}})
                         if(input.method==PickMethod.DAN_TUO) {
-                            Text("胆码 · 必须包含",fontWeight=FontWeight.Medium,fontSize=14.sp,modifier=Modifier.padding(top=8.dp))
+                            Text("胆码 · 必须包含",fontWeight=FontWeight.Medium,fontSize=13.sp,modifier=Modifier.padding(top=8.dp))
                             DigitGrid(input.dan,"dan"){digit->model.updateInput{it.copy(dan=it.dan.toggle(digit),tuo=it.tuo-digit,excluded=emptySet())}}
-                            Text("拖码 · 参与组合",fontWeight=FontWeight.Medium,fontSize=14.sp,modifier=Modifier.padding(top=8.dp))
+                            Text("拖码 · 参与组合",fontWeight=FontWeight.Medium,fontSize=13.sp,modifier=Modifier.padding(top=8.dp))
                             DigitGrid(input.tuo,"tuo"){digit->model.updateInput{it.copy(tuo=it.tuo.toggle(digit),dan=it.dan-digit,excluded=emptySet())}}
                             SmallLabel("胆码与拖码互斥；组三最多1胆，组六最多2胆。")
                         } else SmallLabel("在当前选号范围内继续筛选，返回后保留输入。",Modifier.padding(vertical=8.dp))
@@ -57,22 +57,22 @@ import com.sanxu.ui.*
                     PanelHeading("筛选条件 · ${conditions.size}"){
                         TextButton(onClick={editorIndex=-1},modifier=Modifier.testTag("add_condition")){Icon(Icons.Outlined.Add,null,Modifier.size(18.dp));Text("添加")}
                     }
-                    if(conditions.isEmpty())SmallLabel("尚未添加条件，保留当前全部号码。",Modifier.padding(start=16.dp,end=16.dp,bottom=20.dp))
+                    if(conditions.isEmpty())SmallLabel("尚未添加条件，保留当前全部号码。",Modifier.padding(start=16.dp,end=16.dp,bottom=12.dp))
                     conditions.forEachIndexed{index,condition->
-                        Row(Modifier.fillMaxWidth().heightIn(min=64.dp).clickable{editorIndex=index}.padding(start=16.dp,end=4.dp),verticalAlignment=Alignment.CenterVertically){
-                            Column(Modifier.weight(1f).padding(vertical=8.dp)){Text(condition.title,fontSize=14.sp,fontWeight=FontWeight.Medium);SmallLabel(conditionDescription(condition))}
+                        Row(Modifier.fillMaxWidth().heightIn(min=56.dp).clickable{editorIndex=index}.padding(start=16.dp,end=4.dp),verticalAlignment=Alignment.CenterVertically){
+                            Column(Modifier.weight(1f).padding(vertical=8.dp)){Text(condition.title,fontSize=13.sp,fontWeight=FontWeight.Medium);SmallLabel(conditionDescription(condition))}
                             IconButton(onClick={model.updateInput{it.copy(conditionsJson=ConditionCodec.encode(conditions.filterIndexed{i,_->i!=index}),excluded=emptySet())}}){Icon(Icons.Outlined.Close,"移除${condition.title}",Modifier.size(18.dp))}
                         }
                         if(index!=conditions.lastIndex)HorizontalDivider(Modifier.padding(horizontal=12.dp),color=MaterialTheme.colorScheme.outlineVariant)
                     }
-                    if(result.problem!=null&&result.problem!=PickProblem.NO_RESULTS&&result.problem!=PickProblem.INCOMPLETE)Text("请检查号码、胆码或拖码条件",Modifier.padding(16.dp),fontSize=12.sp,color=MaterialTheme.colorScheme.error)
+                    if(result.problem!=null&&result.problem!=PickProblem.NO_RESULTS&&result.problem!=PickProblem.INCOMPLETE)Text("请检查号码、胆码或拖码条件",Modifier.padding(12.dp),fontSize=12.sp,color=MaterialTheme.colorScheme.error)
                 }
                 1->WorkspacePanel {
                     PanelHeading("方法模板"){TextButton(onClick={naming=true}){Icon(Icons.Outlined.Add,null,Modifier.size(18.dp));Text("保存当前方法")}}
-                    if(methods.isEmpty())SmallLabel("保存当前数字池、位置与条件，下次直接应用。不包含期号和倍数。",Modifier.padding(start=16.dp,end=16.dp,bottom=20.dp))
+                    if(methods.isEmpty())SmallLabel("保存当前数字池、位置与条件，下次直接应用。不包含期号和倍数。",Modifier.padding(start=16.dp,end=16.dp,bottom=12.dp))
                     methods.forEach{method->
-                        Row(Modifier.fillMaxWidth().heightIn(min=72.dp).clickable{detail=method}.padding(start=16.dp,end=4.dp),verticalAlignment=Alignment.CenterVertically){
-                            Column(Modifier.weight(1f).padding(vertical=8.dp)){Text(method.title,fontWeight=FontWeight.Medium,fontSize=15.sp,maxLines=2,overflow=TextOverflow.Ellipsis);SmallLabel("${methodLabel(method.input.method)} · ${PickEngine.generate(method.input).numbers.size} 个号码")}
+                        Row(Modifier.fillMaxWidth().heightIn(min=64.dp).clickable{detail=method}.padding(start=16.dp,end=4.dp),verticalAlignment=Alignment.CenterVertically){
+                            Column(Modifier.weight(1f).padding(vertical=8.dp)){Text(method.title,fontWeight=FontWeight.Medium,fontSize=13.sp,maxLines=2,overflow=TextOverflow.Ellipsis);SmallLabel("${methodLabel(method.input.method)} · ${PickEngine.generate(method.input).numbers.size} 个号码")}
                             TextButton(onClick={model.applyMethod(method);onPick()}){Text("应用")}
                             IconButton(onClick={delete=method}){Icon(Icons.Outlined.DeleteOutline,"删除模板",Modifier.size(20.dp))}
                         }
@@ -81,7 +81,7 @@ import com.sanxu.ui.*
                 }
                 2->WorkspacePanel {
                     PanelHeading("这次选号的备注"){SmallLabel("${state.draft.note.length}/200",Modifier.padding(end=8.dp))}
-                    OutlinedTextField(state.draft.note,{note->if(note.length<=200)model.updateDraft{it.copy(note=note)}},placeholder={Text("记下这一期的思路，随选号记录保存。")},minLines=5,maxLines=8,modifier=Modifier.fillMaxWidth().padding(start=12.dp,end=12.dp,bottom=16.dp).testTag("draft_note"),shape=RoundedCornerShape(12.dp))
+                    OutlinedTextField(state.draft.note,{note->if(note.length<=200)model.updateDraft{it.copy(note=note)}},placeholder={Text("记下这一期的思路，随选号记录保存。")},minLines=5,maxLines=8,modifier=Modifier.fillMaxWidth().padding(start=12.dp,end=12.dp,bottom=16.dp).testTag("draft_note"),shape=RoundedCornerShape(6.dp))
                 }
             }
         }
@@ -90,7 +90,7 @@ import com.sanxu.ui.*
             Row(Modifier.fillMaxWidth().padding(horizontal=16.dp,vertical=8.dp),verticalAlignment=Alignment.CenterVertically){
                 Column(Modifier.weight(1f)){Text("${result.numbers.size} 个号码",style=MaterialTheme.typography.titleMedium,modifier=Modifier.testTag("tools_count"));SmallLabel(methodLabel(input.method))}
                 TextButton(onClick=onBacktest,enabled=result.problem==null){Text("历史回测")}
-                Button(onClick=onPick,modifier=Modifier.height(48.dp).testTag("tools_done"),shape=RoundedCornerShape(10.dp)){Text("返回选号")}
+                Button(onClick=onPick,modifier=Modifier.height(48.dp).testTag("tools_done"),shape=RoundedCornerShape(6.dp)){Text("返回选号")}
             }
         }}
     }

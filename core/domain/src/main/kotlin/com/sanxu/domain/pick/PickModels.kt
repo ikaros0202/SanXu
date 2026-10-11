@@ -41,6 +41,7 @@ data class PickDraft(
     val editingId: String? = null,
     val revision: Int? = null,
     val note: String = "",
+    val singleEdit: SingleNumberEdit = SingleNumberEdit(),
 )
 
 @Serializable

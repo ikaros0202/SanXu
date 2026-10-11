@@ -1,0 +1,75 @@
+{
+  "checkedAt": "2026-10-02T20:58:34.123738+08:00",
+  "projectRoot": "D:\\codexproject\\SanXu",
+  "sourceThread": "01a0facf-ccdd-7d63-bdd9-dcd25ea11f8b",
+  "correctHandoff": "D:\\codexproject\\SanXu\\HANDOFF.md",
+  "status": "context-corrected-documentation-updated-ui-not-yet-implemented",
+  "continuationAuthorized": true,
+  "existingVersion": "1.0.2 (3)",
+  "head": "53f0e20",
+  "documentChangesThisPass": [
+    "AGENTS.md",
+    "DESIGN.md",
+    "HANDOFF.md",
+    "PRODUCT.md",
+    "README.md",
+    "docs/codex-skill-inventory.md",
+    "docs/design-next.md",
+    "docs/design-spec.md",
+    "docs/project-history.md",
+    "docs/requirements.md",
+    "docs/ui-research/direction-contract.md",
+    "docs/ui-research/number-studio/brief.md",
+    "tasks/todo.md"
+  ],
+  "localLinksChecked": 97,
+  "missingLocalLinks": [],
+  "approvedReferences": [
+    {
+      "path": ".impeccable/mocks/approved/distinct-permutations.png",
+      "sha256": "a7bd1bd299fd48b0a167481d5bb14b0a431b4ddb3768ceb536f46240a0c960fc",
+      "byteIdenticalToUserAttachment": true,
+      "nativeBuild": false
+    },
+    {
+      "path": ".impeccable/mocks/approved/single-direct-edit.png",
+      "sha256": "c8999e01ceea39813b08483ae0894393a80e3e132354b192fc516f8945ad2645",
+      "byteIdenticalToUserAttachment": true,
+      "nativeBuild": false
+    }
+  ],
+  "applicationSourceTestsToolsDependenciesDataAndVersionUnchanged": true,
+  "gitDiffCheck": "passed",
+  "historicalOriginalVerification": {
+    "command": "python tools/verify.py",
+    "exitCode": 1,
+    "result": "failed at original project fingerprint assertion",
+    "historicalPaths": 290,
+    "changedPaths": [
+      "HANDOFF.md",
+      "app/src/main/res/drawable-nodpi/home_crystal_content_shell_redesign.png",
+      "app/src/main/res/values/strings_home_announcement.xml",
+      "docs/design-spec.md",
+      "docs/releases/v1.4.0.md",
+      "docs/third-party-assets.md",
+      "tasks/plan.md",
+      "tasks/todo.md"
+    ],
+    "subsequentSeedAndDatabaseChecksExecuted": false,
+    "historicalManifestChanged": false,
+    "oldProjectRestoredOrReset": false
+  },
+  "originalProjectChangedDuringThisDocumentPass": false,
+  "originalGitStatusChangedDuringThisDocumentPass": false,
+  "newBuildOrUiTestsRunDuringThisDocumentPass": false,
+  "startedBuildOrEmulatorDuringThisDocumentPass": false,
+  "wrongProjectEmulatorCleanup": {
+    "serial": "emulator-5580",
+    "avd": "XinYue_API37",
+    "ownTemporaryLucky3dInstallationRemoved": true,
+    "emulatorExitConfirmed": true,
+    "windowConfigRestoredByteIdentically": true,
+    "sharedAdbServerPreserved": true
+  },
+  "gitCommitOrPushPerformed": false
+}

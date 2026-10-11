@@ -1,0 +1,24 @@
+{
+  "approved": true,
+  "approvedAt": "2026-10-02",
+  "approvalEvidence": "User attached this exact image and said: 这两种不错",
+  "artifactType": "approved-design-reference",
+  "nativeBuild": false,
+  "implementationStatus": "source-written-tests-deferred-by-user",
+  "method": "distinct",
+  "sourceAttachment": "C:\\Users\\jiqin\\AppData\\Local\\Temp\\codex-clipboard-5352e1f8-a91a-47c1-921a-40ce91e0fd92.png",
+  "sha256": "a7bd1bd299fd48b0a167481d5bb14b0a431b4ddb3768ceb536f46240a0c960fc",
+  "generator": "image_gen built-in, reattached by user",
+  "prompt": "Edit this Android 叁序 UI image. Fix the permutation diagram's wasting of vertical space. Preserve appchrome, graphite/wine/warmwhite identity, active单选单, exactinputdigits012,6注1倍¥12, 加入本期 and bottomnavigation.\nCompletely REPLACE the large central fan diagram. There must be NO left origin box and NO six-row vertical graph. Instead render one compact white results area of174dp TOTAL height in a360x800dp viewport, which is LESS THAN ONE QUARTER of imageheight. The title '六种排法'13sp sits onone30dp row, right '保留6注'11sp.\nExactly THREE48dp rows with TWO selectable results on EACH row:\nrow1: burgundycheckbox 012     tiny ↔     burgundycheckbox 021\nrow2: burgundycheckbox 102     tiny ↔     burgundycheckbox 120\nrow3: burgundycheckbox 201     tiny ↔     burgundycheckbox 210\nEvery number16sp. All six checked. Align number digits by column. In each row the shared firstdigit is charcoal, the two changing suffixdigits use slightly strongerwine. The tiny swaparrow makes the pair relationship understandable (same firstdigit, other two exchangeorder). No extra origin, no tall branches, no six stackedrows, no duplicate resultpreview. All in ONE shared flat surface, thin rules only. Oneline11sp caption '点号码可取消保留' at bottomedge iffits otherwiseomit.\nAbove it retain graphiteinputrail72dp tall, title11sp, digits24spmaximum, pale rose改数字 action; do not enlarge. Below it existing筛选条件row48dp moves UP to follow results immediately. Remove all other captions orsections. Keep quiet warmgrayunusedspace. Do not invent more content. The task is type a set once, select which orders to keep. Touchrows48dp; glyphs13/16/24sp. Strong density and realnormalphone proportions, not largeformattext. Outputportraitnativeapp edge-toedge.",
+  "seedKey": "f591e32b",
+  "note": "Exact reference retained. Source written; build, tests and native visual acceptance deferred at user request.",
+  "implementationHistory": [
+    {
+      "date": "2026-10-02",
+      "previousStatus": "deferred-by-user",
+      "authorization": "暂时差不多，实施吧",
+      "stopBoundary": "写好代码后就停止任务，我们下次再进行测试。"
+    }
+  ],
+  "implementationRecord": "docs/implementation-number-studio.md"
+}

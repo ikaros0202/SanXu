@@ -19,7 +19,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 @Composable fun WorkspacePanel(modifier:Modifier=Modifier,content:@Composable ColumnScope.()->Unit) {
-    Surface(modifier.fillMaxWidth(),shape=RoundedCornerShape(12.dp),color=MaterialTheme.colorScheme.surface) {
+    Surface(modifier.fillMaxWidth(),shape=RoundedCornerShape(6.dp),color=MaterialTheme.colorScheme.surface) {
         Column(content=content)
     }
 }
@@ -36,7 +36,7 @@ import androidx.compose.ui.unit.sp
                     color=MaterialTheme.colorScheme.surface,
                     contentColor=if(active) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurfaceVariant) {
                     Box(Modifier.padding(horizontal=4.dp),contentAlignment=Alignment.Center) {
-                        Text(label,fontSize=14.sp,fontWeight=if(active) FontWeight.SemiBold else FontWeight.Normal,maxLines=1)
+                        Text(label,fontSize=13.sp,fontWeight=if(active) FontWeight.SemiBold else FontWeight.Normal,maxLines=1)
                         if(active) Box(Modifier.align(Alignment.BottomCenter).width(28.dp).height(3.dp).background(MaterialTheme.colorScheme.primary,RoundedCornerShape(2.dp)))
                     }
                 }
@@ -46,7 +46,7 @@ import androidx.compose.ui.unit.sp
 }
 
 @Composable fun PanelHeading(title:String,modifier:Modifier=Modifier,actions:@Composable RowScope.()->Unit={}) {
-    Row(modifier.fillMaxWidth().heightIn(min=48.dp).padding(start=16.dp,end=8.dp),verticalAlignment=Alignment.CenterVertically) {
+    Row(modifier.fillMaxWidth().heightIn(min=48.dp).padding(start=12.dp,end=4.dp),verticalAlignment=Alignment.CenterVertically) {
         Text(title,Modifier.weight(1f),style=MaterialTheme.typography.titleMedium)
         actions()
     }
@@ -54,13 +54,13 @@ import androidx.compose.ui.unit.sp
 
 @Composable fun ContextTag(text:String,modifier:Modifier=Modifier) {
     Surface(modifier,shape=RoundedCornerShape(6.dp),color=MaterialTheme.colorScheme.primaryContainer,contentColor=MaterialTheme.colorScheme.onPrimaryContainer) {
-        Text(text,Modifier.padding(horizontal=8.dp,vertical=4.dp),fontSize=12.sp,fontWeight=FontWeight.Medium)
+        Text(text,Modifier.padding(horizontal=6.dp,vertical=3.dp),fontSize=11.sp,fontWeight=FontWeight.Medium)
     }
 }
 
 @Composable fun Metric(value:String,label:String,modifier:Modifier=Modifier) {
     Column(modifier,verticalArrangement=Arrangement.spacedBy(4.dp)) {
-        Text(value,fontFamily=NumberFont,fontSize=if(value.length>=7)18.sp else 24.sp,fontWeight=FontWeight.SemiBold,maxLines=1)
-        Text(label,fontSize=12.sp,color=MaterialTheme.colorScheme.onSurfaceVariant)
+        Text(value,fontFamily=NumberFont,fontSize=if(value.length>=7)16.sp else 20.sp,fontWeight=FontWeight.SemiBold,maxLines=1)
+        Text(label,fontSize=11.sp,color=MaterialTheme.colorScheme.onSurfaceVariant)
     }
 }

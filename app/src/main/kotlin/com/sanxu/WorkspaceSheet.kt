@@ -15,7 +15,7 @@ import androidx.compose.ui.unit.dp
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable fun WorkspaceSheet(title:String,onDismiss:()->Unit,content:@Composable ColumnScope.()->Unit) {
     ModalBottomSheet(onDismissRequest=onDismiss,sheetState=rememberModalBottomSheetState(skipPartiallyExpanded=true),containerColor=MaterialTheme.colorScheme.surface,
-        properties=ModalBottomSheetProperties(isAppearanceLightStatusBars=false,isAppearanceLightNavigationBars=MaterialTheme.colorScheme.surface.luminance()>.5f),
+        properties=ModalBottomSheetProperties(isAppearanceLightStatusBars=MaterialTheme.colorScheme.surface.luminance()>.5f,isAppearanceLightNavigationBars=MaterialTheme.colorScheme.surface.luminance()>.5f),
         dragHandle=null) {
         // Keep the marker outside Material3's interactive tooltip wrapper.
         Box(Modifier.align(Alignment.CenterHorizontally).padding(top=12.dp,bottom=4.dp).size(32.dp,4.dp).background(MaterialTheme.colorScheme.outline,RoundedCornerShape(2.dp)))

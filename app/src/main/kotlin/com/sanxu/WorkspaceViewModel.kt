@@ -146,7 +146,7 @@ class WorkspaceViewModel @Inject constructor(
         requestId=null
         work.trySend { plans.saveDraft(draft.input.method.name,draft) }
     }
-    fun newEntry() = updateDraft { it.copy(input=PickInput(method=it.input.method,play=it.input.play),editingId=null,revision=null,note="") }
+    fun newEntry() = updateDraft { it.copy(input=PickInput(method=it.input.method,play=it.input.play),editingId=null,revision=null,note="",singleEdit=SingleNumberEdit()) }
     fun useTrendDigit(position:Int,digit:Int) {
         if(position !in 0..2||digit !in 0..9||_editor.value.saving) return
         val issue=_editor.value.draft.issue

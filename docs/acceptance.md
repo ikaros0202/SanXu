@@ -1,5 +1,8 @@
 # 叁序 1.0.0 实施与验收
 
+> 2026-10-02按用户要求清理淘汰/重复设计图片，已移除本文相关图片链接；[清理清单](ui-research/number-studio/image-cleanup.json)保留原路径和哈希。本文测试与验收结论仅为当时历史记录，不代表下一版新交互已实装或验收。
+
+
 验收日期：2026-10-02。本次交付为独立 Android 本地测试软件，目录 `D:\codexproject\SanXu`，包名 `com.sanxu.app`，版本 1.0.0 / 1。原软件 `D:\codexproject\lucky3D` 保留。
 
 ## 交付内容
@@ -88,14 +91,14 @@ python tools/verify.py
 
 | 页面 | API 37 | API 26 |
 |---|---|---|
-| 单选单 | [截图](evidence/final-api37/pick-distinct-light.png) | [截图](evidence/final-api26/pick-distinct-light.png) |
-| 组选 | [截图](evidence/final-api37/pick-group-light.png) | [截图](evidence/final-api26/pick-group-light.png) |
-| 位选 | [Release 截图](evidence/release-api37/pick-position-light.png) | [Release 截图](evidence/release-api26/pick-position-light.png) |
-| 重复合并反馈 | [截图](evidence/final-api37/merge-dialog-light.png) | [截图](evidence/final-api26/merge-dialog-light.png) |
-| 6 号 / 8 注 / 16 元 | [截图](evidence/final-api37/plans-merged-light.png) | [截图](evidence/final-api26/plans-merged-light.png) |
-| 纸白首页 | [Release 截图](evidence/release-api37/home-light.png) | [Release 截图](evidence/release-api26/home-light.png) |
-| 墨绿首页 | [Release 截图](evidence/release-api37/home-dark.png) | [Release 截图](evidence/release-api26/home-dark.png) |
-| 墨绿走势 | [截图](evidence/final-api37/trend-dark.png) | [截图](evidence/final-api26/trend-dark.png) |
+| 单选单 | 截图（历史图片已清理） | 截图（历史图片已清理） |
+| 组选 | 截图（历史图片已清理） | 截图（历史图片已清理） |
+| 位选 | Release 截图（历史图片已清理） | Release 截图（历史图片已清理） |
+| 重复合并反馈 | 截图（历史图片已清理） | 截图（历史图片已清理） |
+| 6 号 / 8 注 / 16 元 | 截图（历史图片已清理） | 截图（历史图片已清理） |
+| 纸白首页 | Release 截图（历史图片已清理） | Release 截图（历史图片已清理） |
+| 墨绿首页 | Release 截图（历史图片已清理） | Release 截图（历史图片已清理） |
+| 墨绿走势 | 截图（历史图片已清理） | 截图（历史图片已清理） |
 
 API 26 仪器截图因系统截图接口返回空而使用 Compose 官方 `captureToImage`，仅包含应用内容；Release 冒烟截图使用原生 `adb screencap`。截图中的 2026300 期与 26 元清单是测试输入，APK 内置的个人表为空。
 

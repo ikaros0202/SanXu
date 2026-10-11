@@ -1,0 +1,11 @@
+choice ping skipped
+BUILD-PHASE COMPS  comp (pending comp round)  direction f591e32b
+  comps       open    
+  spec        pending 
+  plates      pending 
+  hero        pending 
+  sections    pending 
+  motion      pending 
+  responsive  pending 
+  review      pending 
+NEXT Comp round for the chosen direction (seed f591e32b): read reference/visualize.md, generate three compositional comps of the requested surface at its own viewport into .impeccable/mocks/ (each with a prompt sidecar), put them in front of the user, and set "approved": true in the chosen comp's sidecar. Then C:\Users\jiqin\.codex\skills\impeccable\scripts\impeccable.cmd build-phase advance. No page code before this closes.

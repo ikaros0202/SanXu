@@ -1,0 +1,20 @@
+Use case: ui-mockup. A high-fidelity Chinese NATIVE ANDROID PHONE UI design proposal for 叁序, a personal 福彩3D data and number-organizing app. Render one portrait screen edge-to-edge, no physical phone, no browser, no outer presentation frame, aspect ratio360:800. This is a design proposal, not an implemented screen.
+Match the reference's warm white #FFFEFD / warm gray #F1EFEC / graphite #292427 / wine #AD243B identity and standard Chinese system type. Flat, deliberate, compact, professional. No cyan, gradients, textures, shadows, casino imagery, balls, reels, giant rounded panels, novelty metaphors or isolated pills. One coherent layout with hairline dividers and small corner radii6dp.
+Proportion discipline: normal Android 360x800 logical dp canvas. Status bar24dp, app bar48dp, bottom navigation56dp plus system24dp. App title17sp, body13sp, secondary11sp, numeric data16sp, major editable numbers at most26sp. Hit targets48dp even if visible glyphs smaller. Never enlarge everything to fill empty space. Plenty of meaningful content fits one screen, with calm residual space if needed. Tiny content does not justify tiny hit targets.
+Shared shell: top white status bar '10:36' and native battery/network icons. White48dp appbar small wine 3-line app mark and precise title, right standard actions. Bottom navigation five evenly spaced standard outlined icons and labels '首页' '走势' '选号' '方案' '彩报', current item wine. Crisp Chinese, native proportions. Preserve exact business values and labels provided. No prediction, purchase, payout, AI recommendation, advertisement or made-up app capability.
+EDIT TARGET: supplied home reference. Preserve its palette and core task but REORGANIZE to remove repeated plan controls, giant numbers, redundant navigation rows. This is the 首页 candidate.
+Appbar title '叁序' with small '福彩3D', a settings icon at right.
+Below appbar at y72: a compact108dp white latest-result zone. First row '第2026263期' left, '09-30' nearby, '最新开奖' right and refresh icon. Second row: left two-thirds, number '9 8 7' in26sp GRAPHITE with no balls; below it small13sp '和值24 · 跨度2 · 组六'. Right third separated by a short thin vertical line: label '试机号', value '— — —' in18sp, small '等待更新'. Integrate '详情 ›' as small48dp target at right loweredge of latest result zone; do not give each control a row. Keep necessary separation between official draw and trial.
+Then 8dp gap then history table in one shared white panel. Header48dp '最近开奖' in14sp, right '全部 ›'; table header24dp columns '期号' '日期' '开奖号' '和值' '跨度'. EXACT ten read-only rows, each30dp, aligned tabular data:
+2026262 09-29 347 14 4
+2026261 09-28 511 7 4
+2026260 09-27 619 16 8
+2026259 09-26 731 11 6
+2026258 09-25 635 14 3
+2026257 09-24 486 18 4
+2026256 09-23 051 6 5
+2026255 09-22 699 24 3
+2026254 09-21 850 13 8
+2026253 09-20 034 7 4.
+Only numbers16sp; headers/period12sp; date secondary11sp. Keep leadingzero051034. These are real historical data examples. No red background on full table, no separate cards perrow, no extra chart link beneath the table.
+At lower content edge after table, ONE integrated64dp plan/action strip: left folder icon, '本期方案', below '2026300期 · 8注 · ¥16' at12sp (synthetic personal plan example); small chevron implies viewplan. Right compact wine filled button '继续选号' with48dp touch. Only this one plan summary, no duplication at top orfooter. Residual space between this strip and bottomnavigation is fine, don't add new cards. Home tab selected. No extra numbers or content.

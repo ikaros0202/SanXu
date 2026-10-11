@@ -26,6 +26,7 @@ class WorkspaceFlowTest {
     }
     @Test fun fourMethodsMergeUndoAndRestore() {
         tag("nav_2").performClick()
+        compose.waitForStudio();tag("new_pick").performClick()
         compose.waitUntil(15_000){compose.onAllNodesWithTag("issue_picker").fetchSemanticsNodes().isNotEmpty()}
         tag("issue_picker").performClick()
         tag("issue_input").performTextReplacement("2026300")
@@ -33,7 +34,7 @@ class WorkspaceFlowTest {
         text("批量录入").performClick()
         tag("batch_input").performTextInput("012")
         text("加入号码").performClick()
-        compose.onNodeWithContentDescription("增加倍数").performClick()
+        compose.incrementStudioMultiplier()
         tag("pick_amount").assertTextEquals("¥ 4")
         tag("save_plan").performClick()
         waitFor("已加入方案")
@@ -43,7 +44,7 @@ class WorkspaceFlowTest {
         tag("nav_2").performClick()
         tag("method_DISTINCT").performClick()
         compose.waitForIdle()
-        listOf(0,1,2).forEach{tag("distinct_$it").performClick()}
+        compose.setStudioDigits("edit_digit_set","012")
         tag("pick_count").assertTextEquals("6 个号码 · 6 注")
         screenshot("pick-distinct-light")
         tag("save_plan").performClick()
@@ -56,7 +57,7 @@ class WorkspaceFlowTest {
         screenshot("plans-merged-light")
 
         tag("nav_2").performClick()
-        compose.onNodeWithContentDescription("增加倍数").performClick()
+        compose.incrementStudioMultiplier()
         tag("save_plan").performClick()
         waitFor("重复号码已合并")
         text("撤销本次").performClick()
@@ -67,23 +68,23 @@ class WorkspaceFlowTest {
 
         tag("nav_2").performClick()
         tag("method_GROUP").performClick()
-        tag("group_0").performClick();tag("group_1").performClick()
+        compose.setStudioDigits("edit_digit_set","01")
         tag("pick_count").assertTextEquals("2 个号码 · 2 注")
         screenshot("pick-group-light")
-        tag("group_GROUP6").performClick();tag("group_2").performClick()
+        tag("group_GROUP6").performClick();compose.setStudioDigits("edit_digit_set","012")
         tag("pick_count").assertTextEquals("1 个号码 · 1 注")
         tag("save_plan").performClick();waitFor("已加入方案");text("查看方案").performClick()
         tag("plan_amount").assertTextEquals("¥ 18")
         tag("plan_count").assertTextEquals("7 个号码")
 
         tag("nav_2").performClick();tag("method_POSITION").performClick()
-        listOf(0,1).forEach{tag("pos0_$it").performClick()}
-        tag("position_next_0").performClick();tag("pos1_0").performClick();tag("position_next_1").performClick();listOf(2,7).forEach{tag("pos2_$it").performClick()}
+        compose.setStudioDigits("position_2","27")
+        compose.setStudioDigits("position_0","01");compose.setStudioDigits("position_1","0")
         tag("pick_count").assertTextEquals("4 个号码 · 4 注")
-        tag("pos2_9").assertIsDisplayed()
+        tag("position_2").assertIsDisplayed()
         tag("save_plan").assertIsDisplayed()
         compose.onNodeWithContentDescription("查看 4 个号码").assertIsDisplayed()
-        val digitBounds=tag("pos2_9").getUnclippedBoundsInRoot()
+        val digitBounds=tag("position_2").getUnclippedBoundsInRoot()
         assertThat((digitBounds.right-digitBounds.left).value).isAtLeast(48f)
         assertThat((digitBounds.bottom-digitBounds.top).value).isAtLeast(48f)
         screenshot("pick-position-light")
