@@ -1,5 +1,5 @@
 {
   "name": "fc3d-tools",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "purpose": "Development tools and golden cases; no app database or third-party images."
 }

@@ -13,7 +13,8 @@ def build(output):
     version = json.loads((SOURCE / 'manifest.json').read_text(encoding='utf-8'))['version']
     output.mkdir(parents=True, exist_ok=True)
     target = output / f'fc3d-tools-{version}.zip'
-    content = {name: (SOURCE / name).read_bytes() for name in FILES}
+    # Canonical LF bytes make package hashes independent of Git checkout settings.
+    content = {name: (SOURCE / name).read_bytes().replace(b'\r\n', b'\n') for name in FILES}
     with zipfile.ZipFile(target, 'w', compression=zipfile.ZIP_STORED) as archive:
         for name, data in content.items():
             entry = zipfile.ZipInfo(name, date_time=(1980, 1, 1, 0, 0, 0))
