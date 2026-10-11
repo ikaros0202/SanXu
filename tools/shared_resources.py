@@ -9,6 +9,7 @@ import re
 import tempfile
 import time
 from urllib.request import Request, urlopen
+from urllib.error import HTTPError, URLError
 import zipfile
 
 
@@ -45,7 +46,7 @@ def resolve(lock_path=None, cache_root=None):
         if not re.fullmatch(r'[a-f0-9]{64}', expected):
             raise ValueError('Invalid file SHA-256')
     if cache_root is None:
-        cache_root = os.environ.get('FC3D_CACHE_DIR') or Path(os.environ.get('LOCALAPPDATA', str(Path.home() / '.cache'))) / 'fc3d-tools'
+        cache_root = os.environ.get('FC3D_CACHE_DIR') or Path.home() / '.cache/fc3d-tools'
     cache_root = Path(cache_root).expanduser().resolve()
     cache_root.mkdir(parents=True, exist_ok=True)
     directory = cache_root / (config['version'] + '-' + config['sha256'])
@@ -64,8 +65,17 @@ def resolve(lock_path=None, cache_root=None):
             check_cache(directory, files)
             return directory
         request = Request(config['url'], headers={'User-Agent': 'FC3D-resource-installer/1.0'})
-        with urlopen(request, timeout=60) as response:
-            payload = response.read(10 * 1024 * 1024 + 1)
+        for attempt in range(3):
+            try:
+                with urlopen(request, timeout=30) as response:
+                    payload = response.read(10 * 1024 * 1024 + 1)
+                break
+            except (URLError, TimeoutError) as error:
+                if isinstance(error, HTTPError) and error.code != 429 and error.code < 500:
+                    raise
+                if attempt == 2:
+                    raise
+                time.sleep(attempt + 1)
         if len(payload) > 10 * 1024 * 1024 or digest(payload) != config['sha256']:
             raise ValueError('Resource package SHA-256 mismatch or package too large')
         with tempfile.TemporaryDirectory(prefix='.install-', dir=cache_root) as temporary:

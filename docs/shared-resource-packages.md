@@ -19,7 +19,7 @@ powershell -ExecutionPolicy Bypass -File tools/setup-shared-resources.ps1
 powershell -ExecutionPolicy Bypass -File tools/validate-predevelopment-data.ps1
 ```
 
-工具入口会自动初始化。Windows 默认缓存为 `%LOCALAPPDATA%/fc3d-tools/<版本>-<ZIP哈希>/`；其他系统默认 `~/.cache/fc3d-tools/`。可通过 `FC3D_CACHE_DIR` 指定缓存根目录。首次获取需要联网，无需 GitHub 登录；已缓存的固定版本可离线运行。两个项目依赖相同包时共用缓存；不同版本可共存。
+工具入口会自动初始化。所有系统统一使用用户主目录下的 `~/.cache/fc3d-tools/<版本>-<ZIP哈希>/`，Windows 对应 `%USERPROFILE%/.cache/fc3d-tools/`，避免不同 PowerShell 进程的 LOCALAPPDATA 虚拟化产生两份缓存。可通过 `FC3D_CACHE_DIR` 指定缓存根目录。首次获取需要联网，无需 GitHub 登录；临时网络失败最多重试三次，每次连接超时 30 秒；已缓存的固定版本可离线运行。两个项目依赖相同包时共用缓存；不同版本可共存。
 
 ZIP 整包与清单文件均校验。下载、解包或校验失败时不安装半成品；已有损坏缓存直接拒绝执行，不覆盖用户修改。缓存安装串行加锁、暂存后原子改名。进程被强制关闭可能留下安装锁，须确认没有安装进程后才能清理该锁或换用新缓存根目录。
 

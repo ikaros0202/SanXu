@@ -69,3 +69,5 @@
 ## 当前公共资源方式（2026-10-11）
 
 共用工具和黄金样例由 SanXu 的 `shared/fc3d-tools` 唯一维护，通过公开版本化资源包与用户缓存复用；不再依赖相邻 fc3d-resources 仓库。运行 tools/setup-shared-resources.ps1 可获取并校验当前项目固定版本。 具体流程见[版本化工具包方案](../docs/shared-resource-packages.md)。
+
+- [x] 公共资源改为 SanXu 唯一源码＋公开 tools-v1.0.1 资源包＋用户缓存；旧共享仓库已归档。匿名下载、离线共用缓存、全新克隆重建及各自数据校验通过，见 `docs/resource-package-verification.json`。新 UI 的 Android 编译和验收未在本轮执行。

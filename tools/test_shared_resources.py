@@ -99,5 +99,19 @@ class SharedResourcesTest(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'Unsafe'):
             self.resolve()
 
+    def test_transient_network_failure_is_retried(self):
+        from urllib.error import URLError
+        with patch('shared_resources.urlopen', side_effect=[URLError('temporary TLS failure'), io.BytesIO(self.payload)]) as request, patch('shared_resources.time.sleep'):
+            installed = self.resolve()
+            self.assertTrue(installed.is_dir())
+            self.assertEqual(request.call_count, 2)
+
+    def test_network_failure_does_not_leave_partial_installation(self):
+        from urllib.error import URLError
+        with patch('shared_resources.urlopen', side_effect=URLError('offline')), patch('shared_resources.time.sleep'):
+            with self.assertRaises(URLError):
+                self.resolve()
+        self.assertEqual(list(self.cache.iterdir()), [])
+
 if __name__ == '__main__':
     unittest.main()
