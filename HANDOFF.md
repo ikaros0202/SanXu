@@ -56,3 +56,8 @@
 下次可直接说：
 
 > 在 D:\codexproject\SanXu 读取 HANDOFF.md 和 docs/implementation-number-studio.md，开始测试本轮已写的新 UI。先解决编译与业务问题，再看两种尺寸的原生效果；不要重新做旧项目，也不要把1.0.2截图当作新效果。
+
+
+## 2026-10-11 仓库与公共工具迁移
+
+默认开发项目为 SanXu，Lucky3D 只在用户明确指定时修改。两个应用已分别提交到 GitHub；SanXu 现为公开仓库。公共工具唯一源码在 SanXu shared/fc3d-tools，通过固定版本 ZIP 与用户缓存分发，不再依赖相邻共享仓库。见 [当前方案](docs/shared-resource-packages.md)。这些变更取代上文历史仓库状态，不代表新 UI 通过 Android 编译或验收。

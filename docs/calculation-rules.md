@@ -43,4 +43,4 @@
 
 ## 验证
 
-纯Kotlin测试、相邻共享仓库中的 `fc3d-resources/testdata/fc3d-golden-cases.json`、`tools/validate-predevelopment-data.ps1`三者共同约束计算。数据库事务另有设备测试；正式开奖修正触发界面重新核对另有Compose测试。
+纯Kotlin测试、SanXu 公共工具包中的 `testdata/fc3d-golden-cases.json`、`tools/validate-predevelopment-data.ps1`三者共同约束计算。数据库事务另有设备测试；正式开奖修正触发界面重新核对另有Compose测试。
